@@ -4,6 +4,9 @@
 
 Write a method that takes in an array and a value to be added. Without utilizing any built-in methods, return an array with the new value added at the middle index.
 
+## BIG O
+
+The time and space efficiency of this algorithm is O(n). In C# you cannot alter the size of an existing array and therefore need to create a new array to insert the added variable.
 ##White board layout
-![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/assets/array_shift.PNG)
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/assets/array_shift.JPG)
 
