@@ -10,3 +10,4 @@ The time and space efficiency of this algorithm is O(n). In C# you cannot alter 
 ##White board layout
 ![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/assets/array_shift.JPG)
 
+## We found we needed to alter the conditional statement within our for loop to identify if the array length is less than the midpoint, insert. If else the array is equal to midpoint, add variable number, then add one to index and insert old array index, else add old array to new array at index plus one.
