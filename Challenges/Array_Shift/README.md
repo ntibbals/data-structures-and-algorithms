@@ -1,8 +1,8 @@
 ### Insert and Shift an Array
 
 ## Collaborators
-# Nate Tibbals
-# Carlos Roberto Castillo
+- Nate Tibbals
+- Carlos Roberto Castillo
 
 
 ## Challenge
