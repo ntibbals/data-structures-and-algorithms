@@ -24,7 +24,7 @@ namespace Array_Shift
             int variable = array.Length / 2;
             for( int i = 0; i < array.Length; i++)
             {
-                if(array[i] == variable)
+                if(array[i] == variable + 1)
                 {
                     newArray[i] = arg;
                 }
