@@ -20,17 +20,25 @@ namespace Array_Shift
 
         static int [] ArrayShift(int[] array, int arg)
         {
+
             int[] newArray = new int[array.Length + 1];
+
             int variable = array.Length / 2;
-            for( int i = 0; i < array.Length; i++)
+            
+            for (int i = 0; i < array.Length; i++)
             {
-                if(array[i] == variable + 1)
+                newArray[i] = array[i];
+            }
+            
+            for ( int i = 0; i < newArray.Length; i++)
+            {
+                if(i == variable)
                 {
                     newArray[i] = arg;
                 }
                 else
                 {
-                    newArray[i] = array[i];
+                    newArray[i] = newArray[i];
                 }
             }
             return newArray;
