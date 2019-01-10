@@ -15,5 +15,16 @@ namespace Binaray_Search_Test
             int testKey = 77;
             Assert.Equal(expectedResult, Program.BinarySearch(testArray, testKey));
         }
+
+        [Fact]
+        public void KeyNotInArray()
+        {
+            //Test that given a key not in the array, will return accordinlgy
+            int[] testArray = { 42, 54, 66, 78, 90, 102, 114 };
+            int expectedResult = 1;
+            int testKey = 54;
+            Assert.Equal(expectedResult, Program.BinarySearch(testArray, testKey));
+
+        }
     }
 }
