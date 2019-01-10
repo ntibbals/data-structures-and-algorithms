@@ -8,7 +8,7 @@ namespace Array_Binary_Search
         {
             Console.WriteLine("Challenge 2 Solution is: ");
             int[] array = { 5, 6, 7, 8, 9 };
-            int key = 6;
+            int key = 3;
             //int solution = BinarySearch(array, key);
             Console.WriteLine(BinarySearch(array, key));
             Console.ReadLine();
@@ -29,16 +29,12 @@ namespace Array_Binary_Search
                 {
                     max = mid;
                 }
-                else if(array[mid] < key)
+                else 
                 {
                     min = mid;
                 }
-                else
-                {
-                    return -1;
-                }
             }
-            return 0;
+            return -1;
         }
     }
 }
