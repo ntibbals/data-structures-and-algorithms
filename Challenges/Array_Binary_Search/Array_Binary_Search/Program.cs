@@ -16,6 +16,28 @@ namespace Array_Binary_Search
 
         public static int BinarySearch( int[] array, int key)
         {
+            int min = 0;
+            int max = array.Length;
+            while(min<max)
+            {
+                int mid = (max + min) / 2;
+                if(mid == key)
+                {
+                    return mid;
+                }
+                else if(mid > key)
+                {
+                    max = mid;
+                }
+                else if(mid < key)
+                {
+                    min = mid;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
             return 0;
         }
     }
