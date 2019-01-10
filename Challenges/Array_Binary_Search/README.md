@@ -10,7 +10,7 @@
 
 ## BIG O
 
--The time and space efficiency of this algorithm is O(log n). The method utilizes a while loop and balances binary search principles to reduce the search in half after each loop.
+- The time and space efficiency of this algorithm is O(log n). The method utilizes a while loop and balances binary search principles to reduce the search in half after each loop.
 
 ## White board layout
 
