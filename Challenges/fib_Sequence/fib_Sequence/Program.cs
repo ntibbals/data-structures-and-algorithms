@@ -7,15 +7,23 @@ namespace fib_Sequence
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            int testNum = 4;
+            int testNum = 8;
 
-            Console.WriteLine(FibSquence(testNum));
+            Console.WriteLine(FibSeq(testNum));
+            Console.ReadLine();
         }
 
-        static int FibSquence(int num)
+        static int FibSeq (int num)
         {
-            int answer = 0;
-            return answer;
+            int[] fib= new int[num + 1];
+            fib[0] = 0;
+            fib[1] = 1;
+
+            for (int i = 2; i <= num; i++)
+            {
+                fib[i] = fib[i-1] + fib[i-2];
+            }
+            return fib[num];
         }
     }
 }
