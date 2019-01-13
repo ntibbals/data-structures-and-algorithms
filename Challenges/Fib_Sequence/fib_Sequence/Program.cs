@@ -2,7 +2,7 @@
 
 namespace fib_Sequence
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -18,7 +18,7 @@ namespace fib_Sequence
         /// </summary>
         /// <param name="num">integer to compute</param>
         /// <returns>nth integer of argument</returns>
-        static int FibSeq (int num)
+        public static int FibSeq (int num)
         {
 
             int[] fib= new int[num + 1]; /// initialize array length based on argument plus one
