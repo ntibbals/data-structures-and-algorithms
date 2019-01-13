@@ -14,5 +14,15 @@ namespace FibTest
             int expectedResult = 1;
             Assert.Equal(expectedResult, Program.FibSeq(testOne));
         }
+
+        [Fact]
+        public void TestIntFour()
+        {
+            /// Test that given an integer of four, correct nth will return of three
+            int testFour = 4;
+            int expectedResult = 3;
+            Assert.Equal(expectedResult, Program.FibSeq(testFour));
+        }
+
     }
 }
