@@ -7,7 +7,7 @@ namespace fib_Sequence
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            int testNum = 8; //integer to pass into method
+            long testNum = 1000; //integer to pass into method
 
             Console.WriteLine(FibSeq(testNum));
             Console.ReadLine();
@@ -18,10 +18,10 @@ namespace fib_Sequence
         /// </summary>
         /// <param name="num">integer to compute</param>
         /// <returns>nth integer of argument</returns>
-        public static int FibSeq (int num)
+        public static long FibSeq (long num)
         {
 
-            int[] fib= new int[num + 1]; /// initialize array length based on argument plus one
+            long[] fib= new long[num + 1]; /// initialize array length based on argument plus one
             fib[0] = 0;
             fib[1] = 1;
 
