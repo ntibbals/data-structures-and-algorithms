@@ -30,14 +30,28 @@ namespace LinkedList
         /// </summary>
         /// <param name="num">value of node</param>
         static void NewList(int num)
-        { 
+        {
             LiList myList = new LiList();
+
+            //myList.Head = null;
+            //Node node = new Node(num);
+            //myList.Head = node;
+            //myList.Current = myList.Head;
+            if (myList.Head == null)
+            {
+                Console.WriteLine("1");
+            }
+            else
+            {
+                Console.WriteLine("O");
+            }
+            
+            //myList.Print();
             myList.Insert(num);
             myList.Insert(num * 2);
             myList.Insert(num * 3);
             myList.Insert(num * 4);
             myList.Print();
-
 
         }
     }

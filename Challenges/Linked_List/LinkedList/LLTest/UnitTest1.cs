@@ -26,5 +26,16 @@ namespace LLTest
             testList.Insert(testNum);
             Assert.True(testList.Includes(testNum));
         }
+        [Fact]
+        public void TestIfZEROIncluded()
+        {
+            ///Test if node does not exist, will return false
+            int testNum = 0;
+            LiList testList = new LiList();
+            testList.Insert(testNum);
+            Assert.True(testList.Includes(testNum));
+        }
+
+
     }
 }

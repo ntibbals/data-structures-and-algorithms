@@ -10,12 +10,21 @@ namespace LinkedList.Classes
         /// <summary>
         /// First node in Linked List.
         /// </summary>
-        public Node Head { get; set; }
+        public Node Head { get; set; } = null;
         /// <summary>
         /// Indicates current node in Linked List
         /// </summary>
         public Node Current { get; set; }
 
+        //Node Head = null;
+
+        public LiList node (int num, LiList myList)
+        {
+            Node node = new Node(num);
+            myList.Head = node;
+            myList.Current = myList.Head;
+            return myList;
+        }
         /// <summary>
         /// Inserts value into node at the stark of the linked list and then refernces the head to point to newly added node.
         /// </summary>
