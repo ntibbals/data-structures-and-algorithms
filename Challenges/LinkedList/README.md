@@ -8,3 +8,6 @@
 
 - The time and space efficiency of the methods involved with the creation and insertion of the Linked List is O(n). Everything runs on a linear path as it traverses from node to node.
 
+# Visual
+
+![SCREENSHOT]()
