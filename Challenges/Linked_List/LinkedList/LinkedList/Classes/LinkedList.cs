@@ -13,9 +13,9 @@ namespace LinkedList.Classes
 
         public void Insert(int value)
         {
-            Node node1 = new Node(value);
-            node1.Next = Head;
-            Head = node1;
+            Node node = new Node(value);
+            node.Next = Head;
+            Head = node;
         }
 
         public bool Includes(int value)
@@ -34,6 +34,16 @@ namespace LinkedList.Classes
                 return true;
             }
             return false;
+        }
+
+        public void Print()
+        {
+            Current = Head;
+            while (Current.Next != null)
+            {
+                Console.Write($" {Current.Value} ");
+                Current = Current.Next;
+            }
         }
     }
 }
