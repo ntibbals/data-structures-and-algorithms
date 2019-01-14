@@ -16,5 +16,15 @@ namespace LLTest
             int falseValue = 13;
             Assert.False(testList.Includes(falseValue));
         }
+
+        [Fact]
+        public void TestIfIncluded()
+        {
+            ///Test if node does not exist, will return false
+            int testNum = 7;
+            LiList testList = new LiList();
+            testList.Insert(testNum);
+            Assert.True(testList.Includes(testNum));
+        }
     }
 }
