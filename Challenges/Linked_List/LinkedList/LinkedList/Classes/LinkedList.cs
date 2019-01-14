@@ -16,15 +16,6 @@ namespace LinkedList.Classes
         /// </summary>
         public Node Current { get; set; }
 
-        //Node Head = null;
-
-        public LiList node (int num, LiList myList)
-        {
-            Node node = new Node(num);
-            myList.Head = node;
-            myList.Current = myList.Head;
-            return myList;
-        }
         /// <summary>
         /// Inserts value into node at the stark of the linked list and then refernces the head to point to newly added node.
         /// </summary>

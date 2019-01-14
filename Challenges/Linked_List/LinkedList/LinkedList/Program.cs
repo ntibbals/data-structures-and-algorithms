@@ -33,10 +33,6 @@ namespace LinkedList
         {
             LiList myList = new LiList();
 
-            //myList.Head = null;
-            //Node node = new Node(num);
-            //myList.Head = node;
-            //myList.Current = myList.Head;
             if (myList.Head == null)
             {
                 Console.WriteLine("1");
@@ -45,8 +41,7 @@ namespace LinkedList
             {
                 Console.WriteLine("O");
             }
-            
-            //myList.Print();
+
             myList.Insert(num);
             myList.Insert(num * 2);
             myList.Insert(num * 3);
