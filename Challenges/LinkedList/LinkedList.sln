@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList\LinkedList.csproj", "{66B6FF3F-6FDF-48F8-8420-B4969D294B98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLTest", "LLTest\LLTest.csproj", "{BED60FE6-7E9C-4F7F-970A-CFEA7C96E67C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLTest", "LLTest\LLTest.csproj", "{BED60FE6-7E9C-4F7F-970A-CFEA7C96E67C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D46FFA4C-C196-4BFD-95BF-02EC8242737D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

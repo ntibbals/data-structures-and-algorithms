@@ -12,6 +12,7 @@ namespace LinkedList
             int num = 3;
             //NewNode(num);
             NewList(num);
+            Console.ReadLine();
         }
         /// <summary>
         /// Create a new node
@@ -32,14 +33,14 @@ namespace LinkedList
         static void NewList(int num)
         {
             LiList myList = new LiList();
-
+            Console.WriteLine("Will display 1 if null or 2 if not null:");
             if (myList.Head == null)
             {
                 Console.WriteLine("1");
             }
             else
             {
-                Console.WriteLine("O");
+                Console.WriteLine("2");
             }
 
             myList.Insert(num);

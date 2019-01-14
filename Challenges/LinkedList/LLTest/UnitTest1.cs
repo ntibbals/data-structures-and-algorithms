@@ -79,6 +79,7 @@ namespace LLTest
         [Fact]
         public void InstantiateListAtNull()
         {
+            ///Test that link list is instantiated with null value
             LiList testList = new LiList();
             Assert.Null(testList.Head);
         }

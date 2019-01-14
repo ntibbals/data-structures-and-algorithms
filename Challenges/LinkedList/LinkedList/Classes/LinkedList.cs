@@ -55,10 +55,15 @@ namespace LinkedList.Classes
         public void Print()
         {
             Current = Head;
+            Console.WriteLine("Linked List node values:");
             while (Current.Next != null)
             {
                 Console.Write($" {Current.Value} ");
                 Current = Current.Next;
+            }
+            if(Current.Next == null)
+            {
+                Console.WriteLine("NULL");
             }
         }
     }
