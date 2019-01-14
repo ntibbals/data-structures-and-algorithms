@@ -58,13 +58,11 @@ namespace LinkedList.Classes
             Console.WriteLine("Linked List node values:");
             while (Current.Next != null)
             {
-                Console.Write($" {Current.Value} ");
+                Console.Write($" {Current.Value} =>");
                 Current = Current.Next;
             }
-            if(Current.Next == null)
-            {
-                Console.WriteLine("NULL");
-            }
+        
+                Console.WriteLine($" {Current.Value} => NULL");
         }
     }
 }
