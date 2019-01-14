@@ -27,7 +27,7 @@ namespace LLTest
             Assert.True(testList.Includes(testNum));
         }
         [Fact]
-        public void TestIfZEROIncluded()
+        public void TestIfZeroIncluded()
         {
             ///Test if node does not exist, will return false
             int testNum = 0;
@@ -36,7 +36,7 @@ namespace LLTest
             Assert.True(testList.Includes(testNum));
         }
         [Fact]
-        public void TestIfInsertValue()
+        public void TestIfInsertsValue()
         {
             ///Test if insert function will insert accordingly
             int testNum = 13;
@@ -46,17 +46,43 @@ namespace LLTest
         }
 
         [Fact]
-        public void TestIfInsertsValueAtHead()
+        public void TestIfInsertsValueAtHeadChanges()
         {
-            ///Test if insert function will insert value at head
+            ///Test if insert function will change head value
             int testNum1 = 33;
             int testNum2 = 77;
             LiList testList = new LiList();
             testList.Insert(testNum1);
             testList.Insert(testNum2);
-            int expectedValue = 77;
+            Assert.NotEqual(testNum1, testList.Head.Value);
+        }
+
+        [Fact]
+        public void TestIfInsertMultipleValues()
+        {
+            ///Test if insert multiple values, head will remain last inserted value
+            int testNum1 = 3;
+            int testNum2 = 13;
+            int testNum3 = 23;
+            int testNum4 = 33;
+            int testNum5 = 43;
+            LiList testList = new LiList();
+            testList.Insert(testNum1);
+            testList.Insert(testNum2);
+            testList.Insert(testNum3);
+            testList.Insert(testNum4);
+            testList.Insert(testNum5);
+            int expectedValue = 43;
             Assert.Equal(expectedValue, testList.Head.Value);
         }
+
+        [Fact]
+        public void InstantiateListAtNull()
+        {
+            LiList testList = new LiList();
+            Assert.Null(testList.Head);
+        }
+            
 
     }
 }

@@ -10,7 +10,7 @@ namespace LinkedList
         {
             Console.WriteLine("Hello World!");
             int num = 3;
-            NewNode(num);
+            //NewNode(num);
             NewList(num);
         }
         /// <summary>
