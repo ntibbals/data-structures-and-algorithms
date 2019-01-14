@@ -13,7 +13,10 @@ namespace LinkedList
             NewNode(num);
             NewList(num);
         }
-
+        /// <summary>
+        /// Create a new node
+        /// </summary>
+        /// <param name="num">value of node</param>
         static void NewNode(int num)
         {
             Node node1 = new Node(num);
@@ -22,6 +25,10 @@ namespace LinkedList
             Console.WriteLine(node2.Value);
         }
 
+        /// <summary>
+        /// Instantiates a New Linked List  and inserts new nodes into list
+        /// </summary>
+        /// <param name="num">value of node</param>
         static void NewList(int num)
         { 
             LiList myList = new LiList();
@@ -30,14 +37,6 @@ namespace LinkedList
             myList.Insert(num * 3);
             myList.Insert(num * 4);
             myList.Print();
-            //if(myList.Includes(num * 3))
-            //{
-            //    Console.WriteLine($"{num * 3} is in list.");
-            //}
-            //else
-            //{
-            //    Console.WriteLine($"{num * 3} is not in list.");
-            //}
 
 
         }
