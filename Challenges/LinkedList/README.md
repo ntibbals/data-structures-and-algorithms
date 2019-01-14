@@ -10,4 +10,4 @@
 
 # Visual
 
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/LinkedList/visual.PNG)
