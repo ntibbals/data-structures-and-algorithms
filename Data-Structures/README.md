@@ -4,4 +4,4 @@
 
 # Table of Contents
 
-[1.Linked List](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Array_Shift) 
+[1.Linked List](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Data-Structures/LinkedList) 

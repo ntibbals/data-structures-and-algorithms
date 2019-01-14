@@ -8,4 +8,3 @@
 
 [3.Challenge: Fibonacci Sequence](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Fib_Sequence) 
 
-[4. Challenge: Linked List](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/LinkedList/README.md)
