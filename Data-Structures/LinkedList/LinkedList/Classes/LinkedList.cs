@@ -54,15 +54,34 @@ namespace LinkedList.Classes
         /// </summary>
         public void Print()
         {
-            Current = Head;
-            Console.WriteLine("Linked List node values:");
+            if (Head != null)
+            {
+                Current = Head;
+                Console.WriteLine("Linked List node values:");
+                while (Current.Next != null)
+                {
+                    Console.Write($" {Current.Value} =>");
+                    Current = Current.Next;
+                }
+
+                Console.WriteLine($" {Current.Value} => NULL");
+            }
+            else
+            {
+                System.Console.WriteLine("Your Linked List is empty.");
+            }
+        }
+
+        public void Append(int value)
+        {
             while (Current.Next != null)
             {
-                Console.Write($" {Current.Value} =>");
                 Current = Current.Next;
             }
-        
-                Console.WriteLine($" {Current.Value} => NULL");
+
+            Node node = new Node(value);
+
+            Current.Next = node;
         }
     }
 }
