@@ -72,6 +72,10 @@ namespace LinkedList.Classes
             }
         }
 
+        /// <summary>
+        /// Adds a new node with a given value to end of the list
+        /// </summary>
+        /// <param name="value">value for node</param>
         public void Append(int value)
         {
             while (Current.Next != null)
@@ -83,5 +87,34 @@ namespace LinkedList.Classes
 
             Current.Next = node;
         }
+
+        /// <summary>
+        /// Adds new node with given value immediately before first value node
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="newValue"></param>
+        public void InsertBefore(int value, int newValue)
+        {
+            Current = Head;
+
+            if(Current.Value == value)
+            {
+                Insert(newValue);
+                return;
+            }
+            while (Current.Next != null)
+            {
+                if (Current.Next.Value == value)
+                {
+                    Node node = new Node(newValue);
+                    node.Next = Current.Next;
+                    Current.Next = node;
+                    return;
+                }
+                Current = Current.Next;
+            }
+        }
+
+
     }
 }

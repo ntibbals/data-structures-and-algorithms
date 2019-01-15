@@ -6,7 +6,13 @@
 
 # Big O
 
-- The time and space efficiency of the methods involved with the creation and insertion of the Linked List is O(n). Everything runs on a linear path as it traverses from node to node.
+- When Includes() is applied the time efficiency is O(n) as at most you would simply need to traverse the entire list. The space efficiency is O(1) as no additional memory is instantiated.
+
+- When Insert() is applied the time efficiency is O(1) as regardless of the size of the list, the method will always insert this at the beginning node. In addition, the sspace efficiency is O(1) as no additional memory is instantiated. 
+
+- When Append() is applied the time and efficiency is O(n) as you simply traverse the entire list to the end. The space efficiency is O(1) as you will always add to the same space regardless of the amount.
+
+-
 
 # Visual
 
