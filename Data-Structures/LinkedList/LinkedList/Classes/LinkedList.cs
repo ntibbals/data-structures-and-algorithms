@@ -115,6 +115,28 @@ namespace LinkedList.Classes
             }
         }
 
+        public void InsertAfter(int value, int newValue)
+        {
+            Current = Head;
+
+            if (Head.Value == value)
+            {
+                Insert(newValue);
+                return;
+            }
+            while (Current.Next != null)
+            {
+                if (Current.Value == value)
+                {
+                    Node node = new Node(newValue);
+                    node.Next = Current.Next;
+                    Current.Next = node;
+                    return;
+                }
+                Current = Current.Next;
+            }
+        }
+
 
     }
 }
