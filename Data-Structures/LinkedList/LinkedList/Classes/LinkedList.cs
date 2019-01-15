@@ -78,14 +78,22 @@ namespace LinkedList.Classes
         /// <param name="value">value for node</param>
         public void Append(int value)
         {
-            while (Current.Next != null)
+            if (Head == null)
             {
-                Current = Current.Next;
+                Insert(value);
             }
+            else
+            {
+                Current = Head;
+                while (Current.Next != null)
+                {
+                    Current = Current.Next;
+                }
 
-            Node node = new Node(value);
+                Node node = new Node(value);
 
-            Current.Next = node;
+                Current.Next = node;
+            }
         }
 
         /// <summary>

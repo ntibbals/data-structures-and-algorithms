@@ -83,20 +83,47 @@ namespace LLTest
             LiList testList = new LiList();
             Assert.Null(testList.Head);
         }
-        //[Fact]
-        //public void TestAppendDoesNotInsertAtHead()
-        //{
-        //    ///Test append does not insert the new node at the head
-        //    int testNum1 = 3;
-        //    int testNum2 = 13;
-        //    int testNum3 = 23;
-        //    LiList testList = new LiList();
-        //    testList.Insert(testNum1);
-        //    testList.Insert(testNum2);
-        //    testList.Append(testNum3);
-        //    int expectedValue = 13;
-        //    Assert.Equal(expectedValue, testList.Head.Value);
-        //}
+
+        [Fact]
+        public void TestAppendDoesNotChangeHead()
+        {
+            ///test append does not insert the new appended node at the head
+            int testNum1 = 3;
+            int testNum2 = 13;
+            int testNum3 = 23;
+            LiList testList = new LiList();
+            testList.Insert(testNum1);
+            testList.Insert(testNum2);
+            testList.Append(testNum3);
+            int expectedNalue = 13;
+            Assert.Equal(expectedNalue, testList.Head.Value);
+        }
+
+        [Fact]
+        public void TestAppendToEnd()
+        {
+            ///test appends method at to end node head
+            int testNum1 = 7;
+            int testNum2 = 17;
+            int testNum3 =77;
+            LiList testList = new LiList();
+            testList.Insert(testNum1);
+            testList.Insert(testNum2);
+            testList.Append(testNum3);
+            int expectedValue = 77;
+            Assert.Equal(expectedValue, testList.Head.Next.Next.Value);
+        }
+
+        [Fact]
+        public void TestAppendToNullList()
+        {
+            ///test appends to null list
+            int testNum = 33;
+            LiList testList = new LiList();
+            testList.Append(testNum);
+            int expectedValue = 33;
+            Assert.Equal(expectedValue, testList.Head.Value);
+        }
 
         [Fact]
         public void TestInsertBeforeDoesNotInsertAtHead()
@@ -149,9 +176,9 @@ namespace LLTest
         }
 
         [Fact]
-        public void InsertDoesNotInsertAtHead()
+        public void InsertBeforeDoesNotInsertAtHead()
         {
-            /// Test that insert After method does not change the head position when inserted
+            /// Test that insert Before method does not change the head position when inserted
             int testNum1 = 33;
             int testNum2 = 66;
             int testNum3 = 99;
@@ -160,9 +187,41 @@ namespace LLTest
             testList.Insert(testNum1);
             testList.Insert(testNum2);
             testList.Insert(testNum3);
-            testList.InsertAfter(testNum1, testNum4);
+            testList.InsertBefore(testNum1, testNum4);
             int expectedValue = 99;
             Assert.Equal(expectedValue, (testList.Head.Value));
+        }
+        [Fact]
+        public void InsertBeforeIntoSecondNode()
+        {
+            /// Test that insert Before second node position insertes correctly
+            int testNum1 = 22;
+            int testNum2 = 44;
+            int testNum3 = 66;
+            int testNum4 = 33;
+            LiList testList = new LiList();
+            testList.Insert(testNum1);
+            testList.Insert(testNum2);
+            testList.Insert(testNum3);
+            testList.InsertBefore(testNum2, testNum4);
+            int expectedValue = 33;
+            Assert.Equal(expectedValue, (testList.Head.Next.Value)); // testing that the 
+        }
+        [Fact]
+        public void InsertBeforeLastNode()
+        {
+            /// Test that insert Before the last node will place node on end position
+            int testNum1 = 11;
+            int testNum2 = 21;
+            int testNum3 = 31;
+            int testNum4 = 41;
+            LiList testList = new LiList();
+            testList.Insert(testNum1);
+            testList.Insert(testNum2);
+            testList.Insert(testNum3);
+            testList.InsertBefore(testNum1, testNum4);
+            int expectedValue = 11;
+            Assert.Equal(expectedValue, (testList.Head.Next.Next.Next.Value)); /// testing last position value remains the same - value should be before
         }
     }
 }
