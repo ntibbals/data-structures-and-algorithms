@@ -101,7 +101,7 @@ namespace LLTest
         [Fact]
         public void TestInsertBeforeDoesNotInsertAtHead()
         {
-            ///Test insert before does not insert the new node at the head
+            ///Test insert before does not insert the new node at the head when inserting to middle position
             int testNum1 = 3;
             int testNum2 = 13;
             int testNum3 = 23;
@@ -123,26 +123,45 @@ namespace LLTest
             int testNum2 = 10;
             int testNum3 = 15;
             int testNum4 = 20;
-            int testNum5 = 15;
+            int testNum5 = 30;
             LiList testList = new LiList();
             testList.Insert(testNum1);
             testList.Insert(testNum2);
             testList.Insert(testNum3);
             testList.Insert(testNum4);
             testList.InsertBefore(testNum3, testNum5);
-            int expectedValue = 30;
+            int expectedValue = 45;
             Assert.Equal(expectedValue, (testList.Head.Next.Value + testList.Head.Next.Next.Value));
         }
         [Fact]
-        public void TestInsertBeforeOnNull()
+        public void TestInsertOnHead()
         {
-            ///Test insert before inserts in correct position based on if they are next to each other, will equal 30
+            ///Test insert before the head returns correct value
             int testNum1 = 5;
             int testNum2 = 10;
+            int testNum3 = 33;
             LiList testList = new LiList();
             testList.Insert(testNum1);
-            testList.InsertBefore(testNum1, testNum2);
-            int expectedValue = 10;
+            testList.Includes(testNum2);
+            testList.InsertBefore(testNum1, testNum3);
+            int expectedValue = 33;
+            Assert.Equal(expectedValue, (testList.Head.Value));
+        }
+
+        [Fact]
+        public void InsertDoesNotInsertAtHead()
+        {
+            /// Test that insert After method does not change the head position when inserted
+            int testNum1 = 33;
+            int testNum2 = 66;
+            int testNum3 = 99;
+            int testNum4 = 77;
+            LiList testList = new LiList();
+            testList.Insert(testNum1);
+            testList.Insert(testNum2);
+            testList.Insert(testNum3);
+            testList.InsertAfter(testNum1, testNum4);
+            int expectedValue = 99;
             Assert.Equal(expectedValue, (testList.Head.Value));
         }
     }
