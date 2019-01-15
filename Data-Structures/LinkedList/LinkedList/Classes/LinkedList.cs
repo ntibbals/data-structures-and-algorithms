@@ -115,6 +115,11 @@ namespace LinkedList.Classes
             }
         }
 
+        /// <summary>
+        /// Add new node with newly given value immediately after first node of input value
+        /// </summary>
+        /// <param name="value">current value</param>
+        /// <param name="newValue">new value node</param>
         public void InsertAfter(int value, int newValue)
         {
             Current = Head;
@@ -136,7 +141,5 @@ namespace LinkedList.Classes
                 Current = Current.Next;
             }
         }
-
-
     }
 }
