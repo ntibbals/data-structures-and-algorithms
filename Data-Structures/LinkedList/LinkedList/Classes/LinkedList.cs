@@ -159,18 +159,7 @@ namespace LinkedList.Classes
                 Current = Current.Next;
                 counter++;
             }
-
-            //if (k > counter)
-            //{
-            //    Current = Head;
-            //    while (counter != k)
-            //        Current = Current.Next;
-            //    counter--;
-            //    return Current.Value;
-            //}
-            //else
-            //{
-                counter = counter - 1 - k;
+            counter = counter - k;
                 Current = Head;
                 while (counter > k)
                 {
@@ -179,7 +168,23 @@ namespace LinkedList.Classes
 
                 }
                 return Current.Value;
-           // }
+    
+            //if (counter < k)
+            //{
+            //    Current = Head;
+            //    int myValue = 0;
+            //    for (int i = 0; i < counter; i++)
+            //    {
+            //        Current = Current.Next;
+            //        int index = 0;
+            //        index++;
+            //        if (index == (counter - k))
+            //        {
+            //            myValue = Current.Value;
+            //        }
+            //    }
+            //    return myValue;
+            //}
             //Current = Head;
             //while(counter != answer)
             //{
@@ -189,7 +194,7 @@ namespace LinkedList.Classes
             //        Current.Value = myValue;
             //    }
             //}
- 
+
         }
     }
 }

@@ -12,7 +12,7 @@ namespace LinkedList
             int num = 3;
             //int num1 = 6;
             //int num2 = 7;
-            int k = 0;
+            int k = 1;
             TestKValue(k, num);
             
             Console.ReadLine();
