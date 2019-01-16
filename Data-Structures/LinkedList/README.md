@@ -10,8 +10,11 @@
 
 - When Insert() is applied the time efficiency is O(1) as regardless of the size of the list, the method will always insert this at the beginning node. In addition, the sspace efficiency is O(1) as no additional memory is instantiated. 
 
-- When Append() and Inserts are applied the time and efficiency is O(n) as you simply traverse the entire list. The space efficiency is O(1) as you will always add to the same space regardless of the amount.
+- When Append() is applied the time and efficiency is O(n) as you simply traverse the entire list. The space efficiency is O(1) as you will always add to the same space regardless of the amount.
 
+- When InsertAfter() is applied the time and efficiency is O(n) because at most you will traverse the entire list once or until the value is equivalent. The space efficiency is O(1) as you will always add to the same space regardless of the amount.
+
+- When InsertBefore() is applied the time and efficiency is O(n) because at most you will traverse the entire list once or until the value is equivalent. The space efficiency is O(1) as you will always add to the same space regardless of the amount.
 
 # Visual
 

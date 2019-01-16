@@ -176,9 +176,9 @@ namespace LLTest
         }
 
         [Fact]
-        public void InsertBeforeDoesNotInsertAtHead()
+        public void InsertAfterHead()
         {
-            /// Test that insert Before method does not change the head position when inserted
+            /// Test that insert After method can insert after head
             int testNum1 = 33;
             int testNum2 = 66;
             int testNum3 = 99;
@@ -187,14 +187,14 @@ namespace LLTest
             testList.Insert(testNum1);
             testList.Insert(testNum2);
             testList.Insert(testNum3);
-            testList.InsertBefore(testNum1, testNum4);
-            int expectedValue = 99;
-            Assert.Equal(expectedValue, (testList.Head.Value));
+            testList.InsertAfter(testNum3, testNum4);
+            int expectedValue = 77;
+            Assert.Equal(expectedValue, (testList.Head.Next.Value));
         }
         [Fact]
-        public void InsertBeforeIntoSecondNode()
+        public void InsertAfterIntoSecondNode()
         {
-            /// Test that insert Before second node position insertes correctly
+            /// Test that insert AFter second node position insertes correctly
             int testNum1 = 22;
             int testNum2 = 44;
             int testNum3 = 66;
@@ -203,14 +203,14 @@ namespace LLTest
             testList.Insert(testNum1);
             testList.Insert(testNum2);
             testList.Insert(testNum3);
-            testList.InsertBefore(testNum2, testNum4);
-            int expectedValue = 33;
+            testList.InsertAfter(testNum2, testNum4);
+            int expectedValue = 44;
             Assert.Equal(expectedValue, (testList.Head.Next.Value)); // testing that the 
         }
         [Fact]
-        public void InsertBeforeLastNode()
+        public void InsertAfterLastNode()
         {
-            /// Test that insert Before the last node will place node on end position
+            /// Test that insert After the last node will place node on end position
             int testNum1 = 11;
             int testNum2 = 21;
             int testNum3 = 31;
@@ -219,9 +219,9 @@ namespace LLTest
             testList.Insert(testNum1);
             testList.Insert(testNum2);
             testList.Insert(testNum3);
-            testList.InsertBefore(testNum1, testNum4);
+            testList.InsertAfter(testNum1, testNum4);
             int expectedValue = 11;
-            Assert.Equal(expectedValue, (testList.Head.Next.Next.Next.Value)); /// testing last position value remains the same - value should be before
+            Assert.Equal(expectedValue, (testList.Head.Next.Next.Value)); /// testing last position value remains the same - value should be before
         }
 
         [Fact]

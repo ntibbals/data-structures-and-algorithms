@@ -99,8 +99,8 @@ namespace LinkedList.Classes
         /// <summary>
         /// Adds new node with given value immediately before first value node
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="newValue"></param>
+        /// <param name="value">value to identify</param>
+        /// <param name="newValue">new value to insert</param>
         public void InsertBefore(int value, int newValue)
         {
             Current = Head;
@@ -134,7 +134,9 @@ namespace LinkedList.Classes
 
             if (Head.Value == value)
             {
-                Insert(newValue);
+                Node node = new Node(newValue);
+                node.Next = Current.Next;
+                Current.Next = node;
                 return;
             }
             while (Current.Next != null)
