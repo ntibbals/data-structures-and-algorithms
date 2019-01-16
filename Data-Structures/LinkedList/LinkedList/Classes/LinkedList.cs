@@ -157,10 +157,13 @@ namespace LinkedList.Classes
             int index = 0;
             while(Current.Next != null)
             {
+                Current = Current.Next;
                 counter++;
             }
+            Current = Head;
             while(Current.Value != k)
             {
+                Current = Current.Next;
                 index++;
             }
             int answer = counter - index;
