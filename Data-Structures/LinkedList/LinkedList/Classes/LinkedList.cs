@@ -160,15 +160,26 @@ namespace LinkedList.Classes
                 counter++;
             }
 
-            counter = counter - 1  - k;
-            Current = Head;
-            while (counter != k)
-            {
-                Current = Current.Next;
-                counter--;
-                
-            }
+            //if (k > counter)
+            //{
+            //    Current = Head;
+            //    while (counter != k)
+            //        Current = Current.Next;
+            //    counter--;
+            //    return Current.Value;
+            //}
+            //else
+            //{
+                counter = counter - 1 - k;
+                Current = Head;
+                while (counter > k)
+                {
+                    Current = Current.Next;
+                    counter--;
+
+                }
                 return Current.Value;
+           // }
             //Current = Head;
             //while(counter != answer)
             //{
