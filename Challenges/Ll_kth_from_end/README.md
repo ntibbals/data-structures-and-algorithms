@@ -15,5 +15,5 @@
 - We first created a solution that simply found the position of k from the end in the linked list. I then refactored the second while loop to run based on the initial count of the list, less variable count which then counts down until we've reach the node we are looking to capture the value of.
 
 # Visuals
-![WHITE-BOARD]()
-![SCREENSHOT]()
+![WHITE-BOARD](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Ll_kth_from_end/whiteboard.png)
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Ll_kth_from_end/screenshot.PNG)
