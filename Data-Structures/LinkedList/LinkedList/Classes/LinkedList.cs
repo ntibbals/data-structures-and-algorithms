@@ -150,51 +150,34 @@ namespace LinkedList.Classes
             }
         }
 
+        /// <summary>
+        /// Find the kth node from the end of a link list and return the value
+        /// </summary>
+        /// <param name="k">node position to return</param>
+        /// <returns>kth node value from end</returns>
         public int FindKthFromEnd( int k)
         {
             Current = Head;
             int counter = 1;
-            while(Current.Next != null)
+            while(Current.Next != null) /// interrate through linked list to get count, start at one in order to equate for positioning
             {
                 Current = Current.Next;
                 counter++;
             }
-            counter = counter - k;
+            if (k > (counter - 1))
+            {
+                return 0;
+            }
+                counter = counter - k; //set new counter eqaul to counter less k to find positioning
                 Current = Head;
-                while (counter > 1)
+                while (counter > 1) /// interated through until counter less than one to find variable
                 {
                     Current = Current.Next;
-                    counter--;
+                    counter--; /// deduct from counter each iteration
 
                 }
                 return Current.Value;
     
-            //if (counter < k)
-            //{
-            //    Current = Head;
-            //    int myValue = 0;
-            //    for (int i = 0; i < counter; i++)
-            //    {
-            //        Current = Current.Next;
-            //        int index = 0;
-            //        index++;
-            //        if (index == (counter - k))
-            //        {
-            //            myValue = Current.Value;
-            //        }
-            //    }
-            //    return myValue;
-            //}
-            //Current = Head;
-            //while(counter != answer)
-            //{
-            //    //Current = Current.Next;
-            //    if (counter == answer)
-            //    {
-            //        Current.Value = myValue;
-            //    }
-            //}
-
         }
     }
 }
