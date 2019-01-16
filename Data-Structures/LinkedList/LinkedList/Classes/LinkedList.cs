@@ -161,7 +161,7 @@ namespace LinkedList.Classes
             }
             counter = counter - k;
                 Current = Head;
-                while (counter > k)
+                while (counter > 1)
                 {
                     Current = Current.Next;
                     counter--;
