@@ -176,9 +176,9 @@ namespace LLTest
         }
 
         [Fact]
-        public void InsertAfterDoesNotInsertAtHead()
+        public void InsertAfterHead()
         {
-            /// Test that insert Before method does not change the head position when inserted
+            /// Test that insert After method can insert after head
             int testNum1 = 33;
             int testNum2 = 66;
             int testNum3 = 99;
@@ -187,9 +187,9 @@ namespace LLTest
             testList.Insert(testNum1);
             testList.Insert(testNum2);
             testList.Insert(testNum3);
-            testList.InsertAfter(testNum1, testNum4);
-            int expectedValue = 99;
-            Assert.Equal(expectedValue, (testList.Head.Value));
+            testList.InsertAfter(testNum3, testNum4);
+            int expectedValue = 77;
+            Assert.Equal(expectedValue, (testList.Head.Next.Value));
         }
         [Fact]
         public void InsertAfterIntoSecondNode()

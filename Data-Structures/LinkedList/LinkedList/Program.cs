@@ -14,7 +14,6 @@ namespace LinkedList
             int num2 = 7;
             int k = 2;
             NewList(num, num1, num2);
-            TestKValue(k, num);
             
             Console.ReadLine();
         }
@@ -42,11 +41,7 @@ namespace LinkedList
             myList.Insert(num * 3);
             myList.Insert(num * 4);
             myList.Print();
-            myList.Append(12);
-            myList.Print();
-            myList.InsertBefore(num1, num2);
-            myList.Print();
-            myList.InsertAfter(num1, num2);
+            myList.InsertAfter(12, 99);
             myList.Print();
         }
 
