@@ -12,7 +12,7 @@ namespace LinkedList
             int num = 3;
             //int num1 = 6;
             //int num2 = 7;
-            int k = 6;
+            int k = 2;
             TestKValue(k, num);
             
             Console.ReadLine();
@@ -57,7 +57,8 @@ namespace LinkedList
             myList.Insert(num * 3);
             myList.Insert(num * 4);
             myList.Print();
-            Console.WriteLine($"K value: {myList.FindKthFromEnd(k)}");
+            Console.WriteLine($"k value: {k}");
+            Console.WriteLine($"K value from end: {myList.FindKthFromEnd(k)}");
             Console.ReadLine();
 
         }
