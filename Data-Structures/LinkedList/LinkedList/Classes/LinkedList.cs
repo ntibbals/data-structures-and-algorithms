@@ -153,23 +153,22 @@ namespace LinkedList.Classes
         public int FindKthFromEnd( int k)
         {
             Current = Head;
-            int counter = 0;
-            int index = 0;
-            int myValue = 0;
+            int counter = 1;
             while(Current.Next != null)
             {
                 Current = Current.Next;
                 counter++;
             }
+
+            counter = counter - 1  - k;
             Current = Head;
-            counter = counter + 1 - k;
-            while(counter != k)
+            while (counter != k)
             {
                 Current = Current.Next;
-                index++;
+                counter--;
+                
             }
-            myValue = Current.Value;
-   
+                return Current.Value;
             //Current = Head;
             //while(counter != answer)
             //{
@@ -179,7 +178,7 @@ namespace LinkedList.Classes
             //        Current.Value = myValue;
             //    }
             //}
-            return myValue;
+ 
         }
     }
 }
