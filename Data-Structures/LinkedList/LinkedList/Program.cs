@@ -10,9 +10,10 @@ namespace LinkedList
         {
             Console.WriteLine("Hello World!");
             int num = 3;
-            //int num1 = 6;
-            //int num2 = 7;
+            int num1 = 6;
+            int num2 = 7;
             int k = 2;
+            NewList(num, num1, num2);
             TestKValue(k, num);
             
             Console.ReadLine();
