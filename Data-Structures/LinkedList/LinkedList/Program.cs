@@ -12,7 +12,9 @@ namespace LinkedList
             int num = 3;
             int num1 = 6;
             int num2 = 7;
+            int k = 2;
             NewList(num, num1, num2);
+            TestKValue(k, num);
             
             Console.ReadLine();
         }
@@ -46,6 +48,19 @@ namespace LinkedList
             myList.Print();
             myList.InsertAfter(num1, num2);
             myList.Print();
+        }
+
+        static void TestKValue (int k, int num)
+        {
+            LiList myList = new LiList();
+            myList.Insert(num);
+            myList.Insert(num * 2);
+            myList.Insert(num * 3);
+            myList.Insert(num * 4);
+            myList.Print();
+            Console.WriteLine($"k value: {k}");
+            Console.WriteLine($"K value from end: {myList.FindKthFromEnd(k)}");
+            Console.ReadLine();
 
         }
     }
