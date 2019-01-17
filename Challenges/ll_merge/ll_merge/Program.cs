@@ -27,6 +27,7 @@ namespace ll_merge
         public static LiList LlMerge(LiList lOne, LiList lTwo)
         {
             lOne.Current = lOne.Head;
+            lTwo.Current = lTwo.Head;
             int counterOne = 0;
             int counterTwo = 0;
             while (lOne.Current.Next != null) /// interrate through linked list to get count, start at one in order to equate for positioning
@@ -43,10 +44,10 @@ namespace ll_merge
             lOne.Current = lOne.Head;
             while(newCount > 1)
             {
-                if (lOne.Current.Next.Next != null)
+                if (lOne.Current.Next != null)
                 {
                     lOne.InsertAfter(lOne.Head.Value, lOne.Head.Value);
-                    lOne.Current = lOne.Current.Next.Next;
+                    //lOne.Current = lOne.Current.Next.Next;
                 }
                 else
                 {
