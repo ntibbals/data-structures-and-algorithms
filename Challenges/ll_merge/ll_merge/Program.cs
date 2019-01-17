@@ -42,28 +42,24 @@ namespace ll_merge
                 counterTwo++;
             }
             int newCount = counterOne + counterTwo;
-            lOne.Current = lOne.Head;
-            lTwo.Current = lTwo.Head;
+            Node C1 = lOne.Head;
+            Node C2 = lTwo.Head;
+   
             while(newCount > 1)
             {
-                if (lOne.Current.Next != null)
+      
+                if (lTwo.Current != null)
                 {
-                    lOne.InsertAfter(lOne.Head.Value, lTwo.Current.Value);
-                    lOne.Current = lOne.Current.Next.Next;
-                    lTwo.Current = lTwo.Current.Next;
+                    lOne.InsertAfter(C1.Value, C2.Value);
+                    C1 = C1.Next.Next;
+                    C2 = C2.Next;
                     lOne.Print();
                 }
-                else if (lOne.Current.Next == null)
-                {
-                    lOne.InsertBefore(lOne.Current.Value, lTwo.Current.Value);
-                    lOne.Current = lOne.Current.Next;
-                    lTwo.Current = lTwo.Current.Next;
-                    lOne.Print();
-                }
-
                 else
                 {
-                    lOne.Current = lTwo.Current.Next;
+                    lOne.Append(C2.Value);
+                    C2 = C2.Next;
+                    lOne.Print();
                 }
                 newCount--;
             }
