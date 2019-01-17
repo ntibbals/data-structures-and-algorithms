@@ -12,12 +12,14 @@ namespace ll_merge
             LiList listOne = new LiList();
             LiList listTwo = new LiList();
             listOne.Insert(1);
-            listOne.Insert(2);
-            listOne.Insert(3);
-
+            listOne.InsertAfter(1 , 2);
+            listOne.InsertAfter(2, 3);
+            listOne.InsertAfter(3, 9);
             listTwo.Insert(4);
-            listTwo.Insert(5);
-            listTwo.Insert(6);
+            listTwo.InsertAfter(4, 5);
+            listTwo.InsertAfter(5, 6);
+            listOne.Print();
+            listTwo.Print();
             LlMerge(listOne, listTwo);
             listOne.Print();
             
@@ -27,7 +29,6 @@ namespace ll_merge
         public static LiList LlMerge(LiList lOne, LiList lTwo)
         {
             lOne.Current = lOne.Head;
-            lTwo.Current = lTwo.Head;
             int counterOne = 0;
             int counterTwo = 0;
             while (lOne.Current.Next != null) /// interrate through linked list to get count, start at one in order to equate for positioning
@@ -35,6 +36,7 @@ namespace ll_merge
                 lOne.Current = lOne.Current.Next;
                 counterOne++;
             }
+            lTwo.Current = lTwo.Head;
             while (lTwo.Current.Next != null) /// interrate through linked list to get count, start at one in order to equate for positioning
             {
                 lTwo.Current = lTwo.Current.Next;
@@ -46,8 +48,9 @@ namespace ll_merge
             {
                 if (lOne.Current.Next != null)
                 {
-                    lOne.InsertAfter(lOne.Head.Value, lOne.Head.Value);
-                    //lOne.Current = lOne.Current.Next.Next;
+                    lOne.InsertAfter(lOne.Head.Value, lTwo.Current.Value);
+                    lOne.Current = lOne.Current.Next;
+                    //lTwo.Current = lTwo.Current.Next;
                 }
                 else
                 {
