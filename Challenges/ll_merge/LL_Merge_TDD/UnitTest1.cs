@@ -19,7 +19,7 @@ namespace LL_Merge_TDD
             listTwo.Insert(4);
             listTwo.InsertAfter(4, 5);
             listTwo.InsertAfter(5, 6);
-            Program.LlMerge(listOne, listTwo);
+            Program.Merge(listOne, listTwo);
             int expectedValue = 4;
             Assert.Equal(expectedValue, (listOne.Head.Next.Value));
         }
@@ -35,7 +35,7 @@ namespace LL_Merge_TDD
             listTwo.Insert(4);
             listTwo.InsertAfter(4, 5);
             listTwo.InsertAfter(5, 6);
-            Program.LlMerge(listOne, listTwo);
+            Program.Merge(listOne, listTwo);
             int expectedValue = 1;
             Assert.Equal(expectedValue, (listOne.Head.Value));
         }
@@ -48,7 +48,7 @@ namespace LL_Merge_TDD
             listOne.Insert(1);
             listOne.InsertAfter(1, 2);
             listTwo.Insert(4);
-            Program.LlMerge(listOne, listTwo);
+            Program.Merge(listOne, listTwo);
             int expectedValue = 2;
             Assert.Equal(expectedValue, (listOne.Head.Next.Value));
         }

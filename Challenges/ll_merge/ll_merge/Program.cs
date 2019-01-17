@@ -19,7 +19,7 @@ namespace ll_merge
             listTwo.InsertAfter(5, 6);
             listOne.Print();
             listTwo.Print();
-            LlMerge(listOne, listTwo);
+            Merge(listOne, listTwo);
             listOne.Print();
             Console.ReadLine();
             
@@ -32,7 +32,7 @@ namespace ll_merge
         /// <param name="lOne">list one</param>
         /// <param name="lTwo">list two</param>
         /// <returns>zipped list</returns>
-        public static LiList LlMerge(LiList lOne, LiList lTwo)
+        public static LiList Merge(LiList lOne, LiList lTwo)
         {
             lOne.Current = lOne.Head;
             int counterOne = 0;
