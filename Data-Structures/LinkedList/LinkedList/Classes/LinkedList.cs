@@ -132,7 +132,7 @@ namespace LinkedList.Classes
         {
             Current = Head;
 
-            if (Current.Next == null)
+            if (Current.Value == value)
             {
                 Node node = new Node(newValue);
                 node.Next = Current.Next;
@@ -141,14 +141,21 @@ namespace LinkedList.Classes
             }
             while (Current.Next != null)
             {
-                if (Current.Next.Value == value)
+                if (Current.Value == value)
                 {
                     Node node = new Node(newValue);
                     node.Next = Current.Next;
                     Current.Next = node;
-                    return;
+  
                 }
                 Current = Current.Next;
+            }
+            if (Current.Value == value)
+            {
+                Node node = new Node(newValue);
+                node.Next = Current.Next;
+                Current.Next = node;
+                return;
             }
         }
 
