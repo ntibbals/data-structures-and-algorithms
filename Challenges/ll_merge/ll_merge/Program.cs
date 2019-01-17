@@ -4,9 +4,9 @@ using Ll_kth_from_end;
 
 namespace ll_merge
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             LiList listOne = new LiList();
