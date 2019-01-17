@@ -14,7 +14,6 @@ namespace ll_merge
             listOne.Insert(1);
             listOne.InsertAfter(1 , 2);
             listOne.InsertAfter(2, 3);
-            listOne.InsertAfter(3, 9);
             listTwo.Insert(4);
             listTwo.InsertAfter(4, 5);
             listTwo.InsertAfter(5, 6);
