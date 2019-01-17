@@ -25,6 +25,12 @@ namespace ll_merge
 
         }
 
+        /// <summary>
+        /// Zip two linked lists together
+        /// </summary>
+        /// <param name="lOne">list one</param>
+        /// <param name="lTwo">list two</param>
+        /// <returns>zipped list</returns>
         public static LiList LlMerge(LiList lOne, LiList lTwo)
         {
             lOne.Current = lOne.Head;
@@ -41,9 +47,9 @@ namespace ll_merge
                 lTwo.Current = lTwo.Current.Next;
                 counterTwo++;
             }
-            int newCount = counterOne + counterTwo;
-            Node C1 = lOne.Head;
-            Node C2 = lTwo.Head;
+            int newCount = counterOne + counterTwo; /// length of both lists for new list
+            Node C1 = lOne.Head; ///reference holder 1
+            Node C2 = lTwo.Head; /// reference holder 2
    
             while(newCount > 1)
             {
