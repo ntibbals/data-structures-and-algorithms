@@ -27,7 +27,6 @@ namespace Ll_kth_from_end
             Console.WriteLine($"k value: {k}");
             Console.WriteLine($"K value from end: {myList.FindKthFromEnd(k)}");
             Console.ReadLine();
-
         }
 
         /// <summary>
