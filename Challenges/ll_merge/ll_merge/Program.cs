@@ -4,9 +4,9 @@ using Ll_kth_from_end;
 
 namespace ll_merge
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             LiList listOne = new LiList();
@@ -21,10 +21,17 @@ namespace ll_merge
             listTwo.Print();
             LlMerge(listOne, listTwo);
             listOne.Print();
+            Console.ReadLine();
             
 
         }
 
+        /// <summary>
+        /// Zip two linked lists together
+        /// </summary>
+        /// <param name="lOne">list one</param>
+        /// <param name="lTwo">list two</param>
+        /// <returns>zipped list</returns>
         public static LiList LlMerge(LiList lOne, LiList lTwo)
         {
             lOne.Current = lOne.Head;
@@ -41,19 +48,25 @@ namespace ll_merge
                 lTwo.Current = lTwo.Current.Next;
                 counterTwo++;
             }
-            int newCount = counterOne + counterTwo;
-            lOne.Current = lOne.Head;
+            int newCount = counterOne + counterTwo; /// length of both lists for new list
+            Node C1 = lOne.Head; ///reference holder 1
+            Node C2 = lTwo.Head; /// reference holder 2
+   
             while(newCount > 1)
             {
-                if (lOne.Current.Next != null)
+      
+                if (lTwo.Current != null)
                 {
-                    lOne.InsertAfter(lOne.Head.Value, lTwo.Current.Value);
-                    lOne.Current = lOne.Current.Next;
-                    //lTwo.Current = lTwo.Current.Next;
+                    lOne.InsertAfter(C1.Value, C2.Value);
+                    C1 = C1.Next.Next;
+                    C2 = C2.Next;
+                    lOne.Print();
                 }
                 else
                 {
-                    lOne.Current = lTwo.Current.Next;
+                    lOne.Append(C2.Value);
+                    C2 = C2.Next;
+                    lOne.Print();
                 }
                 newCount--;
             }
