@@ -21,6 +21,7 @@ namespace ll_merge
             listTwo.Print();
             LlMerge(listOne, listTwo);
             listOne.Print();
+            Console.ReadLine();
             
 
         }
