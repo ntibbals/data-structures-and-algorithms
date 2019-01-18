@@ -20,7 +20,10 @@ namespace fib_Sequence
         /// <returns>nth integer of argument</returns>
         public static long FibSeq (long num)
         {
-
+            if(num < 2)
+            {
+                return num;
+            }
             long[] fib= new long[num + 1]; /// initialize array length based on argument plus one
             fib[0] = 0;
             fib[1] = 1;
