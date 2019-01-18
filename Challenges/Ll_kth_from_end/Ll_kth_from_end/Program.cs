@@ -58,7 +58,6 @@ namespace Ll_kth_from_end
             {
                 myList.Current = myList.Current.Next;
                 counter--; /// deduct from counter each iteration
-
             }
             return myList.Current.Value;
         }
