@@ -3,7 +3,7 @@ using LinkedList.Classes;
 
 namespace Ll_kth_from_end
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -16,16 +16,16 @@ namespace Ll_kth_from_end
         }
         static void TestKValue(int k, int num)
         {
-    
+
             LiList myList = new LiList();
-            myList.Insert(num);
-            myList.Insert(num * 2);
-            myList.Insert(num * 3);
-            myList.Insert(num * 4);
-            myList.Print();
-            myList.Current = myList.Head;
+            //myList.Insert(num);
+            //myList.Insert(num * 2);
+            //myList.Insert(num * 3);
+            //myList.Insert(num * 4);
+            //myList.Print();
+            //myList.Current = myList.Head;
             Console.WriteLine($"k value: {k}");
-            Console.WriteLine($"K value from end: {myList.FindKthFromEnd(k)}");
+            Console.WriteLine($"K value from end: {FindKthFromEnd(myList, k)}");
             Console.ReadLine();
         }
 
@@ -34,10 +34,15 @@ namespace Ll_kth_from_end
         /// </summary>
         /// <param name="k">node position to return</param>
         /// <returns>kth node value from end</returns>
-        public int FindKthFromEnd(LiList myList, int k)
+        public static int FindKthFromEnd(LiList myList, int k)
         {
+
             myList.Current = myList.Head;
             int counter = 1;
+            if (myList.Current == null)
+            {
+                throw new Exception();
+            }
             while (myList.Current.Next != null) /// interrate through linked list to get count, start at one in order to equate for positioning
             {
                 myList.Current = myList.Current.Next;
@@ -45,7 +50,7 @@ namespace Ll_kth_from_end
             }
             if (k > (counter - 1))
             {
-                return 0;
+                throw new Exception();
             }
             counter = counter - k; //set new counter eqaul to counter less k to find positioning
             myList.Current = myList.Head;
@@ -56,7 +61,6 @@ namespace Ll_kth_from_end
 
             }
             return myList.Current.Value;
-
         }
     }
 }

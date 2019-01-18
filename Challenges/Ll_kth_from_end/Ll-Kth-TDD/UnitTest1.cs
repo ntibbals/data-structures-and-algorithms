@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using Ll_Kth_TDD;
+using Ll_kth_from_end;
 using LinkedList.Classes;
 
 namespace Ll_Kth_TDD
@@ -20,7 +20,7 @@ namespace Ll_Kth_TDD
             testList.Insert(testNum2);
             testList.Insert(testNum3);
             int expectedValue = 55;
-            Assert.Equal(expectedValue, (testList.FindKthFromEnd(testNum4)));
+            Assert.Equal(expectedValue, (Program.FindKthFromEnd(testList, testNum4)));
         }
         [Fact]
         public void TestKthOnEndNode()
@@ -35,7 +35,7 @@ namespace Ll_Kth_TDD
             testList.Insert(testNum2);
             testList.Insert(testNum3);
             int expectedValue = 33;
-            Assert.Equal(expectedValue, (testList.FindKthFromEnd(testNum4)));
+            Assert.Equal(expectedValue, (Program.FindKthFromEnd(testList, testNum4)));
         }
         [Fact]
         public void TestKthOnNodeNotInList()
@@ -49,8 +49,8 @@ namespace Ll_Kth_TDD
             testList.Insert(testNum1);
             testList.Insert(testNum2);
             testList.Insert(testNum3);
-            int expectedValue = 0;
-            Assert.Equal(expectedValue, (testList.FindKthFromEnd(testNum4)));
+            // Assert.Equal(expectedValue, (testLis.FindKthFromEnd(testNum4)));
+            Assert.Throws<Exception>(() => Program.FindKthFromEnd(testList, testNum4));
         }
     }
 }
