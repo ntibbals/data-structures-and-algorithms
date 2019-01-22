@@ -20,5 +20,19 @@ namespace StacksAndQueues.Classes
             node.Next = Top;
             Top = node;
         }
+
+        public Node Pop()
+        {
+
+            Node temp = Top;
+            Top = Top.Next;
+            temp.Next = null;
+            return temp;
+        }
+
+        public Node Peek()
+        {
+            return Top;
+        }
     }
 }
