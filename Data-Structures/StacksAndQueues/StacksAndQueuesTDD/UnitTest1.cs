@@ -18,7 +18,8 @@ namespace StacksAndQueuesTDD
         public void TestPushIntoEmptyStack()
         {
             Stack testStack = new Stack();
-            testStack.Push(3);
+            int testValue = 3;
+            testStack.Push(testValue);
             int expectedValue = 3;
             Assert.Equal(expectedValue, testStack.Top.Value);
         }
@@ -26,11 +27,12 @@ namespace StacksAndQueuesTDD
         [Fact]
         public void TestPushIntoStackofTwo()
         {
-            Node testNode1 = new Node(7);
             int testValue = 11;
-            Stack testStack = new Stack(testNode1);
+            int testValue2 = 7;
+            Stack testStack = new Stack();
             testStack.Push(testValue);
-            Assert.Equal(testValue, testStack.Top.Value);
+            testStack.Push(testValue2);
+            Assert.Equal(testValue2, testStack.Top.Value);
         }
         [Fact]
         public void TestPushMoreThanOne()
@@ -42,6 +44,62 @@ namespace StacksAndQueuesTDD
             testStack.Push(testValue1);
             testStack.Push(testValue2);
             Assert.Equal(testValue2, testStack.Top.Value);
+        }
+        [Fact]
+        public void TestPopOnEmptyStatck()
+        {
+            Stack testStack = new Stack();
+            Assert.Throws<NullReferenceException>(() => testStack.Pop());
+        }
+        [Fact]
+        public void TestPopWillRemoveTopValue()
+        {
+            Node testNode1 = new Node(5);
+            int testValue1 = 10;
+            int testValue2 = 15;
+            Stack testStack = new Stack(testNode1);
+            testStack.Push(testValue1);
+            testStack.Push(testValue2);
+            testStack.Pop();
+            Assert.Equal(testValue1, testStack.Top.Value);
+        }
+        [Fact]
+        public void TestPoppingMultipleValues()
+        {
+            int testValue = 5;
+            int testValue1 = 10;
+            int testValue2 = 15;
+            Stack testStack = new Stack();
+            testStack.Push(testValue);
+            testStack.Push(testValue1);
+            testStack.Push(testValue2);
+            testStack.Pop();
+            testStack.Pop();
+            Assert.Equal(5, testStack.Top.Value);
+        }
+        [Fact]
+        public void PeekOnEmptyStatck()
+        {
+            Stack testStack = new Stack();
+            Assert.Null(testStack.Peek());
+        }
+        [Fact]
+        public void PeekOnStatckOfOne()
+        {
+            Node testNode = new Node(5);
+            Stack testStack = new Stack(testNode);
+            //testStack.Push(testNode);
+            //testStack.Peek();
+            Assert.Equal(testNode, testStack.Peek());
+        }
+        [Fact]
+        public void PeekWillNotAlterStack()
+        {
+            Node testNode = new Node(5);
+            Stack testStack = new Stack(testNode);
+            testStack.Push(10);
+            testStack.Peek();
+            Assert.Equal(10, testStack.Top.Value);
         }
     }
 }
