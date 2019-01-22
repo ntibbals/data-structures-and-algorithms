@@ -18,6 +18,10 @@ namespace StacksAndQueues.Classes
         {
 
         }
+        public Stack(int value)
+        {
+
+        }
 
         public void Push(int value)
         {
