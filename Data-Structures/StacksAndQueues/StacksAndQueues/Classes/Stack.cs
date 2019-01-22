@@ -57,12 +57,19 @@ namespace StacksAndQueues.Classes
         /// <returns>the temp node variable</returns>
         public Node Pop()
         {
-
-            Node temp = Top;
-            Top = Top.Next;
-            temp.Next = null;
-            Size--;
-            return temp;
+            try
+            {
+                Node temp = Top;
+                Top = Top.Next;
+                temp.Next = null;
+                Size--;
+                return temp;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return null;
         }
 
         /// <summary>

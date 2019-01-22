@@ -51,11 +51,19 @@ namespace StacksAndQueues.Classes
         /// <returns>temp node value</returns>
         public Node Dequeue()
         {
-            Node temp = Front;
-            Front = Front.Next;
-            temp.Next = null;
-            Size--;
-            return temp;
+            try
+            {
+                Node temp = Front;
+                Front = Front.Next;
+                temp.Next = null;
+                Size--;
+                return temp;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return null;
         }
         /// <summary>
         /// Looks at the front of the queue
