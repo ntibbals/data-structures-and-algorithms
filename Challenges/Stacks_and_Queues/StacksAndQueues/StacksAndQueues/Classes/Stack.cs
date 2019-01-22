@@ -8,6 +8,7 @@ namespace StacksAndQueues.Classes
     {
 
         public Node Top { get; set; }
+        public int Size = 0;
 
         public Stack(Node node)
         {
@@ -19,6 +20,7 @@ namespace StacksAndQueues.Classes
             Node node = new Node(value);
             node.Next = Top;
             Top = node;
+            Size++;
         }
 
         public Node Pop()
@@ -27,6 +29,7 @@ namespace StacksAndQueues.Classes
             Node temp = Top;
             Top = Top.Next;
             temp.Next = null;
+            Size--;
             return temp;
         }
 
