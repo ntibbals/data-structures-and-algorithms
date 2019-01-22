@@ -101,5 +101,34 @@ namespace StacksAndQueuesTDD
             testStack.Peek();
             Assert.Equal(10, testStack.Top.Value);
         }
+        [Fact]
+        public void TestInstantiatesEmptyQueue()
+        {
+            Queue testQueue = new Queue();
+            Assert.Null(testQueue.Front);
+
+        }
+        [Fact]
+        public void TestEnqueRearValueOfQueue()
+        {
+            Node testNode = new Node(3);
+            Queue testQueue = new Queue(testNode);
+            int testValue = 7;
+            testQueue.Enqueue(testValue);
+            int expectedValue = 7;
+            Assert.Equal(expectedValue, testQueue.Rear.Value);
+        }
+        [Fact]
+        public void TestEnqueFrontValueOfQueue()
+        {
+            Node testNode = new Node(11);
+            Queue testQueue = new Queue(testNode);
+            int testValue = 13;
+            testQueue.Enqueue(testValue);
+            int expectedValue = 11;
+            Assert.Equal(expectedValue, testQueue.Front.Value);
+        }
+
+
     }
 }

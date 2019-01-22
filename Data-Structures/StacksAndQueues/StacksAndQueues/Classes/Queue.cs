@@ -6,10 +6,15 @@ namespace StacksAndQueues.Classes
 {
     public class Queue
     {
-        public Node Front { get; set; }
+        public Node Front { get; set; } = null;
         public Node Rear { get; set; }
 
         public int Size = 0;
+
+        public Queue()
+        {
+
+        }
 
         public Queue(Node node)
         {
