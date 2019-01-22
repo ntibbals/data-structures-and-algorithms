@@ -13,7 +13,7 @@ namespace StacksAndQueues.Classes
         /// <summary>
         /// Set property for queue of Rear(end)
         /// </summary>
-        public Node Rear { get; set; }
+        public Node Rear { get; set; } = null;
         /// <summary>
         /// Set counter variable for queue
         /// </summary>
@@ -40,10 +40,20 @@ namespace StacksAndQueues.Classes
         /// <param name="value">integer value</param>
         public void Enqueue(int value)
         {
-            Node node = new Node(value);
-            Rear.Next = node;
-            Rear = node;
-            Size++;
+            if (Front == null)
+            {
+                Node newNode = new Node(value);
+                Front = newNode;
+                Rear = newNode;
+                Size++;
+            }
+            else
+            {
+                Node node = new Node(value);
+                Rear.Next = node;
+                Rear = node;
+                Size++;
+            }
         }
         /// <summary>
         /// Removes a node value from queue

@@ -53,7 +53,7 @@ namespace StacksAndQueuesTDD
         {
             /// Test pop on empty stack
             Stack testStack = new Stack();
-            Assert.Throws<NullReferenceException>(() => testStack.Pop());
+            Assert.Null(testStack.Pop());
         }
         [Fact]
         public void TestPopWillRemoveTopValue()
@@ -130,6 +130,15 @@ namespace StacksAndQueuesTDD
             Assert.Equal(expectedValue, testQueue.Rear.Value);
         }
         [Fact]
+        public void TestEnqueueOnEmptyQueue()
+        {
+            /// test dequeue on empty queue
+            Queue testQueue = new Queue();
+            testQueue.Enqueue(11);
+            Assert.Equal(11, testQueue.Front.Value);
+        }
+
+        [Fact]
         public void TestEnqueueFrontValueOfQueue()
         {
             /// test enqueue will not alter front value of queue
@@ -146,7 +155,7 @@ namespace StacksAndQueuesTDD
         {
             /// test dequeue on empty queue
             Queue testQueue = new Queue(); 
-            Assert.Throws<NullReferenceException>(() => testQueue.Dequeue());
+            Assert.Null(testQueue.Dequeue());
         }
 
         [Fact]
