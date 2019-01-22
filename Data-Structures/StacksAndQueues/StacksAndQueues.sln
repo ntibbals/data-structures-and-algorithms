@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StacksAndQueues", "StacksAndQueues\StacksAndQueues.csproj", "{CE877296-E4C8-4020-868E-8251F55B3B54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StacksAndQueuesTDD", "StacksAndQueuesTDD\StacksAndQueuesTDD.csproj", "{A54875D2-9817-4138-B0E6-A699D8F76D93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StacksAndQueuesTDD", "StacksAndQueuesTDD\StacksAndQueuesTDD.csproj", "{A54875D2-9817-4138-B0E6-A699D8F76D93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DFD26ADE-58DF-49F5-94B7-A91BA8728493}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
