@@ -7,7 +7,7 @@ namespace StacksAndQueues.Classes
     public class Stack
     {
 
-        public Node Top { get; set; }
+        public Node Top { get; set; } = null;
         public int Size = 0;
 
         public Stack(Node node)

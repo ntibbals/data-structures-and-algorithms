@@ -88,9 +88,9 @@ namespace StacksAndQueuesTDD
         {
             Node testNode = new Node(5);
             Stack testStack = new Stack(testNode);
-            //testStack.Push(testNode);
-            //testStack.Peek();
-            Assert.Equal(testNode, testStack.Peek());
+            testStack.Push(10);
+            Node expectedNode = new Node(10);
+            Assert.Equal(testStack.Top, testStack.Peek());
         }
         [Fact]
         public void PeekWillNotAlterStack()
