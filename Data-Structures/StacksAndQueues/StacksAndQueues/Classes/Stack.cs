@@ -4,12 +4,16 @@ using System.Text;
 
 namespace StacksAndQueues.Classes
 {
-    class Stack
+    public class Stack
     {
 
         public Node Top { get; set; } = null;
         public int Size = 0;
 
+        public Stack()
+        {
+
+        }
         public Stack(Node node)
         {
 
