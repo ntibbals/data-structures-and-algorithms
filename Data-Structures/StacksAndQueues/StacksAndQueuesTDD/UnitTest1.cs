@@ -132,7 +132,7 @@ namespace StacksAndQueuesTDD
         [Fact]
         public void TestEnqueueOnEmptyQueue()
         {
-            /// test dequeue on empty queue
+            /// test enqueue on empty queue
             Queue testQueue = new Queue();
             testQueue.Enqueue(11);
             Assert.Equal(11, testQueue.Front.Value);
