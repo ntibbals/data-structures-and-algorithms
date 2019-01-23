@@ -25,7 +25,7 @@ namespace Queue_with_Stacks.Classes
             }
             else
             {
-                while (Primary.Top != null)
+                while (Primary.Top.Next != null)
                 {
                     Node newNode = Primary.Pop();
                     Secondary.Push(newNode.Value);

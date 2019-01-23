@@ -34,13 +34,23 @@ namespace Queue_with_stacks_TDD
         [Fact]
         public void DequeuePseudoOne()
         {
-
             PseudoQueue psuedo = new PseudoQueue();
             psuedo.Enqueue1(10);
             psuedo.Enqueue1(15);
+            psuedo.Dequeue1();
+            Assert.Equal(15, psuedo.Primary.Top.Value);
+        }
+        [Fact]
+        public void DequeuePseudoQueueOfFour()
+        {
+            PseudoQueue psuedo = new PseudoQueue();
+            psuedo.Enqueue1(10);
+            psuedo.Enqueue1(15);
+            psuedo.Enqueue1(20);
             psuedo.Enqueue1(25);
             psuedo.Dequeue1();
-            Assert.Equal(10, psuedo.Primary.Top.Value);
+            Assert.Equal(15, psuedo.Primary.Top.Value);
         }
+
     }
 }
