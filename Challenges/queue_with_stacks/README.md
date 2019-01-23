@@ -15,4 +15,4 @@
 - We first had a difficult time identifying what approach to take as you can do utilize both stacks on either the Enqueue method or the Dequeue method. We needed some additional refactoring while coding in order to account for the push/pop from one stack BACK into the original stack.
 
 # Visuals
-![WHITE-BOARD]()
+![WHITE-BOARD](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/queue_with_stacks/whiteboard.JPG)
