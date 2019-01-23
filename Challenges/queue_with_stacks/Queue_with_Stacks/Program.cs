@@ -10,12 +10,20 @@ namespace Queue_with_Stacks
         {
             Console.WriteLine("Hello World!");
 
-            Stack stack = new Stack(5);
-            stack.Push(10);
-            stack.Push(15);
+            QueueWithStacks();
+            Console.ReadLine();
 
-            PseudoQueue psuedo = new PseudoQueue();
-            Console.WriteLine($"{psuedo.Primary.Peek()}");
         }
+
+        static void QueueWithStacks()
+        {
+            PseudoQueue psuedo = new PseudoQueue();
+            psuedo.Enqueue1(10);
+            psuedo.Enqueue1(15);
+            psuedo.Enqueue1(20);
+            psuedo.Enqueue1(25);
+            psuedo.Dequeue1();
+        }
+
     }
 }
