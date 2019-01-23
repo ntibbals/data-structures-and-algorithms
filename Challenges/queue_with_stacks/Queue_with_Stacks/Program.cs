@@ -1,4 +1,6 @@
 ﻿using System;
+using StacksAndQueues.Classes;
+using Queue_with_Stacks.Classes;
 
 namespace Queue_with_Stacks
 {
@@ -7,6 +9,13 @@ namespace Queue_with_Stacks
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Stack stack = new Stack(5);
+            stack.Push(10);
+            stack.Push(15);
+
+            PseudoQueue psuedo = new PseudoQueue();
+            Console.WriteLine($"{psuedo.Primary.Peek()}");
         }
     }
 }
