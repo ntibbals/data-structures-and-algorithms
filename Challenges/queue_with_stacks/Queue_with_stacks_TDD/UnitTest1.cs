@@ -51,6 +51,13 @@ namespace Queue_with_stacks_TDD
             psuedo.Dequeue1();
             Assert.Equal(15, psuedo.Primary.Top.Value);
         }
+        [Fact]
+        public void DequeueOnOneNodeStack()
+        {
+            PseudoQueue psuedo = new PseudoQueue();
+            psuedo.Enqueue1(10);
+            Assert.Equal(10, psuedo.Dequeue1().Value);
+        }
 
     }
 }
