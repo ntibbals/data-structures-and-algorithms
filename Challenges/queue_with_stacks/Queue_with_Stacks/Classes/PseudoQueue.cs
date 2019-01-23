@@ -5,34 +5,38 @@ using StacksAndQueues.Classes;
 
 namespace Queue_with_Stacks.Classes
 {
-    class PseudoQueue
+    public class PseudoQueue
     {
       public Stack Primary { get; set; }
       public Stack Secondary { get; set; }
 
-        public PseudoQueue()
+        public PseudoQueue(Stack stack)
         {
-            Primary = Primary;
-            Secondary = Secondary;
+            Primary = stack;
+            Secondary = stack;
         }
 
-        public void Enqueue(int value)
+        public void Enqueue1(int value)
         {
-            Node newNode = new Node(value);
-            Secondary.Push(value);
+
+                Primary.Push(value);
         }
 
-        public Node Dequeue()
+        public Node Dequeue1()
         {
             if(Primary.Top == null)
             {
-                return Secondary.Pop();
+                return null;
             }
             else
             {
                 while(Primary.Top != null)
                 {
-                    Secondary.Push(Primary.Pop());
+                    Node temp = Primary.Top;
+                    Primary.Top = temp.Next;
+                    temp.Next = null;
+                    Secondary.Push(Primary.Pop().Value);
+                    Secondary.Push(Primary.Pop().Value);
                 }
             }
             return Secondary.Pop();
