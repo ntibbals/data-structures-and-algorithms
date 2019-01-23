@@ -14,7 +14,7 @@ namespace Queue_with_Stacks
             stack.Push(10);
             stack.Push(15);
 
-            PseudoQueue psuedo = new PseudoQueue(stack);
+            PseudoQueue psuedo = new PseudoQueue();
             Console.WriteLine($"{psuedo.Primary.Peek()}");
         }
     }

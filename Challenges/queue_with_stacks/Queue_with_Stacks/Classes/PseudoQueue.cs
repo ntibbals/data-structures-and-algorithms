@@ -7,14 +7,9 @@ namespace Queue_with_Stacks.Classes
 {
     public class PseudoQueue
     {
-      public Stack Primary { get; set; }
-      public Stack Secondary { get; set; }
+        public Stack Primary = new Stack();
+        public Stack Secondary = new Stack();
 
-        public PseudoQueue(Stack stack)
-        {
-            Primary = stack;
-            Secondary = stack;
-        }
 
         public void Enqueue1(int value)
         {
@@ -30,13 +25,19 @@ namespace Queue_with_Stacks.Classes
             }
             else
             {
-                while(Primary.Top != null)
+                while (Primary.Top != null)
                 {
-                    Node temp = Primary.Top;
+                    Node newNode = Primary.Pop();
+                    Secondary.Push(newNode.Value);
+                }
+
+                    Node temp = Secondary.Top;
+                   while (Secondary.Top != null)
+                {
                     Primary.Top = temp.Next;
                     temp.Next = null;
-                    Secondary.Push(Primary.Pop().Value);
-                    Secondary.Push(Primary.Pop().Value);
+                    Node newNode = Secondary.Pop();
+                    Primary.Push(newNode.Value);
                 }
             }
             return Secondary.Pop();
