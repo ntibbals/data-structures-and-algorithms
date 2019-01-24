@@ -15,6 +15,10 @@ namespace fifo_animal_shelter.Classes
         {
             Shelter = new Queue();
         }
+        /// <summary>
+        /// Determines if animal is dog or call, will enqueue in a value accordingly.
+        /// </summary>
+        /// <param name="animal">animal type</param>
         public void Enqueue(string animal)
         {
             if (animal.Equals("dog"))
@@ -31,6 +35,11 @@ namespace fifo_animal_shelter.Classes
             }
         }
 
+        /// <summary>
+        /// Determines if front is dog or cat, and removes front when it equals pref
+        /// </summary>
+        /// <param name="pref">preferred animal</param>
+        /// <returns>removed type</returns>
         public string Dequeue(string pref)
         {
             if (pref.Equals("dog"))
