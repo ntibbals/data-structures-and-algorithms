@@ -5,7 +5,7 @@ using StacksAndQueues.Classes;
 
 namespace fifo_animal_shelter.Classes
 {
-    class AnimalShelter
+    public class AnimalShelter
     {
         public string Dog { get; set; }
         public string Cat { get; set; }

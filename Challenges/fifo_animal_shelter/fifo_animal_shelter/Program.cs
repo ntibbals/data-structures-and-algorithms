@@ -3,7 +3,7 @@ using fifo_animal_shelter.Classes;
 
 namespace fifo_animal_shelter
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
