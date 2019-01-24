@@ -11,10 +11,8 @@ namespace fifo_animal_shelter.Classes
         public string Cat { get; set; }
         public Queue Shelter { get; set; }
 
-        public AnimalShelter(string type)
+        public AnimalShelter()
         {
-            Dog = type;
-            Cat = type;
             Shelter = new Queue();
         }
         public void Enqueue(string animal)
@@ -35,9 +33,9 @@ namespace fifo_animal_shelter.Classes
 
         public string Dequeue(string pref)
         {
-            if (pref.Equals("dog") || pref.Equals("cat"))
+            if (pref.Equals("dog"))
             {
-                if (Shelter.Front.Value == 1 || Shelter.Front.Value == 2)
+                if (Shelter.Front.Value == 1)
                 {
                     Node temp = Shelter.Front;
                     Shelter.Front = Shelter.Front.Next;
@@ -52,7 +50,44 @@ namespace fifo_animal_shelter.Classes
                 }
                 else
                 {
-                    while (Shelter.Front.Value != 1 || Shelter.Front.Value != 2)
+                    while (Shelter.Front.Value != 1)
+                    {
+                        Node temp = Shelter.Front;
+                        Shelter.Front = Shelter.Front.Next;
+                        Shelter.Rear.Next = temp;
+                        Shelter.Rear = temp;
+                    }
+                    Node temp2 = Shelter.Front;
+                    Shelter.Front = Shelter.Front.Next;
+                    if (temp2.Value == 1)
+                    {
+                        return "dog";
+                    }
+                    else
+                    {
+                        return "cat";
+                    }
+                }
+
+            }
+            else if (pref.Equals("cat"))
+            {
+                if (Shelter.Front.Value == 2)
+                {
+                    Node temp = Shelter.Front;
+                    Shelter.Front = Shelter.Front.Next;
+                    if (temp.Value == 1)
+                    {
+                        return "dog";
+                    }
+                    else
+                    {
+                        return "cat";
+                    }
+                }
+                else
+                {
+                    while (Shelter.Front.Value != 2)
                     {
                         Node temp = Shelter.Front;
                         Shelter.Front = Shelter.Front.Next;
@@ -74,7 +109,7 @@ namespace fifo_animal_shelter.Classes
             }
             else
             {
-                return null;
+                return "not working";
             }
         }
     }
