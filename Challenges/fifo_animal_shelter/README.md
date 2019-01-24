@@ -15,4 +15,4 @@
 - I had a difficult time determining how to attached a "dog" or "cat" type onto a node. I believe an alternative solution would be to create an entirely new node class which takes in a Type of dog or cat.
 
 # Visuals
-![WHITE-BOARD]()
+![WHITE-BOARD](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/fifo_animal_shelter/board.JPG)
