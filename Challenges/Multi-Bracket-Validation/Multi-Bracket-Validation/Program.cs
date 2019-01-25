@@ -12,6 +12,11 @@ namespace Multi_Bracket_Validation
             Console.WriteLine(MultiBracketValidation(input));
         }
 
+        /// <summary>
+        /// Takes in a string and validates that the correct brackets are in place using stacks
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string MultiBracketValidation(string input)
         {
             char[] testArray = new char[input.Length]; ///char array for string
@@ -21,6 +26,7 @@ namespace Multi_Bracket_Validation
                 testArray[i] = input[i];
             }
 
+            /// for loop pushes opening brackets into stack and then cross references char array with stack to pop matches accordingly
             for (int i = 0; i < testArray.Length; i++)
             {
                 if (testArray[i] == '{')
