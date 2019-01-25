@@ -9,7 +9,7 @@ namespace Multi_Bracket_Validation.Classes
         /// <summary>
         /// Sets Node property for value
         /// </summary>
-        public int Value { get; set; }
+        public char Value { get; set; }
         /// <summary>
         /// set Node property for next
         /// </summary>
@@ -19,7 +19,7 @@ namespace Multi_Bracket_Validation.Classes
         /// Constructor for node
         /// </summary>
         /// <param name="value">integer value</param>
-        public Node(int value)
+        public Node(char value)
         {
             Value = value;
         }

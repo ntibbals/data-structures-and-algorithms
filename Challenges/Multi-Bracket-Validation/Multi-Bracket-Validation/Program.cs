@@ -9,7 +9,7 @@ namespace Multi_Bracket_Validation
         {
             Console.WriteLine("Hello World!");
             string input = "{{fa}";
-            MultiBracketValidation(input);
+            Console.WriteLine(MultiBracketValidation(input));
         }
 
         public static bool MultiBracketValidation(string input)
@@ -35,10 +35,40 @@ namespace Multi_Bracket_Validation
                 {
                     stack.Push(testArray[i]);
                 }
-
+                else if (testArray[i] == '}')
+                {
+                    stack.Push(testArray[i]);
+                }
+                else if (testArray[i] == ')')
+                {
+                    stack.Push(testArray[i]);
+                }
+                else if (testArray[i] == ']')
+                {
+                    stack.Push(testArray[i]);
+                }
             }
 
-            return true;
+            for (int i = 0; i < stack.Size; i++)
+            {
+                if (stack.Top == null)
+                {
+                    return true;
+                }
+                else if (stack.Top.Value != testArray[i])
+                {
+                    return false;
+                }
+                stack.Pop();
+            }
+            if(stack.Top == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

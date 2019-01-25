@@ -34,7 +34,7 @@ namespace Multi_Bracket_Validation.Classes
         /// Instantion of stack with an int value
         /// </summary>
         /// <param name="value">integer value</param>
-        public Stack(int value)
+        public Stack(char value)
         {
 
         }
@@ -43,7 +43,7 @@ namespace Multi_Bracket_Validation.Classes
         /// Push/adding a node/value to stack
         /// </summary>
         /// <param name="value">integer value</param>
-        public void Push(int value)
+        public void Push(char value)
         {
             Node node = new Node(value);
             node.Next = Top;
