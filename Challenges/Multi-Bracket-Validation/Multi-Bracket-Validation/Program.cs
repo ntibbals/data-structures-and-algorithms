@@ -8,14 +8,15 @@ namespace Multi_Bracket_Validation
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            string input = "{{fa}";
+            string input = "{a)(}";
             Console.WriteLine(MultiBracketValidation(input));
         }
 
-        public static bool MultiBracketValidation(string input)
+        public static string MultiBracketValidation(string input)
         {
             char[] testArray = new char[input.Length];
-            Stack stack = new Stack();
+            Stack stackOpen = new Stack();
+            Stack stackClose = new Stack();
             for (int i = 0; i < testArray.Length; i++)
             {
                 testArray[i] = input[i];
@@ -23,51 +24,70 @@ namespace Multi_Bracket_Validation
 
             for (int i = 0; i < testArray.Length; i++)
             {
-                if(testArray[i] == '{')
+                if (testArray[i] == '{')
                 {
-                    stack.Push(testArray[i]);
+                    stackOpen.Push(testArray[i]);
                 }
                 else if (testArray[i] == '(')
                 {
-                    stack.Push(testArray[i]);
+                    stackOpen.Push(testArray[i]);
                 }
                 else if (testArray[i] == '[')
                 {
-                    stack.Push(testArray[i]);
+                    stackOpen.Push(testArray[i]);
                 }
                 else if (testArray[i] == '}')
                 {
-                    stack.Push(testArray[i]);
+                    stackClose.Push(testArray[i]);
                 }
                 else if (testArray[i] == ')')
                 {
-                    stack.Push(testArray[i]);
+                    stackClose.Push(testArray[i]);
                 }
                 else if (testArray[i] == ']')
                 {
-                    stack.Push(testArray[i]);
+                    stackClose.Push(testArray[i]);
                 }
             }
-
-            for (int i = 0; i < stack.Size; i++)
+            if (stackOpen.Size != stackClose.Size)
             {
-                if (stack.Top == null)
-                {
-                    return true;
-                }
-                else if (stack.Top.Value != testArray[i])
-                {
-                    return false;
-                }
-                stack.Pop();
+                return "size not equal, false";
             }
-            if(stack.Top == null)
+            while (stackOpen.Top != null || stackClose.Top != null)
             {
-                return true;
+                if (stackOpen.Top.Value == stackClose.Top.Value)
+                {
+                    stackOpen.Pop();
+                    stackClose.Pop();
+                }
+                else if (stackOpen.Top.Value != stackClose.Top.Value)
+                {
+                    char reference = stackOpen.Top.Value;
+                    stackOpen.Pop();
+                    stackOpen.Push(reference);
+                }
+            }
+            //  else if (stack.Top.Value == '(' && stack.Top.Next.Value == ')')
+            //  {
+            //      return "1st for loop true";
+            //  }
+            //  else if (stack.Top.Value == '[' && stack.Top.Next.Value == ']')
+            //  {
+            //      return "1st for loop true";
+            //  }
+            //  else if (stack.Top.Value != testArray[i])
+            //  {
+            //      return "1st for loop false";
+            //  }
+            //  stack.Pop();
+            //}
+            if (stackOpen.Size == stackClose.Size)
+            {
+                return "2 for loop true";
             }
             else
             {
-                return false;
+                return "2 for loop false";
             }
         }
     }
