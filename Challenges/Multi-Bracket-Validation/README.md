@@ -13,3 +13,4 @@
 
 # Visuals
 ![WHITE-BOARD](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Multi-Bracket-Validation/IMG_3818.JPG)
+![WHITE-BOARD](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Multi-Bracket-Validation/image.png)
