@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multi-Bracket-Validation", "Multi-Bracket-Validation\Multi-Bracket-Validation.csproj", "{B371F964-3E82-43A1-B0B6-FBEAB1DA214D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi-Bracket-TDD", "Multi-Bracket-TDD\Multi-Bracket-TDD.csproj", "{AFDB4DA4-92B8-4645-B17E-89C3BD8CDD33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multi-Bracket-TDD", "Multi-Bracket-TDD\Multi-Bracket-TDD.csproj", "{AFDB4DA4-92B8-4645-B17E-89C3BD8CDD33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4433628-2BDD-4E53-858A-17D873EC833E}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

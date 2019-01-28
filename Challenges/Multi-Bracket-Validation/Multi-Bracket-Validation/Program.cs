@@ -3,7 +3,7 @@ using Multi_Bracket_Validation.Classes;
 
 namespace Multi_Bracket_Validation
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -17,7 +17,7 @@ namespace Multi_Bracket_Validation
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string MultiBracketValidation(string input)
+        public static bool MultiBracketValidation(string input)
         {
             char[] testArray = new char[input.Length]; ///char array for string
             Stack stackOpen = new Stack(); ///stack holds opening brackets
@@ -49,7 +49,7 @@ namespace Multi_Bracket_Validation
                     }
                     else
                     {
-                        return "for loop one false { }";
+                        return false;
                     }
                 }
                 if (testArray[i] == ']')
@@ -60,7 +60,7 @@ namespace Multi_Bracket_Validation
                     }
                     else
                     {
-                        return "for loop one false [ ]";
+                        return false;
                     }
                 }
                 if (testArray[i] == ')')
@@ -71,17 +71,17 @@ namespace Multi_Bracket_Validation
                     }
                     else
                     {
-                        return "for loop one false ( )";
+                        return false;
                     }
                 }
             }
             if (stackOpen.Size == 0)
             {
-                return "2 for loop true";
+                return true;
             }
             else
             {
-                return "2 for loop false";
+                return false;
             }
         }
 

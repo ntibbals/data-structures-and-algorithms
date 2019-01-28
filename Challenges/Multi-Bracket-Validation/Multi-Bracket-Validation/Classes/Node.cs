@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Multi_Bracket_Validation.Classes
 {
-    class Node
+    public class Node
     {
         /// <summary>
         /// Sets Node property for value

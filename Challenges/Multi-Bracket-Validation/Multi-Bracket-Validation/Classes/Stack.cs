@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Multi_Bracket_Validation.Classes
 {
-    class Stack
+    public class Stack
     {
         /// <summary>
         /// Setting property of Top value in stack
