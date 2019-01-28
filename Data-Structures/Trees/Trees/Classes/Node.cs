@@ -19,6 +19,11 @@ namespace Trees.Classes
         /// </summary>
         public Node Right{ get; set; }
 
+        public Node()
+        {
+
+        }
+
         /// <summary>
         /// Constructor for node
         /// </summary>

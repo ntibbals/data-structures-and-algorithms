@@ -8,7 +8,7 @@ namespace Trees.Classes
     class BinaryTree
     {
 
-        public Node Root;
+        public Node Root { get; set; }
 
         public bool IsEmpty
         {
@@ -22,12 +22,20 @@ namespace Trees.Classes
             Root = null;
             Count = 0;
         }
+        public BinaryTree(Node root)
+        {
+            Root = root;
+            Count = 0;
+        }
+
 
         public void  PreOrder(Node root)
         {
+            List<Node> array = new List<Node>();
+
             if (root != null)
             {
-                Console.Write(Root.Value + " ");
+                Console.Write(root.Value + " ");
                 PreOrder(root.Left);
                 PreOrder(root.Right);
             }
@@ -41,6 +49,21 @@ namespace Trees.Classes
                 Console.Write(root.Value + " ");
                 InOrder(root.Right);
             }
+        }
+
+        public void PostOrder(Node root)
+        {
+            if (root != null)
+            {
+                PostOrder(root.Left);
+                PostOrder(root.Right);
+                Console.Write(root.Value + " ");
+            }
+        }
+
+        public Node ReturnRoot()
+        {
+            return Root;
         }
     }
 }
