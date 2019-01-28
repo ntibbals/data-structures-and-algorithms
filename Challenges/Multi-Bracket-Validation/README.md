@@ -12,4 +12,4 @@
 - I utilized an altered node and stack class that rather than take in integers, leverages characters as "Values".
 
 # Visuals
-![WHITE-BOARD]()
+![WHITE-BOARD](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Multi-Bracket-Validation/IMG_3818.JPG)
