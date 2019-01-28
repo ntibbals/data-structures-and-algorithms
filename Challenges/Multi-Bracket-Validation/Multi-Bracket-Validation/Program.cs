@@ -8,8 +8,13 @@ namespace Multi_Bracket_Validation
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            string input = "{a{()[]}";
+            string input = "{a{(f)[d]}";
+            Console.WriteLine($"Testing {input}");
             Console.WriteLine(MultiBracketValidation(input));
+            string input2 = "{a{f}(d)[e]}";
+            Console.WriteLine($"Testing {input2}");
+            Console.WriteLine(MultiBracketValidation(input2));
+            Console.ReadLine();
         }
 
         /// <summary>
