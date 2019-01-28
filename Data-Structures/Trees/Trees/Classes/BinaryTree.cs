@@ -41,13 +41,11 @@ namespace Trees.Classes
             {
                 return null;
             }
-
+            list.Add(root);
             if (root.Left != null)
             {
                 PreOrder(root.Left, list);
             }
-
-            list.Add(root);
 
             if (root.Right != null)
             {
@@ -63,24 +61,22 @@ namespace Trees.Classes
         /// <returns></returns>
         public static List<Node> PreOrder(Node root, List<Node> list)
         {
-            List<Node> list2 = new List<Node>();
             if (root == null)
             {
                 return null;
             }
 
-            list2.Add(root);
+            list.Add(root);
             if (root.Left != null)
             {
-                PreOrder(root.Left, list2);
+                PreOrder(root.Left, list);
             }
-
 
             if (root.Right != null)
             {
-                PreOrder(root.Left, list2);
+                PreOrder(root.Left, list);
             }
-            return list2;
+            return list;
         }
 
         /// <summary>
@@ -118,7 +114,6 @@ namespace Trees.Classes
         /// <returns></returns>
         public static List<Node> InOrder(Node root, List<Node> list)
         {
-            List<Node> list2 = new List<Node>();
             if (root == null)
             {
                 return null;
@@ -126,16 +121,16 @@ namespace Trees.Classes
 
             if (root.Left != null)
             {
-                InOrder(root.Left, list2);
+                InOrder(root.Left, list);
             }
 
-                list2.Add(root);
+                list.Add(root);
         
             if (root.Right != null)
             {
-                InOrder(root.Left, list2);
+                InOrder(root.Left, list);
             }
-            return list2;
+            return list;
         }
 
         /// <summary>
@@ -172,7 +167,7 @@ namespace Trees.Classes
         /// <returns>post order list of nodes</returns>
         public static List<Node> PostOrder(Node root, List<Node> list)
         {
-            List<Node> list2 = new List<Node>();
+
             if (root == null)
             {
                 return null;
@@ -180,16 +175,16 @@ namespace Trees.Classes
 
             if (root.Left != null)
             {
-                PostOrder(root.Left, list2);
+                PostOrder(root.Left, list);
             }
 
 
             if (root.Right != null)
             {
-                PostOrder(root.Left, list2);
+                PostOrder(root.Left, list);
             }
-            list2.Add(root);
-            return list2;
+            list.Add(root);
+            return list;
         }
 
         public Node ReturnRoot()
