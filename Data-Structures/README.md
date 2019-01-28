@@ -5,3 +5,5 @@
 # Table of Contents
 
 [1.Linked List](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Data-Structures/LinkedList) 
+
+[2. Stacks and Queues ](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Data-Structures/StacksAndQueues) 
