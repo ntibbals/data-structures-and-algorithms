@@ -4,23 +4,23 @@ using System.Text;
 
 namespace Trees.Classes
 {
-    public class Node
+    public class Node<T>
     {
         /// <summary>
         /// Sets Node property for value
         /// </summary>
-        public int Value { get; set; }
+        public T Value { get; set; }
         /// <summary>
         /// set Node property for left child
         /// </summary>
-        public Node Left { get; set; }
+        public Node<T> Left { get; set; }
         /// <summary>
         /// set Node property for right child
         /// </summary>
-        public Node Right{ get; set; }
+        public Node<T> Right{ get; set; }
 
 
-        public Node()
+        public Node<T>()
         {
 
         }
@@ -29,9 +29,9 @@ namespace Trees.Classes
         /// Constructor for node
         /// </summary>
         /// <param name="value">integer value</param>
-        public Node(int value)
+        public Node<T>(Node<T> value)
         {
-            Value = value;
+            T = value;
         }
     }
 }

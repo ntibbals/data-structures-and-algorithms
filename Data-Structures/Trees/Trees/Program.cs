@@ -15,7 +15,7 @@ namespace Trees
 
         public static void CreateBinaryTree()
         {
-            BinaryTree tree = new BinaryTree();
+            BinaryTree<T> tree = new BinaryTree<T>();
             Node root = new Node(100);
 
             Node leftChild = new Node(5);
