@@ -13,7 +13,40 @@ namespace Trees.Classes
         {
             BiTree = biTree;
         }
-
-       
+        public void Add(Node node)
+        {
+            Node Root = BiTree.Root;
+            if (Root == null)
+            {
+                Root = BiTree.Root;
+            }
+            else
+            {
+                Node current = Root;
+                Node parent;
+                while (true)
+                {
+                    parent = current;
+                    if (node.Value < current.Value)
+                    {
+                        current = current.Left;
+                        if (current == null)
+                        {
+                            parent.Left = node;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        current = current.Right;
+                        if (current == null)
+                        {
+                            parent.Right = node;
+                            return;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
