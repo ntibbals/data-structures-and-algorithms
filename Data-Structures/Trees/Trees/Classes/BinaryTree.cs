@@ -30,7 +30,16 @@ namespace Trees.Classes
                 Console.Write(Root.Value + " ");
                 PreOrder(root.Left);
                 PreOrder(root.Right);
-                return;
+            }
+        }
+
+        public void InOrder(Node root)
+        {
+            if (root != null)
+            {
+                InOrder(root.Left);
+                Console.Write(root.Value + " ");
+                InOrder(root.Right);
             }
         }
     }
