@@ -13,6 +13,11 @@ namespace Trees.Classes
         {
             BiTree = biTree;
         }
+
+        /// <summary>
+        /// Adds nodes to binary search tree
+        /// </summary>
+        /// <param name="node">node to add</param>
         public void Add(Node node)
         {
             Node Root = node;
@@ -49,7 +54,12 @@ namespace Trees.Classes
             }
         }
 
-        public Node Search(int value)
+        /// <summary>
+        /// Searches tree for specific node
+        /// </summary>
+        /// <param name="value">value of node to search</param>
+        /// <returns>true if it contains, false if not in tree</returns>
+        public bool Contain(int value)
         {
             Node newNode = new Node(value);
             Node root = newNode;
@@ -58,7 +68,7 @@ namespace Trees.Classes
             {
                 if( root.Value == value)
                 {
-                    return root;
+                    return true;
                 }
                 else if (root.Value > value)
                 {
@@ -69,7 +79,7 @@ namespace Trees.Classes
                     root = root.Right;
                 }
             }
-            return null;
+            return false;
         }
     }
 }

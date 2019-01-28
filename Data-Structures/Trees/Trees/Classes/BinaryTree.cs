@@ -29,7 +29,11 @@ namespace Trees.Classes
             Count = 0;
         }
 
-
+        /// <summary>
+        /// Pre order tree method
+        /// </summary>
+        /// <param name="root">root node</param>
+        /// <returns>list of pre order nodes</returns>
         public static List<Node> PreOrder(Node root)
         {
             List<Node> list = new List<Node>();
@@ -51,6 +55,12 @@ namespace Trees.Classes
             }
             return list;
         }
+        /// <summary>
+        /// Pre order tree method - overload
+        /// </summary>
+        /// <param name="root">root node</param>
+        /// <param name="list">pre order list of nodes</param>
+        /// <returns></returns>
         public static List<Node> PreOrder(Node root, List<Node> list)
         {
             List<Node> list2 = new List<Node>();
@@ -72,9 +82,15 @@ namespace Trees.Classes
             }
             return list2;
         }
-        public static List<int> InOrder(Node root)
+
+        /// <summary>
+        /// Inorder Tree Method
+        /// </summary>
+        /// <param name="root">root node</param>
+        /// <returns>inorder list of nodes</returns>
+        public static List<Node> InOrder(Node root)
         {
-            List<int> list = new List<int>();
+            List<Node> list = new List<Node>();
             if (root == null)
             {
                 return null;
@@ -85,7 +101,7 @@ namespace Trees.Classes
                 InOrder(root.Left, list);
             }
 
-                list.Add(root.Value);
+                list.Add(root);
 
             if (root.Right != null)
             {
@@ -93,9 +109,16 @@ namespace Trees.Classes
             }
             return list;
         }
-        public static List<int> InOrder(Node root, List<int> list)
+
+        /// <summary>
+        /// Inorder overload method
+        /// </summary>
+        /// <param name="root">root node</param>
+        /// <param name="list">in order list of tree nodes</param>
+        /// <returns></returns>
+        public static List<Node> InOrder(Node root, List<Node> list)
         {
-            List<int> list2 = new List<int>();
+            List<Node> list2 = new List<Node>();
             if (root == null)
             {
                 return null;
@@ -106,7 +129,7 @@ namespace Trees.Classes
                 InOrder(root.Left, list2);
             }
 
-                list2.Add(root.Value);
+                list2.Add(root);
         
             if (root.Right != null)
             {
@@ -115,9 +138,14 @@ namespace Trees.Classes
             return list2;
         }
 
-        public static List<int> PostOrder(Node root)
+        /// <summary>
+        /// Returns list of post ordered tree values
+        /// </summary>
+        /// <param name="root">root of tree</param>
+        /// <returns>List of Nodes post order</returns>
+        public static List<Node> PostOrder(Node root)
         {
-            List<int> list = new List<int>();
+            List<Node> list = new List<Node>();
             if (root == null)
             {
                 return null;
@@ -133,12 +161,18 @@ namespace Trees.Classes
                 PostOrder(root.Right, list);
             }
 
-            list.Add(root.Value);
+            list.Add(root);
             return list;
         }
-        public static List<int> PostOrder(Node root, List<int> list)
+        /// <summary>
+        /// Overloaded post order method
+        /// </summary>
+        /// <param name="root">root value</param>
+        /// <param name="list">list created in intitial method</param>
+        /// <returns>post order list of nodes</returns>
+        public static List<Node> PostOrder(Node root, List<Node> list)
         {
-            List<int> list2 = new List<int>();
+            List<Node> list2 = new List<Node>();
             if (root == null)
             {
                 return null;
@@ -154,7 +188,7 @@ namespace Trees.Classes
             {
                 PostOrder(root.Left, list2);
             }
-            list2.Add(root.Value);
+            list2.Add(root);
             return list2;
         }
 
