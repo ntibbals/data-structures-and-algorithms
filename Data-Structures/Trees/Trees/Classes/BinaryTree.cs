@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Trees.Classes;
@@ -51,29 +52,58 @@ namespace Trees.Classes
             return array;
         }
 
-        public void InOrder(Node root)
+        public static List<Node> InOrder(Node root, List<Node> array = null)
         {
-            if (root != null)
+            if (root == null)
             {
-                InOrder(root.Left);
-                Console.Write(root.Value + " ");
-                InOrder(root.Right);
+                return null;
             }
+
+            if (root.Left != null)
+            {
+                InOrder(root.Left, array);
+            }
+            if (array == null)
+            {
+                array = new List<Node>();
+                array.Add(root);
+            }
+            if (root.Right != null)
+            {
+                InOrder(root.Right, array);
+            }
+            return array;
         }
 
-        public void PostOrder(Node root)
+        public static List<Node> PostOrder(Node root, List<Node> array = null)
         {
-            if (root != null)
+            if (root == null)
             {
-                PostOrder(root.Left);
-                PostOrder(root.Right);
-                Console.Write(root.Value + " ");
+                return null;
             }
+
+            if (root.Left != null)
+            {
+                PostOrder(root.Left, array);
+            }
+ 
+            if (root.Right != null)
+            {
+                InOrder(root.Right, array);
+            }
+            if (array == null)
+            {
+                array = new List<Node>();
+                array.Add(root);
+            }
+            return array;
+
         }
 
         public Node ReturnRoot()
         {
             return Root;
         }
+
     }
 }

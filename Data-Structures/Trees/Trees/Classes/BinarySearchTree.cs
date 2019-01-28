@@ -48,5 +48,27 @@ namespace Trees.Classes
                 }
             }
         }
+
+        public Node Search(int value)
+        {
+            Node root = BiTree.Root;
+
+            while (root != null)
+            {
+                if( root.Value == value)
+                {
+                    return root;
+                }
+                else if (root.Value > value)
+                {
+                    root = root.Left;
+                }
+                else
+                {
+                    root = root.Right;
+                }
+            }
+            return null;
+        }
     }
 }

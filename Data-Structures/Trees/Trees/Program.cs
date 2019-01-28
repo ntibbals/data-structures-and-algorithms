@@ -38,7 +38,27 @@ namespace Trees
 
             var Tree = BinaryTree.PreOrder(root);
 
-            foreach (var item in Tree)
+            foreach (Node item in Tree)
+            {
+                if (item != null)
+                {
+                    Console.WriteLine(item.Value);
+                }
+
+            }
+            var Tree2 = BinaryTree.InOrder(root);
+
+            foreach (Node item in Tree2)
+            {
+                if (item != null)
+                {
+                    Console.WriteLine(item.Value);
+                }
+
+            }
+            var Tree3 = BinaryTree.PostOrder(root);
+
+            foreach (Node item in Tree)
             {
                 if (item != null)
                 {
