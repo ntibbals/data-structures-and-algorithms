@@ -8,6 +8,8 @@ namespace Trees
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            CreateBinaryTree();
+            Console.ReadLine();
 
         }
 
@@ -34,6 +36,16 @@ namespace Trees
             Node rightRightLeaf = new Node(35);
             rightChild.Right = rightRightLeaf;
 
+            var Tree = BinaryTree.PreOrder(root);
+
+            foreach (var item in Tree)
+            {
+                if (item != null)
+                {
+                    Console.WriteLine(item.Value);
+                }
+
+            }
 
 
 
