@@ -29,16 +29,26 @@ namespace Trees.Classes
         }
 
 
-        public void  PreOrder(Node root)
+        public static List<Node> PreOrder(Node root, List<Node> array = null)
         {
-            List<Node> array = new List<Node>();
-
-            if (root != null)
+            if( root == null)
             {
-                Console.Write(root.Value + " ");
-                PreOrder(root.Left);
-                PreOrder(root.Right);
+                return null;
             }
+            if (array == null)
+            {
+                array = new List<Node>();
+                array.Add(root);
+            }
+            if (root.Left != null)
+            {
+                PreOrder(root.Left, array);
+            }
+            if (root.Right != null)
+            {
+                PreOrder(root.Right, array);
+            }
+            return array;
         }
 
         public void InOrder(Node root)

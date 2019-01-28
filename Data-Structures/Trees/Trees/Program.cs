@@ -9,14 +9,35 @@ namespace Trees
         {
             Console.WriteLine("Hello World!");
 
+        }
+
+        public static void CreateBinaryTree()
+        {
             BinaryTree tree = new BinaryTree();
-            tree.Insert(3);
-            tree.Insert(10);
-            tree.Insert(20);
-            Console.WriteLine(tree.Root.Value);
-            tree.PostOrder(tree.ReturnRoot());
-            tree.InOrder(tree.ReturnRoot());
-            tree.PreOrder(tree.ReturnRoot());
+            Node root = new Node(100);
+
+            Node leftChild = new Node(5);
+            root.Left = leftChild;
+
+            Node rightChild = new Node(10);
+            root.Right = rightChild;
+
+            Node leftLeftLeaf = new Node(15);
+            leftChild.Left = leftLeftLeaf;
+
+            Node leftRightLeaf = new Node(20);
+            leftChild.Right = leftRightLeaf;
+
+            Node rightLeftLeaf = new Node(30);
+            rightChild.Left = rightLeftLeaf;
+
+            Node rightRightLeaf = new Node(35);
+            rightChild.Right = rightRightLeaf;
+
+
+
+
+
         }
     }
 }
