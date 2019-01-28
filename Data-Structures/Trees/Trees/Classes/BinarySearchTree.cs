@@ -15,10 +15,10 @@ namespace Trees.Classes
         }
         public void Add(Node node)
         {
-            Node Root = BiTree.Root;
+            Node Root = node;
             if (Root == null)
             {
-                Root = BiTree.Root;
+                Root = node;
             }
             else
             {
@@ -51,7 +51,8 @@ namespace Trees.Classes
 
         public Node Search(int value)
         {
-            Node root = BiTree.Root;
+            Node newNode = new Node(value);
+            Node root = newNode;
 
             while (root != null)
             {
