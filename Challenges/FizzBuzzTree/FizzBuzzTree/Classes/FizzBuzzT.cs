@@ -5,44 +5,40 @@ using Trees.Classes;
 
 namespace FizzBuzzTree.Classes
 {
-    class FizzBuzzT<T>
+    public class FizzBuzzT<T>
     {
 
 
-        static BinaryTree<T> FizzBuzzTree(BinaryTree<T> bt)
+        static BinaryTree<object> FizzBuzzTree(BinaryTree<object> bt)
         {
-            BinaryTree<T> fizzTree = new BinaryTree<T>();
+            Node<object> root = bt.Root;
 
-            try
+             void Helper(Node<object> helperRoot)
             {
-                if (bt.Root == null)
+                if (helperRoot == null)
                 {
-                    return null;
+                    return;
                 }
-                bt.Add(bt.Root.Value);
-                if (bt.Root.Left != null)
+                Helper(helperRoot.Left);
+                Helper(helperRoot.Right);
+                if (Convert.ToInt32(helperRoot.Value) % 15 == 0)
                 {
-                    FizzBuzzTree(bt.Root.Left, fizzTree);
+                    helperRoot.Value = "FizzBuzz";
                 }
+                else if (Convert.ToInt32(helperRoot.Value) % 5 == 0)
+                {
+                    helperRoot.Value = "Buzz";
+                }
+                else if (Convert.ToInt32(helperRoot.Value) % 3 == 0)
+                {
+                    helperRoot.Value = "Fizz";
 
-                if (bt.Root.Right != null)
-                {
-                    FizzBuzzTree(bt.Root.Right, fizzTree);
                 }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            return fizzTree;
-        }
 
-        static BinaryTree<T> FizzBuzzTree(Node<T> root, BinaryTree<T> list)
-        {
-            BinaryTree<T> fizzTree = new BinaryTree<T>();
+            Helper(root);
+            return bt;
 
-            return fizzTree;
-  
         }
     }
 }
