@@ -3,21 +3,18 @@ using Trees.Classes;
 
 namespace Trees
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            CreateBinaryTree();
-            Console.ReadLine();
+
 
         }
-
-        public static void CreateBinaryTree()
+        public void CreateMainBinaryTree()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
             Node<int> root = new Node<int>(100);
-
             Node<int> leftChild = new Node<int>(5);
             root.Left = leftChild;
 
@@ -36,7 +33,8 @@ namespace Trees
             Node<int> rightRightLeaf = new Node<int>(35);
             rightChild.Right = rightRightLeaf;
 
-            }
+        }
+
     }
 }
 

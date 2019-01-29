@@ -1,55 +1,54 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using Trees.Classes;
 
 namespace Trees.Classes
 {
-    public class BinaryTree<T>
+    public class BT
     {
-
-        public Node<T> Root { get; set; }
+        public Nodeb Root { get; set; }
+        public List<int> BiTreeList { get; set; }
 
         public bool IsEmpty
         {
-            get { return Root == null;  }
+            get { return Root == null; }
         }
 
         public int Count { get; private set; }
-        public BinaryTree()
+        public BT()
         {
-
+            Root = null;
         }
 
-        public BinaryTree(Node<T> root)
+        public BT(Nodeb root)
         {
             Root = root;
             Count = 0;
         }
 
-        public void CreateBinaryTree()
+        public void CBT()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
-            tree.Root = new Node<int>(100);
 
-            Node<int> leftChild = new Node<int>(5);
+            BT tree = new BT();
+            tree.Root = new Nodeb(100);
+
+            Nodeb leftChild = new Nodeb(5);
             tree.Root.Left = leftChild;
 
-            Node<int> rightChild = new Node<int>(10);
+            Nodeb rightChild = new Nodeb(10);
             tree.Root.Right = rightChild;
 
-            Node<int> leftLeftLeaf = new Node<int>(15);
+            Nodeb leftLeftLeaf = new Nodeb(15);
             tree.Root.Left.Left = leftLeftLeaf;
 
-            Node<int> leftRightLeaf = new Node<int>(20);
+            Nodeb leftRightLeaf = new Nodeb(20);
             tree.Root.Left.Right = leftRightLeaf;
 
-            Node<int> rightLeftLeaf = new Node<int>(30);
+            Nodeb rightLeftLeaf = new Nodeb(30);
             tree.Root.Right.Left = rightLeftLeaf;
 
-            Node<int> rightRightLeaf = new Node<int>(35);
-            tree.Root.Right.Right = rightRightLeaf;
+            Nodeb rightRightLeaf = new Nodeb(35);
+            tree.Root.Right.Right= rightRightLeaf;
 
         }
         /// <summary>
@@ -57,9 +56,9 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="root">root node</param>
         /// <returns>list of pre order nodes</returns>
-        public static List<T> PreOrder(Node<T> root)
+        public static List<int> PeOrder(Nodeb root)
         {
-            List<T> list = new List<T>();
+            List<int> list = new List<int>();
             if (root == null)
             {
                 return null;
@@ -67,12 +66,12 @@ namespace Trees.Classes
             list.Add(root.Value);
             if (root.Left != null)
             {
-                PreOrder(root.Left, list);
+                PeOrder(root.Left, list);
             }
 
             if (root.Right != null)
             {
-                PreOrder(root.Right, list);
+                PeOrder(root.Right, list);
             }
             return list;
         }
@@ -82,7 +81,7 @@ namespace Trees.Classes
         /// <param name="root">root node</param>
         /// <param name="list">pre order list of nodes</param>
         /// <returns></returns>
-        public static List<T> PreOrder(Node<T> root, List<T> list)
+        public static List<int> PeOrder(Nodeb root, List<int> list)
         {
             if (root == null)
             {
@@ -92,12 +91,12 @@ namespace Trees.Classes
             list.Add(root.Value);
             if (root.Left != null)
             {
-                PreOrder(root.Left, list);
+                PeOrder(root.Left, list);
             }
 
             if (root.Right != null)
             {
-                PreOrder(root.Right, list);
+                PeOrder(root.Right, list);
             }
             return list;
         }
@@ -107,9 +106,9 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="root">root node</param>
         /// <returns>inorder list of nodes</returns>
-        public static List<T> InOrder(Node<T> root)
+        public static List<int> IOrder(Nodeb root)
         {
-            List<T> list = new List<T>();
+            List<int> list = new List<int>();
             if (root == null)
             {
                 return null;
@@ -117,14 +116,14 @@ namespace Trees.Classes
 
             if (root.Left != null)
             {
-                InOrder(root.Left, list);
+                IOrder(root.Left, list);
             }
 
-                list.Add(root.Value);
+            list.Add(root.Value);
 
             if (root.Right != null)
             {
-                InOrder(root.Right, list);
+                IOrder(root.Right, list);
             }
             return list;
         }
@@ -135,7 +134,7 @@ namespace Trees.Classes
         /// <param name="root">root node</param>
         /// <param name="list">in order list of tree nodes</param>
         /// <returns></returns>
-        public static List<T> InOrder(Node<T> root, List<T> list)
+        public static List<int> IOrder(Nodeb root, List<int> list)
         {
             if (root == null)
             {
@@ -144,14 +143,14 @@ namespace Trees.Classes
 
             if (root.Left != null)
             {
-                InOrder(root.Left, list);
+                IOrder(root.Left, list);
             }
 
-                list.Add(root.Value);
-        
+            list.Add(root.Value);
+
             if (root.Right != null)
             {
-                InOrder(root.Right, list);
+                IOrder(root.Right, list);
             }
             return list;
         }
@@ -161,9 +160,9 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="root">root of tree</param>
         /// <returns>List of Nodes post order</returns>
-        public static List<T> PostOrder(Node<T> root)
+        public static List<int> PstOrder(Nodeb root)
         {
-            List<T> list = new List<T>();
+            List<int> list = new List<int>();
             if (root == null)
             {
                 return null;
@@ -171,12 +170,12 @@ namespace Trees.Classes
 
             if (root.Left != null)
             {
-                PostOrder(root.Left, list);
+                PstOrder(root.Left, list);
             }
 
             if (root.Right != null)
             {
-                PostOrder(root.Right, list);
+                PstOrder(root.Right, list);
             }
 
             list.Add(root.Value);
@@ -188,7 +187,7 @@ namespace Trees.Classes
         /// <param name="root">root value</param>
         /// <param name="list">list created in intitial method</param>
         /// <returns>post order list of nodes</returns>
-        public static List<T> PostOrder(Node<T> root, List<T> list)
+        public static List<int> PstOrder(Node<int> root, List<int> list)
         {
 
             if (root == null)
@@ -198,20 +197,19 @@ namespace Trees.Classes
 
             if (root.Left != null)
             {
-                PostOrder(root.Left, list);
+                PstOrder(root.Left, list);
             }
             if (root.Right != null)
             {
-                PostOrder(root.Right, list);
+                PstOrder(root.Right, list);
             }
             list.Add(root.Value);
             return list;
         }
 
-        public Node<T> ReturnRoot()
+        public Nodeb ReturnRoot()
         {
             return Root;
         }
-
     }
 }

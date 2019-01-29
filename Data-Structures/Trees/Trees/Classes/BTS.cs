@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Trees.Classes;
 
 namespace Trees.Classes
 {
-    public class BinarySearchTree<T>
+    public class BTS
     {
-        public BinaryTree<T> Root { get; set; }
+        public BT Root { get; set; }
 
-        public BinarySearchTree()
+        public BTS()
         {
             Root = null;
         }
@@ -18,17 +17,17 @@ namespace Trees.Classes
         /// Adds nodes to binary search tree
         /// </summary>
         /// <param name="node">node to add</param>
-        public void Add(Node<int> node)
+        public void Add(Nodeb node)
         {
-            Node<int> Root = node;
+            Nodeb Root = node;
             if (Root == null)
             {
                 Root = node;
             }
             else
             {
-                Node<int> current = Root;
-                Node<int> parent;
+                Nodeb current = Root;
+                Nodeb parent;
                 while (true)
                 {
                     parent = current;
@@ -61,12 +60,12 @@ namespace Trees.Classes
         /// <returns>true if it contains, false if not in tree</returns>
         public bool Contain(int value)
         {
-            Node<int> newNode = new Node<int>(value);
-            Node<int> root = newNode;
+            Nodeb newNode = new Nodeb(value);
+            Nodeb root = newNode;
 
             while (root != null)
             {
-                if( root.Value == value)
+                if (root.Value == value)
                 {
                     return true;
                 }
