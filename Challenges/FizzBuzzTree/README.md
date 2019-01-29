@@ -16,3 +16,5 @@
 ### Insight
 
 - I've needed to refactored my code from over the weekend to better handled objects and generics in order to deal with the additional value types.
+
+- For my implementation I utilized a helper method which Jason Hiskey verbally discussed with me and drew a white board visual.
