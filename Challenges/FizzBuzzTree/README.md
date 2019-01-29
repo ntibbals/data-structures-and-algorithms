@@ -11,7 +11,7 @@
 - The space efficiency of this algorithm is O(1) as nothing is being added, just altered.
 
 ### Visual
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/FizzBuzzTree/board.JPG)
 
 ### Insight
 
