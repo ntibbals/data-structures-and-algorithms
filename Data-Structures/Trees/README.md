@@ -16,3 +16,11 @@
 - When Add() is applied the time efficiency is O(n) because you traverse each node until the correct location is found to insert. The Space efficiency is O(1) as you will only add in one place each method call.
  
 - When Contains() is applied the time efficiency is O(n) because you traverse each node once. The Space efficiency is O(1) as it retains no additional memory.
+
+
+## Resources
+
+https://en.wikipedia.org/wiki/Binary_search_tree
+http://www.cprogrammingnotes.com/question/bst-recursion.html
+https://www.codeproject.com/Articles/18976/A-simple-Binary-Search-Tree-written-in-C
+https://www.csharpstar.com/csharp-program-to-implement-binary-search-tree-traversal/
