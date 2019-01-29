@@ -7,7 +7,7 @@ namespace Trees.Classes
 {
     public class BinarySearchTree<T>
     {
-        public BinaryTree<T> Root { get; set; }
+        public Node<T> Root { get; set; }
 
         public BinarySearchTree()
         {
@@ -53,7 +53,44 @@ namespace Trees.Classes
                 }
             }
         }
+        /// <summary>
+        /// Initial method call for add, uses recursion
+        /// </summary>
+        /// <param name="value">node to add</param>
+        public void AddT(T value)
+        {
+            Root = AddT(value, Root);
+        }
 
+        /// <summary>
+        /// Overloaded method to identify proper placedment for new node
+        /// </summary>
+        /// <param name="value">value to add</param>
+        /// <param name="node">current node</param>
+        /// <returns></returns>
+        public Node<T> AddT( T value, Node<T> node)
+        {
+            if (node == null) /// if null, add node to current position
+            {
+                return new Node<T>(value);
+            }
+
+            if (node.Value > value) /// if node is greater than the value, look to the left
+            {
+                node.Left = AddT(value, node.Left); //recussive call
+            }
+
+            else if (node.Value < value) /// if node is less than value, look to the right
+            {
+                node.Right = AddT(value, node.Right); // recurssive call
+            }
+
+            else
+            {
+                return node;
+            }
+            return node;
+        }
         /// <summary>
         /// Searches tree for specific node
         /// </summary>

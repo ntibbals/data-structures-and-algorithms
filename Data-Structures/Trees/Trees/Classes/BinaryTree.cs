@@ -52,6 +52,31 @@ namespace Trees.Classes
             tree.Root.Right.Right = rightRightLeaf;
 
         }
+
+        public void CreateObjectTree()
+        {
+            BinaryTree<object> tree = new BinaryTree<object>();
+            tree.Root = new Node<object>(100);
+
+            Node<object> leftChild = new Node<object>(5);
+            tree.Root.Left = leftChild;
+
+            Node<object> rightChild = new Node<object>(10);
+            tree.Root.Right = rightChild;
+
+            Node<object> leftLeftLeaf = new Node<object>(15);
+            tree.Root.Left.Left = leftLeftLeaf;
+
+            Node<object> leftRightLeaf = new Node<object>(20);
+            tree.Root.Left.Right = leftRightLeaf;
+
+            Node<object> rightLeftLeaf = new Node<object>(30);
+            tree.Root.Right.Left = rightLeftLeaf;
+
+            Node<object> rightRightLeaf = new Node<object>(35);
+            tree.Root.Right.Right = rightRightLeaf;
+        }
+
         /// <summary>
         /// Pre order tree method
         /// </summary>
@@ -60,19 +85,26 @@ namespace Trees.Classes
         public static List<T> PreOrder(Node<T> root)
         {
             List<T> list = new List<T>();
-            if (root == null)
+            try
             {
-                return null;
-            }
-            list.Add(root.Value);
-            if (root.Left != null)
-            {
-                PreOrder(root.Left, list);
-            }
+                if (root == null)
+                {
+                    return null;
+                }
+                list.Add(root.Value);
+                if (root.Left != null)
+                {
+                    PreOrder(root.Left, list);
+                }
 
-            if (root.Right != null)
+                if (root.Right != null)
+                {
+                    PreOrder(root.Right, list);
+                }
+            }
+            catch (Exception e)
             {
-                PreOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
             return list;
         }
@@ -84,20 +116,28 @@ namespace Trees.Classes
         /// <returns></returns>
         public static List<T> PreOrder(Node<T> root, List<T> list)
         {
-            if (root == null)
+            try
             {
-                return null;
-            }
 
-            list.Add(root.Value);
-            if (root.Left != null)
-            {
-                PreOrder(root.Left, list);
-            }
+                if (root == null)
+                {
+                    return null;
+                }
 
-            if (root.Right != null)
+                list.Add(root.Value);
+                if (root.Left != null)
+                {
+                    PreOrder(root.Left, list);
+                }
+
+                if (root.Right != null)
+                {
+                    PreOrder(root.Right, list);
+                }
+            }
+            catch (Exception e)
             {
-                PreOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
             return list;
         }
@@ -110,21 +150,29 @@ namespace Trees.Classes
         public static List<T> InOrder(Node<T> root)
         {
             List<T> list = new List<T>();
-            if (root == null)
+            try
             {
-                return null;
-            }
 
-            if (root.Left != null)
-            {
-                InOrder(root.Left, list);
-            }
+                if (root == null)
+                {
+                    return null;
+                }
+
+                if (root.Left != null)
+                {
+                    InOrder(root.Left, list);
+                }
 
                 list.Add(root.Value);
 
-            if (root.Right != null)
+                if (root.Right != null)
+                {
+                    InOrder(root.Right, list);
+                }
+            }
+            catch (Exception e)
             {
-                InOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
             return list;
         }
@@ -137,21 +185,29 @@ namespace Trees.Classes
         /// <returns></returns>
         public static List<T> InOrder(Node<T> root, List<T> list)
         {
-            if (root == null)
+            try
             {
-                return null;
-            }
 
-            if (root.Left != null)
-            {
-                InOrder(root.Left, list);
-            }
+                if (root == null)
+                {
+                    return null;
+                }
+
+                if (root.Left != null)
+                {
+                    InOrder(root.Left, list);
+                }
 
                 list.Add(root.Value);
-        
-            if (root.Right != null)
+
+                if (root.Right != null)
+                {
+                    InOrder(root.Right, list);
+                }
+            }
+            catch (Exception e)
             {
-                InOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
             return list;
         }
@@ -164,22 +220,30 @@ namespace Trees.Classes
         public static List<T> PostOrder(Node<T> root)
         {
             List<T> list = new List<T>();
-            if (root == null)
+            try
             {
-                return null;
-            }
 
-            if (root.Left != null)
+                if (root == null)
+                {
+                    return null;
+                }
+
+                if (root.Left != null)
+                {
+                    PostOrder(root.Left, list);
+                }
+
+                if (root.Right != null)
+                {
+                    PostOrder(root.Right, list);
+                }
+
+                list.Add(root.Value);
+            }
+            catch (Exception e)
             {
-                PostOrder(root.Left, list);
+                Console.WriteLine(e.Message);
             }
-
-            if (root.Right != null)
-            {
-                PostOrder(root.Right, list);
-            }
-
-            list.Add(root.Value);
             return list;
         }
         /// <summary>
@@ -190,21 +254,28 @@ namespace Trees.Classes
         /// <returns>post order list of nodes</returns>
         public static List<T> PostOrder(Node<T> root, List<T> list)
         {
+            try
+            {
 
-            if (root == null)
-            {
-                return null;
-            }
+                if (root == null)
+                {
+                    return null;
+                }
 
-            if (root.Left != null)
-            {
-                PostOrder(root.Left, list);
+                if (root.Left != null)
+                {
+                    PostOrder(root.Left, list);
+                }
+                if (root.Right != null)
+                {
+                    PostOrder(root.Right, list);
+                }
+                list.Add(root.Value);
             }
-            if (root.Right != null)
+            catch (Exception e)
             {
-                PostOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
-            list.Add(root.Value);
             return list;
         }
 
