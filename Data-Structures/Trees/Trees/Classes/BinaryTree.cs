@@ -41,7 +41,7 @@ namespace Trees.Classes
             {
                 return null;
             }
-            list.Add(root);
+            list.Add(root.Value);
             if (root.Left != null)
             {
                 PreOrder(root.Left, list);
@@ -66,7 +66,7 @@ namespace Trees.Classes
                 return null;
             }
 
-            list.Add(root);
+            list.Add(root.Value);
             if (root.Left != null)
             {
                 PreOrder(root.Left, list);
@@ -97,7 +97,7 @@ namespace Trees.Classes
                 InOrder(root.Left, list);
             }
 
-                list.Add(root);
+                list.Add(root.Value);
 
             if (root.Right != null)
             {
@@ -124,7 +124,7 @@ namespace Trees.Classes
                 InOrder(root.Left, list);
             }
 
-                list.Add(root);
+                list.Add(root.Value);
         
             if (root.Right != null)
             {
@@ -156,7 +156,7 @@ namespace Trees.Classes
                 PostOrder(root.Right, list);
             }
 
-            list.Add(root);
+            list.Add(root.Value);
             return list;
         }
         /// <summary>
@@ -183,11 +183,11 @@ namespace Trees.Classes
             {
                 PostOrder(root.Left, list);
             }
-            list.Add(root);
+            list.Add(root.Value);
             return list;
         }
 
-        public Node ReturnRoot()
+        public Node<T> ReturnRoot()
         {
             return Root;
         }

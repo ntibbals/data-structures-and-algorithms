@@ -7,32 +7,32 @@ namespace Trees.Classes
 {
     class BinarySearchTree<T>
     {
-        public BinaryTree<T> BiTree { get; set; }
+        public BinaryTree<T> Root { get; set; }
 
-        public BinarySearchTree(BinaryTree<T> biTree)
+        public BinarySearchTree()
         {
-            BiTree = biTree;
+            Root = null;
         }
 
         /// <summary>
         /// Adds nodes to binary search tree
         /// </summary>
         /// <param name="node">node to add</param>
-        public void Add(Node<T> node)
+        public void Add(Node<int> node)
         {
-            Node<T> Root = node;
+            Node<int> Root = node;
             if (Root == null)
             {
                 Root = node;
             }
             else
             {
-                Node<T> current = Root;
-                Node<T> parent;
+                Node<int> current = Root;
+                Node<int> parent;
                 while (true)
                 {
                     parent = current;
-                    if (node < current)
+                    if (node.Value < current.Value)
                     {
                         current = current.Left;
                         if (current == null)
@@ -61,8 +61,8 @@ namespace Trees.Classes
         /// <returns>true if it contains, false if not in tree</returns>
         public bool Contain(int value)
         {
-            Node<T> newNode = new Node<T>(value);
-            Node<T> root = newNode;
+            Node<int> newNode = new Node<int>(value);
+            Node<int> root = newNode;
 
             while (root != null)
             {

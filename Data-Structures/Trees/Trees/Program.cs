@@ -15,62 +15,28 @@ namespace Trees
 
         public static void CreateBinaryTree()
         {
-            BinaryTree<T> tree = new BinaryTree<T>();
-            Node root = new Node(100);
+            BinaryTree<int> tree = new BinaryTree<int>();
+            Node<int> root = new Node<int>(100);
 
-            Node leftChild = new Node(5);
+            Node<int> leftChild = new Node<int>(5);
             root.Left = leftChild;
 
-            Node rightChild = new Node(10);
+            Node<int> rightChild = new Node<int>(10);
             root.Right = rightChild;
 
-            Node leftLeftLeaf = new Node(15);
+            Node<int> leftLeftLeaf = new Node<int>(15);
             leftChild.Left = leftLeftLeaf;
 
-            Node leftRightLeaf = new Node(20);
+            Node<int> leftRightLeaf = new Node<int>(20);
             leftChild.Right = leftRightLeaf;
 
-            Node rightLeftLeaf = new Node(30);
+            Node<int> rightLeftLeaf = new Node<int>(30);
             rightChild.Left = rightLeftLeaf;
 
-            Node rightRightLeaf = new Node(35);
+            Node<int> rightRightLeaf = new Node<int>(35);
             rightChild.Right = rightRightLeaf;
 
-            var Tree = BinaryTree.PreOrder(root);
-
-            foreach (Node item in Tree)
-            {
-                if (item != null)
-                {
-                    Console.WriteLine(item.Value);
-                }
-
             }
-            //var Tree2 = BinaryTree.InOrder(root);
-
-            //foreach (Node item in Tree2)
-            //{
-            //    if (item != null)
-            //    {
-            //        Console.WriteLine(item.Value);
-            //    }
-
-            //}
-            //var Tree3 = BinaryTree.PostOrder(root);
-
-            //foreach (Node item in Tree)
-            //{
-            //    if (item != null)
-            //    {
-            //        Console.WriteLine(item.Value);
-            //    }
-
-            //}
-
-
-
-
-        }
     }
 }
 

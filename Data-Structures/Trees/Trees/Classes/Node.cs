@@ -20,7 +20,7 @@ namespace Trees.Classes
         public Node<T> Right{ get; set; }
 
 
-        public Node<T>()
+        public Node()
         {
 
         }
@@ -29,9 +29,9 @@ namespace Trees.Classes
         /// Constructor for node
         /// </summary>
         /// <param name="value">integer value</param>
-        public Node<T>(Node<T> value)
+        public Node(T value)
         {
-            T = value;
+            Value = value;
         }
     }
 }
