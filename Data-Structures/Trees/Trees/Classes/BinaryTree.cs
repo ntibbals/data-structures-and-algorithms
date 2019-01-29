@@ -74,7 +74,7 @@ namespace Trees.Classes
 
             if (root.Right != null)
             {
-                PreOrder(root.Left, list);
+                PreOrder(root.Right, list);
             }
             return list;
         }
@@ -128,7 +128,7 @@ namespace Trees.Classes
         
             if (root.Right != null)
             {
-                InOrder(root.Left, list);
+                InOrder(root.Right, list);
             }
             return list;
         }
@@ -181,7 +181,7 @@ namespace Trees.Classes
 
             if (root.Right != null)
             {
-                PostOrder(root.Left, list);
+                PostOrder(root.Right, list);
             }
             list.Add(root.Value);
             return list;
