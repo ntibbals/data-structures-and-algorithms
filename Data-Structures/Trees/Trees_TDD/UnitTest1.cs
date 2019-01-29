@@ -155,11 +155,11 @@ namespace Trees_TDD
         [Fact]
         public void AddOnBinarySearchTree()
         {
-            /// testing post order on empty tree
+            /// Add for right branch
             BTS testTree = new BTS(77);
             Nodeb testNode = new Nodeb(77);
             testTree.Add(88);
-            Assert.Equal(77, testTree.Root.Left.Value);
+            Assert.Equal(88, testTree.Root.Right.Value);
         }
     }
 }

@@ -20,45 +20,49 @@ namespace Trees.Classes
         }
 
         /// <summary>
-        /// Adds nodes to binary search tree
+        /// Initial method call for add, uses recursion
         /// </summary>
-        /// <param name="node">node to add</param>
-        public void Add(Nodeb node)
+        /// <param name="value">node to add</param>
+        public void Add(int value)
         {
-            Nodeb Root = node;
-            if (Root == null)
+            Root = Add(value, Root);
+        }
+
+        /// <summary>
+        /// Overloaded method to identify proper placedment for new node
+        /// </summary>
+        /// <param name="value">value to add</param>
+        /// <param name="node">current node</param>
+        /// <returns></returns>
+        public Nodeb Add(int value, Nodeb node)
+        {
+            if (node == null) /// if null, add node to current position
             {
-                Root = node;
+                return new Nodeb(value);
             }
+
+            if (node.Value > value) /// if node is greater than the value, look to the left
+            {
+                node.Left = Add(value, node.Left); //recussive call
+            }
+
+            else if (node.Value < value) /// if node is less than value, look to the right
+            {
+                node.Right = Add(value, node.Right); // recurssive call
+            }
+
             else
             {
-                Nodeb current = Root;
-                Nodeb parent;
-                while (true)
-                {
-                    parent = current;
-                    if (node.Value < current.Value)
-                    {
-                        current = current.Left;
-                        if (current == null)
-                        {
-                            parent.Left = node;
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        current = current.Right;
-                        if (current == null)
-                        {
-                            parent.Right = node;
-                            return;
-                        }
-                    }
-                }
+                return node;
             }
+            return node;
         }
-        public void Add(int value)
+
+        /// <summary>
+        /// Initial Add attempt method
+        /// </summary>
+        /// <param name="value"></param>
+        public void Add2(int value)
         {
             Nodeb newNode = new Nodeb(value);
             Nodeb Root = newNode;
