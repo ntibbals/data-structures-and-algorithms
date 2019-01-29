@@ -6,11 +6,17 @@ namespace Trees.Classes
 {
     public class BTS
     {
-        public BT Root { get; set; }
+        public Nodeb Root { get; set; }
 
         public BTS()
         {
             Root = null;
+        }
+
+        public BTS(int value)
+        {
+            Nodeb newNode = new Nodeb(value);
+            Root = newNode;
         }
 
         /// <summary>
@@ -52,7 +58,49 @@ namespace Trees.Classes
                 }
             }
         }
+        public void Add(int value)
+        {
+            Nodeb newNode = new Nodeb(value);
+            Nodeb Root = newNode;
+            if (Root == null)
+            {
+                Root = newNode;
+            }
+            else
+            {
+                Nodeb current = Root;
+                Nodeb parent;
+                parent = current;
+                while (true)
+                {
 
+                    if (value < current.Value)
+                    {
+                        if (parent.Left == null)
+                        {
+                            parent.Left = newNode;
+                            return;
+                        }
+                        else
+                        {
+                            parent = parent.Left;
+                        }
+                    }
+                    else
+                    {
+                        if (parent.Right == null)
+                        {
+                            parent.Right = newNode;
+                            return;
+                        }
+                        else
+                        {
+                            parent = parent.Right;
+                        }
+                    }
+                }
+            }
+        }
         /// <summary>
         /// Searches tree for specific node
         /// </summary>

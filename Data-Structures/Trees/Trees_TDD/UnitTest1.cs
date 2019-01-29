@@ -151,5 +151,15 @@ namespace Trees_TDD
             BT testTree = new BT();
             Assert.Null(BT.PstOrder(testTree.Root));
         }
+
+        [Fact]
+        public void AddOnBinarySearchTree()
+        {
+            /// testing post order on empty tree
+            BTS testTree = new BTS(77);
+            Nodeb testNode = new Nodeb(77);
+            testTree.Add(88);
+            Assert.Equal(77, testTree.Root.Left.Value);
+        }
     }
 }
