@@ -59,19 +59,28 @@ namespace Trees.Classes
         public static List<int> PeOrder(Nodeb root)
         {
             List<int> list = new List<int>();
-            if (root == null)
+            try
             {
-                return null;
-            }
-            list.Add(root.Value);
-            if (root.Left != null)
-            {
-                PeOrder(root.Left, list);
-            }
 
-            if (root.Right != null)
+
+                if (root == null)
+                {
+                    return null;
+                }
+                list.Add(root.Value);
+                if (root.Left != null)
+                {
+                    PeOrder(root.Left, list);
+                }
+
+                if (root.Right != null)
+                {
+                    PeOrder(root.Right, list);
+                }
+            }
+            catch (Exception e)
             {
-                PeOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
             return list;
         }
@@ -83,20 +92,28 @@ namespace Trees.Classes
         /// <returns></returns>
         public static List<int> PeOrder(Nodeb root, List<int> list)
         {
-            if (root == null)
+            try
             {
-                return null;
-            }
 
-            list.Add(root.Value);
-            if (root.Left != null)
-            {
-                PeOrder(root.Left, list);
-            }
+                if (root == null)
+                {
+                    return null;
+                }
 
-            if (root.Right != null)
+                list.Add(root.Value);
+                if (root.Left != null)
+                {
+                    PeOrder(root.Left, list);
+                }
+
+                if (root.Right != null)
+                {
+                    PeOrder(root.Right, list);
+                }
+            }
+            catch (Exception e)
             {
-                PeOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
             return list;
         }
@@ -109,21 +126,28 @@ namespace Trees.Classes
         public static List<int> IOrder(Nodeb root)
         {
             List<int> list = new List<int>();
-            if (root == null)
+            try
             {
-                return null;
+                if (root == null)
+                {
+                    return null;
+                }
+
+                if (root.Left != null)
+                {
+                    IOrder(root.Left, list);
+                }
+
+                list.Add(root.Value);
+
+                if (root.Right != null)
+                {
+                    IOrder(root.Right, list);
+                }
             }
-
-            if (root.Left != null)
+            catch (Exception e)
             {
-                IOrder(root.Left, list);
-            }
-
-            list.Add(root.Value);
-
-            if (root.Right != null)
-            {
-                IOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
             return list;
         }
@@ -136,21 +160,29 @@ namespace Trees.Classes
         /// <returns></returns>
         public static List<int> IOrder(Nodeb root, List<int> list)
         {
-            if (root == null)
+            try
             {
-                return null;
+
+                if (root == null)
+                {
+                    return null;
+                }
+
+                if (root.Left != null)
+                {
+                    IOrder(root.Left, list);
+                }
+
+                list.Add(root.Value);
+
+                if (root.Right != null)
+                {
+                    IOrder(root.Right, list);
+                }
             }
-
-            if (root.Left != null)
+            catch (Exception e)
             {
-                IOrder(root.Left, list);
-            }
-
-            list.Add(root.Value);
-
-            if (root.Right != null)
-            {
-                IOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
             return list;
         }
@@ -163,22 +195,29 @@ namespace Trees.Classes
         public static List<int> PstOrder(Nodeb root)
         {
             List<int> list = new List<int>();
-            if (root == null)
+            try
             {
-                return null;
-            }
+                if (root == null)
+                {
+                    return null;
+                }
 
-            if (root.Left != null)
+                if (root.Left != null)
+                {
+                    PstOrder(root.Left, list);
+                }
+
+                if (root.Right != null)
+                {
+                    PstOrder(root.Right, list);
+                }
+
+                list.Add(root.Value);
+            }
+            catch (Exception e)
             {
-                PstOrder(root.Left, list);
+                Console.WriteLine(e.Message);
             }
-
-            if (root.Right != null)
-            {
-                PstOrder(root.Right, list);
-            }
-
-            list.Add(root.Value);
             return list;
         }
         /// <summary>
@@ -187,23 +226,30 @@ namespace Trees.Classes
         /// <param name="root">root value</param>
         /// <param name="list">list created in intitial method</param>
         /// <returns>post order list of nodes</returns>
-        public static List<int> PstOrder(Node<int> root, List<int> list)
+        public static List<int> PstOrder(Nodeb root, List<int> list)
         {
+            try
+            {
 
-            if (root == null)
-            {
-                return null;
-            }
+                if (root == null)
+                {
+                    return null;
+                }
 
-            if (root.Left != null)
-            {
-                PstOrder(root.Left, list);
+                if (root.Left != null)
+                {
+                    PstOrder(root.Left, list);
+                }
+                if (root.Right != null)
+                {
+                    PstOrder(root.Right, list);
+                }
+                list.Add(root.Value);
             }
-            if (root.Right != null)
+            catch (Exception e)
             {
-                PstOrder(root.Right, list);
+                Console.WriteLine(e.Message);
             }
-            list.Add(root.Value);
             return list;
         }
 
