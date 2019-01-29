@@ -32,7 +32,6 @@ namespace FizzBuzzTree.Classes
                 else if (Convert.ToInt32(helperRoot.Value) % 3 == 0)
                 {
                     helperRoot.Value = "Fizz";
-
                 }
             }
 
