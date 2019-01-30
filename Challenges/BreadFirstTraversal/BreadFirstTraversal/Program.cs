@@ -32,6 +32,7 @@ namespace BreadFirstTraversal
             tree.Root.Right.Right = rightRightLeaf;
 
             BreadthFirst(tree);
+            Console.ReadLine();
         }
 
         /// <summary>

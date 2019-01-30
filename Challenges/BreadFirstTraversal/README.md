@@ -11,5 +11,6 @@
 
 ### Visual
 ![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/BreadFirstTraversal/board1.JPG)
-![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/BreadFirstTraversal/board1.JPG)
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/BreadFirstTraversal/board2.JPG)
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/BreadFirstTraversal/visual3.JPG)
 
