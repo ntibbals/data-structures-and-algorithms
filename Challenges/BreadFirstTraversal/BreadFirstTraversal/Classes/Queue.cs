@@ -39,18 +39,18 @@ namespace BreadFirstTraversal.Classes
         /// Adds a node/value to queue
         /// </summary>
         /// <param name="value">integer value</param>
-        public void Enqueue(int value)
+        public void Enqueue(Nodeb node)
         {
             if (Front == null)
             {
-                Nodeb newNode = new Nodeb(value);
+                Nodeb newNode = node;
                 Front = newNode;
                 Rear = newNode;
                 Size++;
             }
             else
             {
-                Nodeb node = new Nodeb(value);
+                //Nodeb node = new Nodeb(value);
                 Rear.Next = node;
                 Rear = node;
                 Size++;

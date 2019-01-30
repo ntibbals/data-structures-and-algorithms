@@ -36,7 +36,7 @@ namespace BreadFirstTraversal
         static void BreadthFirst (BT tree)
         {
             Queue bfQueue = new Queue();
-            bfQueue.Enqueue(tree.Root.Value);
+            bfQueue.Enqueue(tree.Root);
 
             while(bfQueue.Front != null)
             {
@@ -44,11 +44,11 @@ namespace BreadFirstTraversal
                 Console.Write($" {temp.Value} =>");
                 if(temp.Left != null)
                 {
-                    bfQueue.Enqueue(temp.Left.Value);
+                    bfQueue.Enqueue(temp.Left);
                 }
                 if(temp.Right != null)
                 {
-                    bfQueue.Enqueue(temp.Right.Value);
+                    bfQueue.Enqueue(temp.Right);
                 }
             }
 
