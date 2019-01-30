@@ -34,6 +34,11 @@ namespace BreadFirstTraversal
             BreadthFirst(tree);
         }
 
+        /// <summary>
+        /// Take in a binary tree and traverses it using breadth first principles, using a queue
+        /// </summary>
+        /// <param name="tree">binary tree</param>
+        /// <returns> list of tree nodes in breadth first order</returns>
         public static List<int> BreadthFirst (BT tree)
         {
             List<int> list = new List<int>();
