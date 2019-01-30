@@ -32,6 +32,8 @@ namespace Trees.Classes
         public Node(T value)
         {
             Value = value;
+            Left = null;
+            Right = null;
         }
     }
 }
