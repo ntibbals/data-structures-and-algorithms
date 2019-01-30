@@ -1,12 +1,13 @@
 ﻿using System;
 using Trees.Classes;
 using BreadFirstTraversal.Classes;
+using System.Collections.Generic;
 
 namespace BreadFirstTraversal
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             BT tree = new BT();
@@ -33,14 +34,19 @@ namespace BreadFirstTraversal
             BreadthFirst(tree);
         }
 
-        static void BreadthFirst (BT tree)
+        public static List<int> BreadthFirst (BT tree)
         {
+            List<int> list = new List<int>();
             Queue bfQueue = new Queue();
             bfQueue.Enqueue(tree.Root);
-
+            if (tree.Root == null)
+            {
+                return null;
+            }
             while(bfQueue.Front != null)
             {
                 Nodeb temp = bfQueue.Dequeue();
+                list.Add(temp.Value);
                 Console.Write($" {temp.Value} =>");
                 if(temp.Left != null)
                 {
@@ -51,6 +57,7 @@ namespace BreadFirstTraversal
                     bfQueue.Enqueue(temp.Right);
                 }
             }
+            return list;
 
         }
     }
