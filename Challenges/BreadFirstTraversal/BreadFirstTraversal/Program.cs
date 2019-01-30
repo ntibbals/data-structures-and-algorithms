@@ -1,12 +1,13 @@
 ﻿using System;
 using Trees.Classes;
 using BreadFirstTraversal.Classes;
+using System.Collections.Generic;
 
 namespace BreadFirstTraversal
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             BT tree = new BT();
@@ -31,16 +32,27 @@ namespace BreadFirstTraversal
             tree.Root.Right.Right = rightRightLeaf;
 
             BreadthFirst(tree);
+            Console.ReadLine();
         }
 
-        static void BreadthFirst (BT tree)
+        /// <summary>
+        /// Take in a binary tree and traverses it using breadth first principles, using a queue
+        /// </summary>
+        /// <param name="tree">binary tree</param>
+        /// <returns> list of tree nodes in breadth first order</returns>
+        public static List<int> BreadthFirst (BT tree)
         {
+            List<int> list = new List<int>();
             Queue bfQueue = new Queue();
             bfQueue.Enqueue(tree.Root);
-
+            if (tree.Root == null)
+            {
+                return null;
+            }
             while(bfQueue.Front != null)
             {
                 Nodeb temp = bfQueue.Dequeue();
+                list.Add(temp.Value);
                 Console.Write($" {temp.Value} =>");
                 if(temp.Left != null)
                 {
@@ -51,6 +63,7 @@ namespace BreadFirstTraversal
                     bfQueue.Enqueue(temp.Right);
                 }
             }
+            return list;
 
         }
     }
