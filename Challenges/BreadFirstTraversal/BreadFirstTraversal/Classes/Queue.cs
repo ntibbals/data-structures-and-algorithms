@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Trees.Classes;
 
 namespace BreadFirstTraversal.Classes
 {
@@ -9,11 +10,11 @@ namespace BreadFirstTraversal.Classes
         /// <summary>
         /// Set property for queue of Front(top)
         /// </summary>
-        public Node Front { get; set; } = null;
+        public Nodeb Front { get; set; } = null;
         /// <summary>
         /// Set property for queue of Rear(end)
         /// </summary>
-        public Node Rear { get; set; } = null;
+        public Nodeb Rear { get; set; } = null;
         /// <summary>
         /// Set counter variable for queue
         /// </summary>
@@ -29,7 +30,7 @@ namespace BreadFirstTraversal.Classes
         /// Instantiates queue with node value
         /// </summary>
         /// <param name="node">node</param>
-        public Queue(Node node)
+        public Queue(Nodeb node)
         {
             Front = node;
             Rear = node;
@@ -42,14 +43,14 @@ namespace BreadFirstTraversal.Classes
         {
             if (Front == null)
             {
-                Node newNode = new Node(value);
+                Nodeb newNode = new Nodeb(value);
                 Front = newNode;
                 Rear = newNode;
                 Size++;
             }
             else
             {
-                Node node = new Node(value);
+                Nodeb node = new Nodeb(value);
                 Rear.Next = node;
                 Rear = node;
                 Size++;
@@ -59,11 +60,11 @@ namespace BreadFirstTraversal.Classes
         /// Removes a node value from queue
         /// </summary>
         /// <returns>temp node value</returns>
-        public Node Dequeue()
+        public Nodeb Dequeue()
         {
             try
             {
-                Node temp = Front;
+                Nodeb temp = Front;
                 Front = Front.Next;
                 temp.Next = null;
                 Size--;
@@ -79,7 +80,7 @@ namespace BreadFirstTraversal.Classes
         /// Looks at the front of the queue
         /// </summary>
         /// <returns>front node value</returns>
-        public Node Peek()
+        public Nodeb Peek()
         {
             return Front;
         }

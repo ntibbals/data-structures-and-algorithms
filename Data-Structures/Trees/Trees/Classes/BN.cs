@@ -19,6 +19,8 @@ namespace Trees.Classes
         /// </summary>
         public Nodeb Right { get; set; }
 
+        public Nodeb Next { get; set; }
+
 
         public Nodeb()
         {
