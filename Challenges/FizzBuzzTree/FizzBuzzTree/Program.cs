@@ -32,18 +32,21 @@ namespace FizzBuzzTree
                 }
                 Helper(helperRoot.Left); /// looks left
                 Helper(helperRoot.Right);/// checks right
-                if (Convert.ToInt32(helperRoot.Value) % 15 == 0)
-                {
-                    helperRoot.Value = "FizzBuzz";
-                }
-                else if (Convert.ToInt32(helperRoot.Value) % 5 == 0)
-                {
-                    helperRoot.Value = "Buzz";
-                }
-                else if (Convert.ToInt32(helperRoot.Value) % 3 == 0)
-                {
-                    helperRoot.Value = "Fizz";
+                if (Int32.TryParse(helperRoot.Value.ToString(), out int value))
+                    {
+                    if (value % 15 == 0)
+                    {
+                        helperRoot.Value = "FizzBuzz";
+                    }
+                    else if (value % 5 == 0)
+                    {
+                        helperRoot.Value = "Buzz";
+                    }
+                    else if (value % 3 == 0)
+                    {
+                        helperRoot.Value = "Fizz";
 
+                    }
                 }
             }
 
