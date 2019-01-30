@@ -5,7 +5,7 @@ using FizzBuzzTree.Classes;
 
 namespace FizzBuzzTree
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -17,20 +17,21 @@ namespace FizzBuzzTree
             fTree.Root.Left.Left = new Node<object>(15);
             fTree.Root.Right.Right = new Node<object>(25);
             FizzBuzzTree(fTree);
+
         }
 
-        static BinaryTree<object> FizzBuzzTree(BinaryTree<object> bt)
+        public static BinaryTree<object> FizzBuzzTree(BinaryTree<object> bt)
         {
-            Node<object> root = bt.Root;
+            Node<object> root = bt.Root; ///holder for tree root
 
-            void Helper(Node<object> helperRoot)
+            void Helper(Node<object> helperRoot) /// helper method to run recursion, not alter root
             {
-                if (helperRoot == null)
+                if (helperRoot == null) /// break point for recursion
                 {
                     return;
                 }
-                Helper(helperRoot.Left);
-                Helper(helperRoot.Right);
+                Helper(helperRoot.Left); /// looks left
+                Helper(helperRoot.Right);/// checks right
                 if (Convert.ToInt32(helperRoot.Value) % 15 == 0)
                 {
                     helperRoot.Value = "FizzBuzz";
@@ -46,7 +47,7 @@ namespace FizzBuzzTree
                 }
             }
 
-            Helper(root);
+            Helper(root); ///begins the recursion
             return bt;
 
         }
