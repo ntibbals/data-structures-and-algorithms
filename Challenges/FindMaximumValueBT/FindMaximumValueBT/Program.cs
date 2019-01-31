@@ -33,7 +33,11 @@ namespace FindMaximumValueBT
             Console.WriteLine(FindMaxValue(tree));
             Console.ReadLine();
         }
-
+        /// <summary>
+        /// Initial method that takes in a binary tree and determines the maximum value
+        /// </summary>
+        /// <param name="tree">binary tree</param>
+        /// <returns>maximum value</returns>
         public static int FindMaxValue(BT tree)
         {
 
@@ -41,13 +45,17 @@ namespace FindMaximumValueBT
             {
                 throw null;
             }
-            //int temp = tree.Root.Value;
             int temp = FindMaxValue(tree.Root);
             
 
             return temp;
         }
 
+        /// <summary>
+        /// Recursive method to do the traversal and logic to determine max value
+        /// </summary>
+        /// <param name="root">root of binary tree</param>
+        /// <returns>Return maximum value to initial method</returns>
         public static int FindMaxValue(Nodeb root)
         {
             int temp = root.Value;
