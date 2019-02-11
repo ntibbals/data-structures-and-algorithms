@@ -21,7 +21,7 @@ namespace Binary_Height_TDD
             testTree.Root.Right = rightChild;
 
 
-            Assert.Equal(1, Program.FindHeight(testTree));
+            Assert.Equal(1, Program.CalculateBinaryTreeHeight(testTree));
         }
 
         [Fact]
@@ -49,7 +49,7 @@ namespace Binary_Height_TDD
             Nodeb rightRightChild = new Nodeb(30);
             testTree.Root.Right.Right = rightRightChild;
 
-            Assert.Equal(3, Program.FindHeight(testTree));
+            Assert.Equal(3, Program.CalculateBinaryTreeHeight(testTree));
         }
    
         [Fact]
@@ -60,7 +60,7 @@ namespace Binary_Height_TDD
             testTree.Root = new Nodeb(100);
 
 
-            Assert.Equal(0, Program.FindHeight(testTree));
+            Assert.Equal(0, Program.CalculateBinaryTreeHeight(testTree));
         }
 
         [Fact]
@@ -68,7 +68,7 @@ namespace Binary_Height_TDD
         {
             /// Test empty tree
             BT testTree = new BT();
-            Assert.Throws<NullReferenceException>(() => Program.FindHeight(testTree));
+            Assert.Throws<NullReferenceException>(() => Program.CalculateBinaryTreeHeight(testTree));
         }
 
         [Fact]
@@ -87,7 +87,7 @@ namespace Binary_Height_TDD
             Nodeb rightRightChild = new Nodeb(15);
             testTree.Root.Right.Right = rightRightChild;
 
-            Assert.Equal(2, Program.FindHeight(testTree));
+            Assert.Equal(2, Program.CalculateBinaryTreeHeight(testTree));
         }
         [Fact]
         public void TestLevelofOne()

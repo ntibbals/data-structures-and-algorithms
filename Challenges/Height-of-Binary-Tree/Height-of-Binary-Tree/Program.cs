@@ -37,7 +37,7 @@ namespace Height_of_Binary_Tree
             Nodeb rightRightRightRightLeaf = new Nodeb(170);
             tree.Root.Right.Right.Right.Right = rightRightRightRightLeaf;
 
-            Console.WriteLine(FindHeight(tree));
+            Console.WriteLine(CalculateBinaryTreeHeight(tree));
             Console.WriteLine(FindLevel(tree));
             Console.ReadLine();
 
@@ -48,7 +48,7 @@ namespace Height_of_Binary_Tree
         /// </summary>
         /// <param name="tree">binary tree</param>
         /// <returns>height of tree</returns>
-        public static int FindHeight(BT tree)
+        public static int CalculateBinaryTreeHeight(BT tree)
         {
             if (tree.Root == null)
             {
