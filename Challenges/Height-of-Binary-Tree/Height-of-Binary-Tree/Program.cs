@@ -20,6 +20,9 @@ namespace Height_of_Binary_Tree
             Nodeb leftLeftLeaf = new Nodeb(15);
             tree.Root.Left.Left = leftLeftLeaf;
 
+            Nodeb leftLeftLeftLeaf = new Nodeb(17);
+            tree.Root.Left.Left.Left = leftLeftLeftLeaf;
+
             Nodeb leftRightLeaf = new Nodeb(200);
             tree.Root.Left.Right = leftRightLeaf;
 
@@ -30,6 +33,9 @@ namespace Height_of_Binary_Tree
             tree.Root.Right.Right = rightRightLeaf;
             Nodeb rightRightRightLeaf = new Nodeb(160);
             tree.Root.Right.Right.Right = rightRightRightLeaf;
+
+            Nodeb rightRightRightRightLeaf = new Nodeb(170);
+            tree.Root.Right.Right.Right.Right = rightRightRightRightLeaf;
 
             Console.WriteLine(FindHeight(tree));
             Console.ReadLine();
@@ -44,8 +50,8 @@ namespace Height_of_Binary_Tree
             }
 
             Nodeb root = tree.Root;
-            int currentCount = 0;
-
+            int currentCountLeft = 0;
+            int currentCountRight = 0;
             void Helper(Nodeb temp)
             {
                 if (temp == null)
@@ -54,14 +60,25 @@ namespace Height_of_Binary_Tree
                 }
                 Helper(temp.Left);
                 Helper(temp.Right);
-                if( temp.Left != null || temp.Right != null)
+                if( temp.Right != null)
                 {
-                    currentCount++;
+                    currentCountLeft++;
+                }
+                if (temp.Right != null)
+                {
+                    currentCountRight++;
                 }
             }
             Helper(root);
 
-            return currentCount;
+            if (currentCountLeft > currentCountRight)
+            {
+                return currentCountLeft;
+            }
+            else
+            { 
+                return currentCountRight;
+            }
         }
     }
 }
