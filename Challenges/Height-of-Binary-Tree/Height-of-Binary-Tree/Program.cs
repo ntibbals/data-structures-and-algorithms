@@ -43,6 +43,11 @@ namespace Height_of_Binary_Tree
 
         }
 
+        /// <summary>
+        /// Find height recursively
+        /// </summary>
+        /// <param name="tree">binary tree</param>
+        /// <returns>height of tree</returns>
         public static int FindHeight(BT tree)
         {
             if (tree.Root == null)
@@ -84,6 +89,11 @@ namespace Height_of_Binary_Tree
             }
         }
 
+        /// <summary>
+        /// Find levels of tree
+        /// </summary>
+        /// <param name="tree">binary tree</param>
+        /// <returns>level within a tree</returns>
         public static int FindLevel(BT tree)
         {
             if (tree.Root == null)
