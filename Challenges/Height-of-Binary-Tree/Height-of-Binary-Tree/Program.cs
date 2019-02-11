@@ -38,6 +38,7 @@ namespace Height_of_Binary_Tree
             tree.Root.Right.Right.Right.Right = rightRightRightRightLeaf;
 
             Console.WriteLine(FindHeight(tree));
+            Console.WriteLine(FindLevel(tree));
             Console.ReadLine();
 
         }
@@ -78,6 +79,45 @@ namespace Height_of_Binary_Tree
             else
             { 
                 return currentCountRight;
+            }
+        }
+
+        public static int FindLevel(BT tree)
+        {
+            if (tree.Root == null)
+            {
+                throw null;
+            }
+
+            Nodeb root = tree.Root;
+            int currentCountLeft = 0;
+            int currentCountRight = 0;
+            void Helper(Nodeb temp)
+            {
+                if (temp == null)
+                {
+                    return;
+                }
+                Helper(temp.Left);
+                Helper(temp.Right);
+                if (temp.Right != null)
+                {
+                    currentCountLeft++;
+                }
+                if (temp.Right != null)
+                {
+                    currentCountRight++;
+                }
+            }
+            Helper(root);
+
+            if (currentCountLeft > currentCountRight)
+            {
+                return currentCountLeft - 1;
+            }
+            else
+            {
+                return currentCountRight - 1;
             }
         }
     }
