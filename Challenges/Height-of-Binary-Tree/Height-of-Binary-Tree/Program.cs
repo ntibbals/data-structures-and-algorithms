@@ -3,7 +3,7 @@ using Trees.Classes;
 
 namespace Height_of_Binary_Tree
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -61,10 +61,12 @@ namespace Height_of_Binary_Tree
                 }
                 Helper(temp.Left);
                 Helper(temp.Right);
-                if( temp.Right != null)
+
+                if( temp.Left != null )
                 {
                     currentCountLeft++;
                 }
+
                 if (temp.Right != null)
                 {
                     currentCountRight++;
@@ -90,8 +92,8 @@ namespace Height_of_Binary_Tree
             }
 
             Nodeb root = tree.Root;
-            int currentCountLeft = 0;
-            int currentCountRight = 0;
+            int currentCountLeft = 1;
+            int currentCountRight = 1;
             void Helper(Nodeb temp)
             {
                 if (temp == null)
@@ -100,7 +102,7 @@ namespace Height_of_Binary_Tree
                 }
                 Helper(temp.Left);
                 Helper(temp.Right);
-                if (temp.Right != null)
+                if (temp.Left != null)
                 {
                     currentCountLeft++;
                 }
@@ -113,11 +115,11 @@ namespace Height_of_Binary_Tree
 
             if (currentCountLeft > currentCountRight)
             {
-                return currentCountLeft - 1;
+                return currentCountLeft;
             }
             else
             {
-                return currentCountRight - 1;
+                return currentCountRight;
             }
         }
     }
