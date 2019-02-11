@@ -6,4 +6,10 @@
     <RootNamespace>Height_of_Binary_Tree</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Trees">
+      <HintPath>..\..\..\Data-Structures\Trees\Trees\bin\Debug\netcoreapp2.2\Trees.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
