@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binary-Tree-Balancer", "Binary-Tree-Balancer\Binary-Tree-Balancer.csproj", "{1315A127-BAE3-407C-8B32-B9EE0F8B6FCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1315A127-BAE3-407C-8B32-B9EE0F8B6FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1315A127-BAE3-407C-8B32-B9EE0F8B6FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1315A127-BAE3-407C-8B32-B9EE0F8B6FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1315A127-BAE3-407C-8B32-B9EE0F8B6FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2B2FDD7-A4FA-45A7-AB17-75A4C171AA72}
+	EndGlobalSection
+EndGlobal
