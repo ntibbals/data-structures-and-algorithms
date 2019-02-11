@@ -2,7 +2,7 @@
 
 namespace Are_Characters_Unique
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -11,8 +11,9 @@ namespace Are_Characters_Unique
             Console.WriteLine(AreCharactersUnique(inpu));
         }
 
-        static bool AreCharactersUnique (string input)
+        public static bool AreCharactersUnique (string input)
         {
+
             string[] array = new string [input.Length];
 
             for (int i = 0; i < array.Length; i++)
