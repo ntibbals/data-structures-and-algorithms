@@ -20,9 +20,6 @@ namespace Binary_Tree_Balancer
             Nodeb leftLeftLeaf = new Nodeb(15);
             tree.Root.Left.Left = leftLeftLeaf;
 
-            Nodeb leftLeftLeftLeaf = new Nodeb(17);
-            tree.Root.Left.Left.Left = leftLeftLeftLeaf;
-
             Nodeb leftRightLeaf = new Nodeb(200);
             tree.Root.Left.Right = leftRightLeaf;
 
@@ -33,9 +30,10 @@ namespace Binary_Tree_Balancer
             tree.Root.Right.Right = rightRightLeaf;
             Nodeb rightRightRightLeaf = new Nodeb(160);
             tree.Root.Right.Right.Right = rightRightRightLeaf;
-
-            Nodeb rightRightRightRightLeaf = new Nodeb(170);
+            Nodeb rightRightRightRightLeaf = new Nodeb(160);
             tree.Root.Right.Right.Right.Right = rightRightRightRightLeaf;
+
+
 
             Console.WriteLine(IsBinaryTreeBalanced(tree.Root));
         }
@@ -43,7 +41,6 @@ namespace Binary_Tree_Balancer
         public static bool IsBinaryTreeBalanced(Nodeb root)
         {
             Nodeb temp = root;
-            int height = 0;
             int HeightHelper (Nodeb helperHeight)
             {
                 if (helperHeight == null)
@@ -52,17 +49,26 @@ namespace Binary_Tree_Balancer
                 }
                 return (1 + Math.Max(HeightHelper(helperHeight.Left), HeightHelper(helperHeight.Right))); ///Math.Max compares the given arguments and determines the greater, similiar to a conditional statement
             }
-            height = HeightHelper(temp);
 
-            if (height > 0)
+            bool ComparisonHelper(Nodeb helperComparison)
             {
-                return true;
-            }
+                if (helperComparison == null)
+                {
+                    return true;
+                }
+                int difference = HeightHelper(helperComparison.Left) - HeightHelper(helperComparison.Right);
 
-            else
-            {
-                return false;
+                if (Math.Abs(difference) > 1)
+                {
+                    return false;
+                }
+                else
+                {
+                    return ComparisonHelper(helperComparison.Left) && ComparisonHelper(helperComparison.Right);
+                }
             }
+            return ComparisonHelper(temp);
+            
         }
     }
 }
