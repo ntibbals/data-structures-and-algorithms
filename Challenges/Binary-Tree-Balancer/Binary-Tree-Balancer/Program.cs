@@ -3,7 +3,7 @@ using Trees.Classes;
 
 namespace Binary_Tree_Balancer
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -40,6 +40,10 @@ namespace Binary_Tree_Balancer
 
         public static bool IsBinaryTreeBalanced(Nodeb root)
         {
+            if (root == null)
+            {
+                throw null;
+            }
             Nodeb temp = root;
             int HeightHelper (Nodeb helperHeight)
             {
