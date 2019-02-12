@@ -37,7 +37,7 @@ namespace Height_of_Binary_Tree
             Nodeb rightRightRightRightLeaf = new Nodeb(170);
             tree.Root.Right.Right.Right.Right = rightRightRightRightLeaf;
 
-            Console.WriteLine(CalculateBinaryTreeHeight(tree));
+            Console.WriteLine(CalculateBinaryTreeHeight(tree.Root));
             Console.WriteLine(FindLevel(tree));
             Console.ReadLine();
 
@@ -48,45 +48,27 @@ namespace Height_of_Binary_Tree
         /// </summary>
         /// <param name="tree">binary tree</param>
         /// <returns>height of tree</returns>
-        public static int CalculateBinaryTreeHeight(BT tree)
+        public static int CalculateBinaryTreeHeight(Nodeb root)
         {
-            if (tree.Root == null)
+            if (root == null)
             {
                 throw null;
             }
 
-            Nodeb root = tree.Root;
-            int currentCountLeft = 0;
-            int currentCountRight = 0;
-            void Helper(Nodeb temp)
+            Nodeb temp = root;
+            int Helper(Nodeb tempH)
             {
-                if (temp == null)
+                if (tempH == null)
                 {
-                    return;
+                    return -1;
                 }
-                Helper(temp.Left);
-                Helper(temp.Right);
+                int currentCountLeft = Helper(tempH.Left);
+                int currentCountRight = Helper(tempH.Right);
 
-                if( temp.Left != null )
-                {
-                    currentCountLeft++;
-                }
 
-                if (temp.Right != null)
-                {
-                    currentCountRight++;
-                }
+                return (1 + Math.Max(currentCountLeft, currentCountRight)); /// returns the greater of the two arguments
             }
-            Helper(root);
-
-            if (currentCountLeft > currentCountRight)
-            {
-                return currentCountLeft;
-            }
-            else
-            { 
-                return currentCountRight;
-            }
+            return Helper(temp);
         }
 
         /// <summary>
@@ -101,36 +83,20 @@ namespace Height_of_Binary_Tree
                 throw null;
             }
 
-            Nodeb root = tree.Root;
-            int currentCountLeft = 1;
-            int currentCountRight = 1;
-            void Helper(Nodeb temp)
+            Nodeb temp = tree.Root;
+            int Helper(Nodeb tempH)
             {
-                if (temp == null)
+                if (tempH == null)
                 {
-                    return;
+                    return 0;
                 }
-                Helper(temp.Left);
-                Helper(temp.Right);
-                if (temp.Left != null)
-                {
-                    currentCountLeft++;
-                }
-                if (temp.Right != null)
-                {
-                    currentCountRight++;
-                }
-            }
-            Helper(root);
+                int currentCountLeft = Helper(tempH.Left);
+                int currentCountRight = Helper(tempH.Right);
 
-            if (currentCountLeft > currentCountRight)
-            {
-                return currentCountLeft;
+
+                return (1 + Math.Max(currentCountLeft, currentCountRight)); /// returns the greater of the two arguments
             }
-            else
-            {
-                return currentCountRight;
-            }
+            return Helper(temp);
         }
     }
 }

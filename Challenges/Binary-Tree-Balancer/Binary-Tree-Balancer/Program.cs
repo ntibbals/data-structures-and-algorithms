@@ -38,6 +38,11 @@ namespace Binary_Tree_Balancer
             Console.WriteLine(IsBinaryTreeBalanced(tree.Root));
         }
 
+        /// <summary>
+        /// Determines if a binary tree is balanced - wraps two helper methods one to determine height of a tree, another to do a comparison between left and right
+        /// </summary>
+        /// <param name="root">root of a node</param>
+        /// <returns></returns>
         public static bool IsBinaryTreeBalanced(Nodeb root)
         {
             if (root == null)
