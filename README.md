@@ -17,3 +17,15 @@
 [7. Challenge: FIFO Animal Shelter](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/fifo_animal_shelter) 
 
 [8. Challenge: Multi Bracket Validation](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Multi-Bracket-Validation) 
+
+[9. Challenge: Array Binary Search](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Array_Binary_Search) 
+
+[10. Challenge: Bread First Traversal](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/BreadFirstTraversal) 
+
+[10. Challenge: Find the Maximum Value in a Binary Tree](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/FindMaximumValueBT) 
+
+[11. Challenge: Find the Height of a Binary Tree](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Height-of-Binary-Tree) 
+
+[11. Challenge: Determine if a Binary Tree is Balanced](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Binary-Tree-Balancer) 
+
+[12. Challenge: Determine if characters in an array are unique](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Are_Characters_Unique) 
