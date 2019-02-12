@@ -11,4 +11,4 @@
 - The space efficiency of this algorithm is O(n) as we are instantiating a new array.
 
 ### Visual
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Are_Characters_Unique/whiteboard.JPG)

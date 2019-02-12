@@ -10,4 +10,4 @@
 - The space efficiency of this algorithm is O(1) as we are not adding any additional memoery.
 
 ### Visual
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Height-of-Binary-Tree/whiteboard.JPG)
