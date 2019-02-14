@@ -19,5 +19,15 @@ namespace Hashtable
             Value = value;
             Next = null;
         }
+
+        public int getKey()
+        {
+            return Key;
+        }
+
+        public object getValue()
+        {
+            return Value;
+        }
     }
 }

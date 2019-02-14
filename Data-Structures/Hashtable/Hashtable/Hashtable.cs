@@ -17,12 +17,24 @@ namespace Hashtable
             Table = new NodeH[Buckets];
         }
 
-        public int GetKey(int key)
+        public object GetKey(int key)
         {
+            int hash = (key % Buckets);
+            while (Table[hash] != null && Table[hash].getKey() != key)
+            {
+                hash = (hash + 1) % Buckets;
+            }
 
+            if (Table[hash] == null)
+            {
+                return -1;
+            }
 
+            else
+            {
+                return Table[hash].getValue();
+            }
 
-            return key;
         }
     }
 }
