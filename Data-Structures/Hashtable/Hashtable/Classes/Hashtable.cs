@@ -29,8 +29,10 @@ namespace Hashtables.Classes
                 Console.WriteLine($"Current value{i} is {value}");
             }
 
-            value = value * 499;
 
+            value = value * 499;
+            Console.WriteLine($"Value after multiplied by 499 {value}");
+            Console.WriteLine($" buckets = {Buckets}");
             value = value % Buckets;
 
             return value;

@@ -9,7 +9,7 @@ namespace Hashtables
         {
             Console.WriteLine("Hello World!");
 
-            Hashtable hash = new Hashtable(3);
+            Hashtable hash = new Hashtable(6);
 
             Console.WriteLine(hash.HashFunc("Nate"));
 
