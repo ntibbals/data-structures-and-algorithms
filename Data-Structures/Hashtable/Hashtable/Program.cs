@@ -9,15 +9,16 @@ namespace Hashtables
         {
             Console.WriteLine("Hello World!");
 
-            Hashtable hash = new Hashtable(6);
+            Hashtable hash = new Hashtable(7);
 
             Console.WriteLine(hash.HashFunc("Nate"));
+            Console.WriteLine(hash.HashFunc("Nate1"));
 
             hash.Add("Nate", "Tibbss");
 
-            hash.Add("Mike", "Switchup");
+            hash.Add("Nate1", "Switchup");
 
-            Console.WriteLine(hash.GetKey("Nate"));
+            Console.WriteLine(hash.GetKey("Nate1"));
 
             Console.WriteLine(hash.Contains("Mike"));
 

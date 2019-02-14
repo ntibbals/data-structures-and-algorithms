@@ -51,6 +51,7 @@ namespace Hashtables.Classes
             }
             else
             {
+                ///Collision occurred, create new linked list on node
                 NodeH temp = Table[hashKey];
                 while (temp.Next != null)
                 {
@@ -65,22 +66,28 @@ namespace Hashtables.Classes
         public object GetKey(string key)
         {
             int keyValue = HashFunc(key);
-            int hash = (keyValue % Buckets);
-            while(Table[hash] != null && Table[hash].Key != key)
+            if (Table[keyValue].Key == key)
             {
-                hash = (hash + 1) % Buckets;
-            }
 
-            if (Table[hash] == null)
-            {
-                ;
-                return "Didn't find anything";
+                return Table[keyValue].getValue();
             }
 
             else
             {
-                Console.WriteLine($"Found. Returning {Table[hash].getValue()}");
-                return Table[hash].getValue();
+                NodeH temp = Table[keyValue];
+                while (temp.Key != key || temp == null)
+                {
+                    temp = temp.Next;
+                }
+                if (temp.Key == key)
+                {
+
+                    return temp.getValue();
+                }
+                else
+                {
+                    return "Key not in Hash Table";
+                }
             }
         }
 

@@ -48,5 +48,63 @@ namespace Hashtable_TDD
             Assert.Equal(expected2, testHash.HashFunc(key2));
 
         }
+
+        [Fact]
+        public void CanAddSingleKeyValuePair()
+        {
+            Hashtable testHash = new Hashtable(6);
+
+            testHash.Add("Test", "TestValue");
+            int key = testHash.HashFunc("Test");
+            string expected = "TestValue";
+            Assert.Equal(expected, testHash.Table[key].getValue());
+        }
+
+        [Fact]
+        public void CanAddMultipleKeyValuePair()
+        {
+            Hashtable testHash = new Hashtable(6);
+
+            testHash.Add("Test", "TestValue");
+            testHash.Add("TestTest", "TestTestValue");
+            int key = testHash.HashFunc("TestTest");
+            string expected = "TestTestValue";
+            Assert.Equal(expected, testHash.Table[key].getValue());
+        }
+        [Fact]
+        public void CanAddWithCollision()
+        {
+            Hashtable testHash = new Hashtable(7);
+
+            testHash.Add("Test", "TestValue");
+            testHash.Add("Test1", "Test1Value");
+            int key = testHash.HashFunc("Test"); /// index 6
+            int key1 = testHash.HashFunc("Test1"); /// index 6
+            string expected = "TestValue";
+            string expected1 = "Test1Value";
+            Assert.Equal(expected, testHash.Table[key].getValue());
+            Assert.Equal(expected1, testHash.Table[key1].Next.getValue());
+        }
+
+        [Fact]
+        public void CanGetSingleKeyValuePair()
+        {
+            Hashtable testHash = new Hashtable(6);
+
+            testHash.Add("Test", "TestValue");
+            string expected = "TestValue";
+            Assert.Equal(expected, testHash.GetKey("Test"));
+        }
+
+        [Fact]
+        public void CanGetWithCollision()
+        {
+            Hashtable testHash = new Hashtable(7);
+
+            testHash.Add("Test", "TestValue");
+            testHash.Add("Test1", "Test1Value");
+            string expected = "Test1Value";
+            Assert.Equal(expected, testHash.GetKey("Test1"));
+        }
     }
 }
