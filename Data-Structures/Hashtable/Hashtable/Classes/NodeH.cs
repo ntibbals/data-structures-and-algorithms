@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Hashtable
+namespace Hashtables.Classes
 {
     public class NodeH
     {
-
         public string Key { get; set; }
 
         public object Value { get; set; }
 
         public NodeH Next { get; set; }
 
-        public NodeH (string key, object value)
+        public NodeH(string key, object value)
         {
             Key = key;
             Value = value;

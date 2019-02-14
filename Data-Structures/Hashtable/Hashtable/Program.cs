@@ -1,7 +1,7 @@
 ﻿using System;
-using static Hashtable.Hashtable;
+using Hashtables.Classes;
 
-namespace Hashtable
+namespace Hashtables
 {
     class Program
     {
@@ -9,6 +9,9 @@ namespace Hashtable
         {
             Console.WriteLine("Hello World!");
 
+            Hashtable hash = new Hashtable(3);
+
+            Console.WriteLine(hash.HashFunc("Nate"));
         }
     }
 }

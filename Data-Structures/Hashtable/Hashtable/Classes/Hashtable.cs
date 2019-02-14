@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Hashtable
+namespace Hashtables.Classes
 {
     public class Hashtable
     {
@@ -23,8 +23,17 @@ namespace Hashtable
 
             for (int i = 0; i < key.Length; i++)
             {
-
+                int cValue = key[i];
+                Console.WriteLine($"char value {cValue}");
+                value = cValue + value;
+                Console.WriteLine($"Current value{i} is {value}");
             }
+
+            value = value * 499;
+
+            value = value % Buckets;
+
+            return value;
         }
         public object GetKey(string key)
         {
