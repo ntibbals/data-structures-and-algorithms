@@ -7,13 +7,13 @@ namespace Hashtable
     public class NodeH
     {
 
-        public int Key { get; set; }
+        public string Key { get; set; }
 
         public object Value { get; set; }
 
         public NodeH Next { get; set; }
 
-        public NodeH (int key, object value)
+        public NodeH (string key, object value)
         {
             Key = key;
             Value = value;
@@ -22,7 +22,7 @@ namespace Hashtable
 
         public int getKey()
         {
-            return Key;
+            return Convert.ToInt32(Key);
         }
 
         public object getValue()
