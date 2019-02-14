@@ -1,4 +1,5 @@
 ﻿using System;
+using static Hashtable.Hashtable;
 
 namespace Hashtable
 {
@@ -8,7 +9,6 @@ namespace Hashtable
         {
             Console.WriteLine("Hello World!");
 
-            Console.WriteLine(GetHashCode(5));
         }
     }
 }
