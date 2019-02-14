@@ -12,6 +12,11 @@ namespace Hashtables
             Hashtable hash = new Hashtable(3);
 
             Console.WriteLine(hash.HashFunc("Nate"));
+
+            hash.Add("Nate", "Tibbss");
+
+            hash.Add("Nate", "Switchup");
+
         }
     }
 }

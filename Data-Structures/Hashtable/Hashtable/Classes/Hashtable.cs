@@ -35,25 +35,33 @@ namespace Hashtables.Classes
 
             return value;
         }
-        public object GetKey(string key)
+
+
+        public void Add(string key, object value)
         {
-            int keyValue = Convert.ToInt32(key);
-            int hash = (keyValue % Buckets);
-            while (Table[hash] != null && Table[hash].getKey() != keyValue)
-            {
-                hash = (hash + 1) % Buckets;
-            }
+            NodeH newHash = new NodeH(key, value);
 
-            if (Table[hash] == null)
-            {
-                return -1;
-            }
+            int hashKey = HashFunc(key);
 
+            if(Table[hashKey] == null)
+            {
+                Table[hashKey] = newHash;
+            }
             else
             {
-                return Table[hash].getValue();
+                NodeH temp = Table[hashKey];
+                while (temp.Next != null)
+                {
+                    temp = temp.Next;
+                }
+
+                temp.Next = newHash;
             }
 
         }
+
+
+
+
     }
 }
