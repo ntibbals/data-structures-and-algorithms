@@ -15,8 +15,9 @@ namespace Hashtables
 
             hash.Add("Nate", "Tibbss");
 
-            hash.Add("Nate", "Switchup");
+            hash.Add("Mike", "Switchup");
 
+            Console.WriteLine(hash.GetKey("Nate"));
         }
     }
 }

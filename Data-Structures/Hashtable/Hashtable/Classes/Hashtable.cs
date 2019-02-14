@@ -60,6 +60,28 @@ namespace Hashtables.Classes
 
         }
 
+        public object GetKey(string key)
+        {
+            int keyValue = HashFunc(key);
+            int hash = (keyValue % Buckets);
+            while(Table[hash] != null && Table[hash].Key != key)
+            {
+                hash = (hash + 1) % Buckets;
+            }
+
+            if (Table[hash] == null)
+            {
+                ;
+                return "Didn't find anything";
+            }
+
+            else
+            {
+                Console.WriteLine($"Found. Returning {Table[hash].getValue()}");
+                return Table[hash].getValue();
+            }
+        }
+
 
 
 
