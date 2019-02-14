@@ -18,7 +18,7 @@ namespace Hashtables
 
             hash.Add("Nate1", "Switchup");
 
-            Console.WriteLine(hash.GetKey("Nate1"));
+            Console.WriteLine(hash.Get("Nate1"));
 
             Console.WriteLine(hash.Contains("Mike"));
 

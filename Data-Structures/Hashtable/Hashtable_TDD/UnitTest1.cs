@@ -93,7 +93,7 @@ namespace Hashtable_TDD
 
             testHash.Add("Test", "TestValue");
             string expected = "TestValue";
-            Assert.Equal(expected, testHash.GetKey("Test"));
+            Assert.Equal(expected, testHash.Get("Test"));
         }
 
         [Fact]
@@ -104,7 +104,29 @@ namespace Hashtable_TDD
             testHash.Add("Test", "TestValue");
             testHash.Add("Test1", "Test1Value");
             string expected = "Test1Value";
-            Assert.Equal(expected, testHash.GetKey("Test1"));
+            Assert.Equal(expected, testHash.Get("Test1"));
+        }
+
+        [Fact]
+        public void CanGetWithTripleCollision()
+        {
+            Hashtable testHash = new Hashtable(7);
+
+            testHash.Add("Test", "TestValue");
+            testHash.Add("Test1", "Test1Value");
+            testHash.Add("Test2", "Test2Value");
+            string expected = "Test2Value";
+            Assert.Equal(expected, testHash.Get("Test2"));
+        }
+        [Fact]
+        public void CanGetNull()
+        {
+            Hashtable testHash = new Hashtable(7);
+
+            testHash.Add("Test", "TestValue");
+            testHash.Add("Test1", "Test1Value");
+            testHash.Add("Test2", "Test2Value");
+            Assert.Throws<NullReferenceException>(() => testHash.Get("Fail"));
         }
     }
 }

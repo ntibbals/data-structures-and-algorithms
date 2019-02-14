@@ -45,7 +45,7 @@ namespace Hashtables.Classes
 
             int hashKey = HashFunc(key);
 
-            if(Table[hashKey] == null)
+            if (Table[hashKey] == null)
             {
                 Table[hashKey] = newHash;
             }
@@ -63,7 +63,7 @@ namespace Hashtables.Classes
 
         }
 
-        public object GetKey(string key)
+        public object Get(string key)
         {
             int keyValue = HashFunc(key);
             if (Table[keyValue].Key == key)
@@ -86,7 +86,7 @@ namespace Hashtables.Classes
                 }
                 else
                 {
-                    return "Key not in Hash Table";
+                    return null;
                 }
             }
         }
@@ -94,26 +94,29 @@ namespace Hashtables.Classes
         public bool Contains(string key)
         {
             int keyValue = HashFunc(key);
-            int hash = (keyValue % Buckets);
-
-            while(Table[hash] != null && Table[hash].Key != key)
+            if (Table[keyValue].Key == key)
             {
-                hash = (hash + 1) % Buckets;
-            }
 
-            if(Table[hash] == null)
-            {
-                return false;
+                return true;
             }
 
             else
             {
-                return true;
+                NodeH temp = Table[keyValue];
+                while (temp.Key != key || temp == null)
+                {
+                    temp = temp.Next;
+                }
+                if (temp.Key == key)
+                {
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
-
-
-
-
     }
 }
