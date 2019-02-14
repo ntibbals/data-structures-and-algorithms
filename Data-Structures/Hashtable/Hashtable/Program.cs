@@ -11,8 +11,8 @@ namespace Hashtables
 
             Hashtable hash = new Hashtable(7);
 
-            Console.WriteLine(hash.HashFunc("Nate"));
-            Console.WriteLine(hash.HashFunc("Nate1"));
+            Console.WriteLine(hash.Hash("Nate"));
+            Console.WriteLine(hash.Hash("Nate1"));
 
             hash.Add("Nate", "Tibbss");
 

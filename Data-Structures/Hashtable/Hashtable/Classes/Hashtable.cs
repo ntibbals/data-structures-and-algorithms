@@ -17,7 +17,7 @@ namespace Hashtables.Classes
             Table = new NodeH[Buckets];
         }
 
-        public int HashFunc(string key)
+        public int Hash(string key)
         {
             int value = 0;
 
@@ -43,7 +43,7 @@ namespace Hashtables.Classes
         {
             NodeH newHash = new NodeH(key, value);
 
-            int hashKey = HashFunc(key);
+            int hashKey = Hash(key);
 
             if (Table[hashKey] == null)
             {
@@ -65,7 +65,7 @@ namespace Hashtables.Classes
 
         public object Get(string key)
         {
-            int keyValue = HashFunc(key);
+            int keyValue = Hash(key);
             if (Table[keyValue] == null)
             {
 
@@ -98,7 +98,7 @@ namespace Hashtables.Classes
 
         public bool Contains(string key)
         {
-            int keyValue = HashFunc(key);
+            int keyValue = Hash(key);
             if (Table[keyValue] == null)
             {
 

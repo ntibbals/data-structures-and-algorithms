@@ -15,7 +15,7 @@ namespace Hashtable_TDD
             /// ASCII VALUES: 84 101 115 116
             int expected = 6;
 
-            Assert.Equal(expected, testHash.HashFunc(key));
+            Assert.Equal(expected, testHash.Hash(key));
 
         }
 
@@ -28,7 +28,7 @@ namespace Hashtable_TDD
             /// Empty string has 0 length, will always be 0
             int expected = 0;
 
-            Assert.Equal(expected, testHash.HashFunc(key));
+            Assert.Equal(expected, testHash.Hash(key));
         }
 
         [Fact]
@@ -44,8 +44,8 @@ namespace Hashtable_TDD
             /// ASCII VALUES: 84 101 115 116 1
             int expected2 = 6;
 
-            Assert.Equal(expected, testHash.HashFunc(key));
-            Assert.Equal(expected2, testHash.HashFunc(key2));
+            Assert.Equal(expected, testHash.Hash(key));
+            Assert.Equal(expected2, testHash.Hash(key2));
 
         }
 
@@ -55,7 +55,7 @@ namespace Hashtable_TDD
             Hashtable testHash = new Hashtable(6);
 
             testHash.Add("Test", "TestValue");
-            int key = testHash.HashFunc("Test");
+            int key = testHash.Hash("Test");
             string expected = "TestValue";
             Assert.Equal(expected, testHash.Table[key].getValue());
         }
@@ -67,7 +67,7 @@ namespace Hashtable_TDD
 
             testHash.Add("Test", "TestValue");
             testHash.Add("TestTest", "TestTestValue");
-            int key = testHash.HashFunc("TestTest");
+            int key = testHash.Hash("TestTest");
             string expected = "TestTestValue";
             Assert.Equal(expected, testHash.Table[key].getValue());
         }
@@ -78,8 +78,8 @@ namespace Hashtable_TDD
 
             testHash.Add("Test", "TestValue");
             testHash.Add("Test1", "Test1Value");
-            int key = testHash.HashFunc("Test"); /// index 6
-            int key1 = testHash.HashFunc("Test1"); /// index 6
+            int key = testHash.Hash("Test"); /// index 6
+            int key1 = testHash.Hash("Test1"); /// index 6
             string expected = "TestValue";
             string expected1 = "Test1Value";
             Assert.Equal(expected, testHash.Table[key].getValue());
