@@ -82,6 +82,27 @@ namespace Hashtables.Classes
             }
         }
 
+        public bool Contains(string key)
+        {
+            int keyValue = HashFunc(key);
+            int hash = (keyValue % Buckets);
+
+            while(Table[hash] != null && Table[hash].Key != key)
+            {
+                hash = (hash + 1) % Buckets;
+            }
+
+            if(Table[hash] == null)
+            {
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+
 
 
 
