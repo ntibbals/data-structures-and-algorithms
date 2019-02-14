@@ -126,7 +126,46 @@ namespace Hashtable_TDD
             testHash.Add("Test", "TestValue");
             testHash.Add("Test1", "Test1Value");
             testHash.Add("Test2", "Test2Value");
-            Assert.Throws<NullReferenceException>(() => testHash.Get("Fail"));
+            Assert.Null(testHash.Get("Fail"));
+        }
+        [Fact]
+        public void ContainSingleKeyValuePair()
+        {
+            Hashtable testHash = new Hashtable(6);
+        
+            testHash.Add("Test", "TestValue");
+            Assert.True(testHash.Contains("Test"));
+        }
+
+        [Fact]
+        public void ContainWithCollision()
+        {
+            Hashtable testHash = new Hashtable(7);
+
+            testHash.Add("Test", "TestValue");
+            testHash.Add("Test1", "Test1Value");
+            Assert.True(testHash.Contains("Test1"));
+        }
+
+        [Fact]
+        public void ContainWithTripleCollision()
+        {
+            Hashtable testHash = new Hashtable(7);
+
+            testHash.Add("Test", "TestValue");
+            testHash.Add("Test1", "Test1Value");
+            testHash.Add("Test2", "Test2Value");
+            Assert.True(testHash.Contains("Test2"));
+        }
+        [Fact]
+        public void DoesNotContain()
+        {
+            Hashtable testHash = new Hashtable(7);
+
+            testHash.Add("Test", "TestValue");
+            testHash.Add("Test1", "Test1Value");
+            testHash.Add("Test2", "Test2Value");
+            Assert.False(testHash.Contains("Fail"));
         }
     }
 }

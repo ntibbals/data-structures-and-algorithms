@@ -66,12 +66,17 @@ namespace Hashtables.Classes
         public object Get(string key)
         {
             int keyValue = HashFunc(key);
-            if (Table[keyValue].Key == key)
+            if (Table[keyValue] == null)
+            {
+
+                return null;
+            }
+
+            else if (Table[keyValue].Key == key)
             {
 
                 return Table[keyValue].getValue();
             }
-
             else
             {
                 NodeH temp = Table[keyValue];
@@ -94,12 +99,17 @@ namespace Hashtables.Classes
         public bool Contains(string key)
         {
             int keyValue = HashFunc(key);
-            if (Table[keyValue].Key == key)
+            if (Table[keyValue] == null)
+            {
+
+                return false;
+            }
+
+            else if (Table[keyValue].Key == key)
             {
 
                 return true;
             }
-
             else
             {
                 NodeH temp = Table[keyValue];
