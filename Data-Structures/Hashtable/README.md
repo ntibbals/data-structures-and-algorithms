@@ -13,4 +13,4 @@
 - The time efficiency of the Contains method  without a key located in one of the collided linked lists is O(1) as it will return true or false if it exists. If it is a key located at a collided position, it will be an O(n) in order to find the key value pair within the correct node. The space efficiency is O(1) as we are not adding any additional memory.
 
 ### Visual
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Data-Structures/Hashtable/visual.PNG)
