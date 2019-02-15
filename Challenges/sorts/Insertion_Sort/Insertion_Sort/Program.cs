@@ -13,7 +13,16 @@ namespace Insertion_Sort
             {
                 Console.Write($" {sorted[i]} ,");
             }
+            Console.WriteLine();
+            int[] sort2Array = new int[] { 9, 5, 4, 2, 1 };
+            int[] sorted2 = InsertionSort(sort2Array);
+            for (int i = 0; i < sorted2.Length; i++)
+            {
+                Console.Write($" {sorted2[i]} ,");
+            }
             Console.ReadLine();
+
+
 
         }
 
@@ -21,12 +30,17 @@ namespace Insertion_Sort
         {
             for (int i = 1; i < array.Length; i++)
             {
+                Console.WriteLine($"Iteration {i} at {array[i]}");
                 int x = i - 1;
                 int temp = array[i];
-                while( x >= 0 && temp < array[x] )
+                Console.WriteLine($"Temp is {temp}");
+
+                while ( x >= 0 && temp < array[x] )
                 {
                     array[x + 1] = array[x];
                     x = x - 1;
+                    Console.WriteLine($"X is {x}");
+
                 }
                 array[x + 1] = temp;
             }
