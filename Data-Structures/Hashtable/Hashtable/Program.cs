@@ -11,20 +11,13 @@ namespace Hashtables
 
             Hashtable hash = new Hashtable(7);
 
-            Console.WriteLine(hash.Hash("Nate"));
-            Console.WriteLine(hash.Hash("Nate1"));
-
-            hash.Add("Nate", "Tibbss");
-
-            hash.Add("Nate1", "Switchup");
-
-            Console.WriteLine(hash.Get("FG"));
-
-            //Console.WriteLine(hash.Contains("Mike"));
-
-            //Console.WriteLine(hash.Contains("Paul"));
-            Console.WriteLine(hash.Contains("FC"));
-
+            Console.WriteLine($" Index key for Seattle: {hash.Hash("Seattle")}");
+            Console.WriteLine($" Adding key value pair, Seattle and Pike Market");
+            hash.Add("Seattle", "Pike Market");
+            Console.WriteLine(hash.Get("Seattle"));
+            Console.WriteLine("Looking for key: Seattle");
+            Console.WriteLine(hash.Contains("Seattle"));
+            Console.ReadLine();
 
         }
     }
