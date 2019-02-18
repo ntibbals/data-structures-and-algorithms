@@ -9,6 +9,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanCreateKey()
         {
+            /// Can create a hash key
             Hashtable testHash = new Hashtable(7);
 
             string key = "Test";
@@ -22,6 +23,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanCreateKeyWithEmpty()
         {
+            // can create a hash key with empty string
             Hashtable testHash = new Hashtable(7);
 
             string key = "";
@@ -34,6 +36,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanCreateMultipleKeys()
         {
+            /// can create multiple keys
             Hashtable testHash = new Hashtable(7);
 
             string key = "Test";
@@ -52,6 +55,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanAddSingleKeyValuePair()
         {
+            /// can add a single key value pair
             Hashtable testHash = new Hashtable(6);
 
             testHash.Add("Test", "TestValue");
@@ -63,6 +67,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanAddMultipleKeyValuePair()
         {
+            /// can add multiple pairs
             Hashtable testHash = new Hashtable(6);
 
             testHash.Add("Test", "TestValue");
@@ -74,6 +79,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanAddWithCollision()
         {
+            /// can add with collision
             Hashtable testHash = new Hashtable(7);
 
             testHash.Add("Test", "TestValue");
@@ -89,6 +95,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanGetSingleKeyValuePair()
         {
+            /// can get a single key value
             Hashtable testHash = new Hashtable(6);
 
             testHash.Add("Test", "TestValue");
@@ -99,6 +106,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanGetWithCollision()
         {
+            /// can get a collided value
             Hashtable testHash = new Hashtable(7);
 
             testHash.Add("Test", "TestValue");
@@ -110,6 +118,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanGetWithTripleCollision()
         {
+            /// can get with a triple collision
             Hashtable testHash = new Hashtable(7);
 
             testHash.Add("Test", "TestValue");
@@ -121,6 +130,7 @@ namespace Hashtable_TDD
         [Fact]
         public void CanGetNull()
         {
+            /// can get null 
             Hashtable testHash = new Hashtable(7);
 
             testHash.Add("Test", "TestValue");
@@ -131,6 +141,7 @@ namespace Hashtable_TDD
         [Fact]
         public void ContainSingleKeyValuePair()
         {
+            /// contains works with single key value
             Hashtable testHash = new Hashtable(6);
         
             testHash.Add("Test", "TestValue");
@@ -140,6 +151,7 @@ namespace Hashtable_TDD
         [Fact]
         public void ContainWithCollision()
         {
+            /// contains works with collision
             Hashtable testHash = new Hashtable(7);
 
             testHash.Add("Test", "TestValue");
@@ -150,6 +162,7 @@ namespace Hashtable_TDD
         [Fact]
         public void ContainWithTripleCollision()
         {
+            /// contains works with triple collusions
             Hashtable testHash = new Hashtable(7);
 
             testHash.Add("Test", "TestValue");
@@ -160,6 +173,7 @@ namespace Hashtable_TDD
         [Fact]
         public void DoesNotContain()
         {
+            /// contains works if key is not in hash table
             Hashtable testHash = new Hashtable(7);
 
             testHash.Add("Test", "TestValue");

@@ -2,7 +2,7 @@
 
 namespace Insertion_Sort
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -26,6 +26,11 @@ namespace Insertion_Sort
 
         }
 
+        /// <summary>
+        /// Sorts given array in ascending order
+        /// </summary>
+        /// <param name="array">array to sort</param>
+        /// <returns>sorted array</returns>
         public static int[] InsertionSort(int[] array)
         {
             for (int i = 1; i < array.Length; i++)
