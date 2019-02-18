@@ -17,6 +17,11 @@ namespace Hashtables.Classes
             Table = new NodeH[Buckets];
         }
 
+        /// <summary>
+        /// Hash function to create key
+        /// </summary>
+        /// <param name="key">string key</param>
+        /// <returns>integer key index in hash table</returns>
         public int Hash(string key)
         {
             int value = 0;
@@ -38,7 +43,11 @@ namespace Hashtables.Classes
             return value;
         }
 
-
+        /// <summary>
+        /// Adds key value pairs to hash table
+        /// </summary>
+        /// <param name="key">key to add</param>
+        /// <param name="value">value to retrieve</param>
         public void Add(string key, object value)
         {
             NodeH newHash = new NodeH(key, value);
@@ -63,6 +72,11 @@ namespace Hashtables.Classes
 
         }
 
+        /// <summary>
+        /// Retrieves value from hash table with given key
+        /// </summary>
+        /// <param name="key">key</param>
+        /// <returns>value </returns>
         public object Get(string key)
         {
             int keyValue = Hash(key);
@@ -96,6 +110,11 @@ namespace Hashtables.Classes
             }
         }
 
+        /// <summary>
+        /// Chechks to determine if key exists
+        /// </summary>
+        /// <param name="key">key </param>
+        /// <returns>true/false</returns>
         public bool Contains(string key)
         {
             int keyValue = Hash(key);
