@@ -7,11 +7,11 @@ namespace InsertSort_TDD
     public class UnitTest1
     {
         [Fact]
-        public void CanSortArrayofTwo()
+        public void CanSortSingle()
         {
-            // Sort array with two index
-            int[] testArray = new int[] { 9, 1 };
-            int[] expected = new int[] { 1, 9 };
+            // Sort array with single index
+            int[] testArray = new int[] { 9 };
+            int[] expected = new int[] {  9 };
 
             Assert.Equal(expected, Program.InsertionSort(testArray));
 
@@ -53,6 +53,26 @@ namespace InsertSort_TDD
             // can sort negative integers
             int[] testArray = new int[] { 1, 9, -5, 4, 2 };
             int[] expected = new int[] { -5, 1, 2, 4, 9 };
+
+            Assert.Equal(expected, Program.InsertionSort(testArray));
+
+        }
+        [Fact]
+        public void CanSortSortedArray()
+        {
+            // sort array that is already sorted
+            int[] testArray = new int[] { 1, 2, 4, 5, 9 };
+            int[] expected = new int[] { 1, 2, 4, 5, 9 };
+
+            Assert.Equal(expected, Program.InsertionSort(testArray));
+
+        }
+        [Fact]
+        public void CanSortBackwardsSortedArray()
+        {
+            // sort array that is already sorted
+            int[] testArray = new int[] { 9, 8, 7, 6 };
+            int[] expected = new int[] { 6, 7, 8, 9 };
 
             Assert.Equal(expected, Program.InsertionSort(testArray));
 
