@@ -29,15 +29,11 @@ namespace Hashtables.Classes
             for (int i = 0; i < key.Length; i++)
             {
                 int cValue = key[i];
-                Console.WriteLine($"char value {cValue}");
                 value = cValue + value;
-                Console.WriteLine($"Current value{i} is {value}");
             }
 
 
             value = value * 499;
-            Console.WriteLine($"Value after multiplied by 499 {value}");
-            Console.WriteLine($" buckets = {Buckets}");
             value = value % Buckets;
 
             return value;
