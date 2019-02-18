@@ -8,15 +8,15 @@ namespace Repeated_Word
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            string coco = "Hot chocolate hot is hot toddy";
+            string coco = "hot chocolate is hot toddy";
             Console.WriteLine(RepeatedWord(coco));
         }
 
         public static string RepeatedWord(string phrase)
         {
-            string[] array = phrase.Split(" ");
+            string[] array = phrase.ToLower().Split(" ");
 
-            Hashtable words = new Hashtable(array.Length + 1);
+            Hashtable words = new Hashtable(100);
             for (int i = 0; i < array.Length; i++)
             {
                 if(words.Contains(array[i]))
