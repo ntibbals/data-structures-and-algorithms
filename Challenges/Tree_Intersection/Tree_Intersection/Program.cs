@@ -31,23 +31,23 @@ namespace Tree_Intersection
                 TraverseOne(helperRoot.Right);
                 table.Add(helperRoot.Value.ToString(), helperRoot.Value);
             }
-
-            void TravereTwo(Nodeb helperRoot)
+            TraverseOne(root1);
+            void TraverseTwo(Nodeb helperRoot)
             {
                 if (helperRoot == null)
                 {
                     return;
                 }
 
-                TraverseOne(helperRoot.Left);
-                TraverseOne(helperRoot.Right);
+                TraverseTwo(helperRoot.Left);
+                TraverseTwo(helperRoot.Right);
                 if(table.Contains(helperRoot.Value.ToString()))
                 {
                     values.Add(helperRoot.Value);
                 }
 
             }
-                       
+            TraverseTwo(root2);        
             return values;
         }
     }
