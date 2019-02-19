@@ -1,4 +1,6 @@
 ﻿using System;
+using Hashtables.Classes;
+using Trees.Classes;
 
 namespace Tree_Intersection
 {
