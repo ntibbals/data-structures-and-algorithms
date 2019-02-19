@@ -33,7 +33,7 @@ namespace tree_intersection_tdd
 
             Nodeb leftRightLeaf2 = new Nodeb(20);
             testTree2.Root.Left.Right = leftRightLeaf2;
-            List<int> expected = new List<int> { 5, 20 };
+            List<int> expected = new List<int> { 20, 5 };
             Assert.Equal(expected, Program.TreeIntersection(testTree, testTree2));
 
         }
