@@ -10,8 +10,35 @@ namespace Tree_Intersection
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-        }
 
+            BT tree = new BT();
+            tree.Root = new Nodeb(100);
+            Nodeb leftChild = new Nodeb(5);
+            tree.Root.Left = leftChild;
+
+            Nodeb rightChild = new Nodeb(10);
+            tree.Root.Right = rightChild;
+
+            Nodeb leftRightLeaf = new Nodeb(20);
+            tree.Root.Left.Right = leftRightLeaf;
+
+            BT tree2 = new BT();
+            tree2.Root = new Nodeb(100);
+            Nodeb leftChild2 = new Nodeb(5);
+            tree2.Root.Left = leftChild2;
+
+            Nodeb rightChild2 = new Nodeb(10);
+            tree2.Root.Right = rightChild2;
+
+            Nodeb leftRightLeaf2 = new Nodeb(20);
+            tree2.Root.Left.Right = leftRightLeaf2;
+
+        List<int> intersectedValues = TreeIntersection(tree, tree2);
+            foreach (var item in intersectedValues)
+            {
+                Console.Write($" Intersected values {item}");
+            }
+        }
         /// <summary>
         /// Identify pairs between two binary trees
         /// </summary>
