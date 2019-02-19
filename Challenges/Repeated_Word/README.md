@@ -8,4 +8,4 @@
 - - The space efficiency of this method is O(n) as it holds the values in a new array and hash table.
 
 ## Visual
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Repeated_Word/whiteboard.JPG)
