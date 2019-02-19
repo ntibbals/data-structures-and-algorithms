@@ -15,9 +15,39 @@ namespace Tree_Intersection
         public static List<int> TreeIntersection( BT treeOne, BT treeTwo)
         {
             List<int> values = new List<int>();
+            Hashtable table = new Hashtable(100);
 
+            Nodeb root1 = treeOne.Root;
+            Nodeb root2 = treeTwo.Root;
 
+            void TraverseOne(Nodeb helperRoot)
+            {
+                if(helperRoot == null)
+                {
+                    return;
+                }
 
+                TraverseOne(helperRoot.Left);
+                TraverseOne(helperRoot.Right);
+                table.Add(helperRoot.Value.ToString(), helperRoot.Value);
+            }
+
+            void TravereTwo(Nodeb helperRoot)
+            {
+                if (helperRoot == null)
+                {
+                    return;
+                }
+
+                TraverseOne(helperRoot.Left);
+                TraverseOne(helperRoot.Right);
+                if(table.Contains(helperRoot.Value.ToString()))
+                {
+                    values.Add(helperRoot.Value);
+                }
+
+            }
+                       
             return values;
         }
     }
