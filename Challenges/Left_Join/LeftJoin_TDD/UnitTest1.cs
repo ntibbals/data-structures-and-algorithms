@@ -11,6 +11,7 @@ namespace LeftJoin_TDD
         [Fact]
         public void TestLeftJoin()
         {
+            /// Test left join capturing data
             Hashtable testLeft = new Hashtable(50);
             testLeft.Add("shark", "kill");
             testLeft.Add("dolphin", "dance");
@@ -30,6 +31,7 @@ namespace LeftJoin_TDD
         [Fact]
         public void TestLeftJoinCollision()
         {
+            /// Test left join with collision
             Hashtable testLeft = new Hashtable(5);
             testLeft.Add("fond", "enamored");
             testLeft.Add("diligent", "employed");
@@ -47,14 +49,16 @@ namespace LeftJoin_TDD
         [Fact]
         public void TestEmptyHashTable()
         {
+            ///Test empty hash table join
             Hashtable testLeft = new Hashtable(50);
             Hashtable testRight = new Hashtable(50);
             List<object> expected = new List<object>();
             Assert.Equal(expected, Program.LeftJoin(testLeft, testRight));
         }
         [Fact]
-        public void TestLeftNoCollision()
+        public void TestLeftJoinNoMatch()
         {
+            //Test left join with no match
             Hashtable testLeft = new Hashtable(50);
             testLeft.Add("fond", "enamored");
             testLeft.Add("diligent", "employed");
