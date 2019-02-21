@@ -20,6 +20,12 @@ namespace Left_Join
             LeftJoin(testLeft, testRight);
         }
 
+        /// <summary>
+        /// Joins two tables based on Left Join principles. If the key does not exist in left table, joined value will be null
+        /// </summary>
+        /// <param name="Left">Left Hash table</param>
+        /// <param name="Right">right hash table</param>
+        /// <returns>List of left table keys and values including any values where keys also exist in the right table</returns>
         public static List<object> LeftJoin(Hashtable Left, Hashtable Right)
         {
             List<object> result = new List<object>();
