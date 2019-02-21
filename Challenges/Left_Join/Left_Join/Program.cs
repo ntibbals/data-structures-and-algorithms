@@ -35,19 +35,23 @@ namespace Left_Join
                 {
                     List<object> listi = new List<object>();
                     NodeH temp = Left.Table[i];
-                    if (Right.Contains(temp.Key))
+                    while (temp != null)
                     {
-                        listi.Add(temp.Key);
-                        listi.Add(temp.Value.ToString());
-                        listi.Add(Right.Get(temp.Key));
-                    }
-                    else
-                    {
-                        listi.Add(temp.Key);
-                        listi.Add(temp.Value.ToString());
-                        listi.Add("NULL");
-                    }
 
+                        if (Right.Contains(temp.Key))
+                        {
+                            listi.Add(temp.Key);
+                            listi.Add(temp.Value.ToString());
+                            listi.Add(Right.Get(temp.Key));
+                        }
+                        else
+                        {
+                            listi.Add(temp.Key);
+                            listi.Add(temp.Value.ToString());
+                            listi.Add("NULL");
+                        }
+                        temp = temp.Next;
+                    }
                     result.Add(listi);
                 }                
             }
