@@ -8,4 +8,4 @@
 - The space efficiency of this method is O(n). This is because we are instantiating a new list to hold the collected values.
 
 ## Visual
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Left_Join/whiteboard.JPG)
