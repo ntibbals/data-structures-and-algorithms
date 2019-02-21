@@ -33,10 +33,10 @@ namespace Left_Join
             {
                 if (Left.Table[i] != null)
                 {
-                    List<object> listi = new List<object>();
                     NodeH temp = Left.Table[i];
                     while (temp != null)
                     {
+                        List<object> listi = new List<object>();
 
                         if (Right.Contains(temp.Key))
                         {
@@ -51,8 +51,9 @@ namespace Left_Join
                             listi.Add("NULL");
                         }
                         temp = temp.Next;
+                        result.Add(listi);
+
                     }
-                    result.Add(listi);
                 }                
             }
             return result;
