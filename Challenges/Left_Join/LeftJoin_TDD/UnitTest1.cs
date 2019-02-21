@@ -20,8 +20,8 @@ namespace LeftJoin_TDD
             testRight.Add("flow", "jam");
             //{ [ ["fond", "enamored", "averse"], [] ] };
             List<object> expected = new List<object>(); 
-            string[] left1 = new string[] { "fond", "enamored", "averse" };
-            string[] left2 = new string[] { "diligent", "employed", "null" };
+            object[] left1 = new object[] { "fond", "enamored", "averse" };
+            object[] left2 = new object[] { "diligent", "employed", NULL };
             expected.Add(left1);
             expected.Add(left2);
             Assert.Equal(expected, Program.LeftJoin(testLeft, testRight));
