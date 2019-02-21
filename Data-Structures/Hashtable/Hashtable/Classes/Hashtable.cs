@@ -128,7 +128,7 @@ namespace Hashtables.Classes
             else
             {
                 NodeH temp = Table[keyValue];
-                while (temp.Key != key || temp == null)
+                while (temp.Key != key && temp.Next != null)
                 {
                     temp = temp.Next;
                 }
