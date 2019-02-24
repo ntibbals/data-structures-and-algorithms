@@ -6,11 +6,14 @@ namespace Graph.Classes
 {
     class Vertex
     {
-        public object Value { get; set; }
+        public string Name { get; set; }
+        public Dictionary<string, List<string>> weightTable { get; set; }
+        public bool Visited { get; set; }
+        public List<Edge> Edges { get; set; }
 
-        public Vertex(object value)
+        public Vertex()
         {
-            Value = value;
+           
         }
     }
 }
