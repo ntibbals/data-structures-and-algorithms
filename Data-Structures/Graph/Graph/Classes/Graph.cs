@@ -6,5 +6,6 @@ namespace Graph.Classes
 {
     class Graph
     {
+        
     }
 }

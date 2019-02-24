@@ -8,12 +8,14 @@ namespace Graph.Classes
     {
 
 
-        public Vertex Vertex { get; set; }
+        public Vertex V1 { get; set; }
+        public Vertex V2 { get; set; }
         public int Weight { get; set; }
 
-        public Edge(Vertex neightbor, int weight)
+        public Edge(Vertex neightbor1, Vertex neighbor2, int weight)
         {
-            Vertex = neightbor;
+            V1 = neightbor1;
+            V2 = neighbor2;
             Weight = weight;
         }
     }
