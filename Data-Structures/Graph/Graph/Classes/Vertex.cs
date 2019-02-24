@@ -7,7 +7,7 @@ namespace Graph.Classes
     class Vertex
     {
         public object Value { get; set; }
-
+        public Graph Graph { get; set; }
 
         public Vertex(object value)
         {
