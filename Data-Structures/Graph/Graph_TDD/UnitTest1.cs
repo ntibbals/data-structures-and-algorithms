@@ -173,11 +173,30 @@ namespace Graph_TDD
             graph.AddNode(testV2);
             graph.AddEdge(testV1, testV2, 4);
             List<Node> expected = new List<Node>();
-            expected.Add(testV2);
             expected.Add(testV1);
+            expected.Add(testV2);
+            Assert.Equal(expected, graph.BreadFirst(testV1));
+        }
+
+
+        [Fact]
+        public void ReturnMultiVisitedNodes()
+        {
+            ///test that method will return ordered list of visited nodes
+            Graphs graph = new Graphs();
+            Node testV1 = new Node("Test1");
+            Node testV2 = new Node("Test2");
+            Node testV3 = new Node("Test3");
+
+            graph.AddNode(testV1);
+            graph.AddNode(testV2);
+            graph.AddNode(testV3);
+            graph.AddEdge(testV1, testV2, 4);
+            graph.AddEdge(testV2, testV3, 8);
+            List<Node> expected = new List<Node>();
+            expected.Add(testV2);
+            expected.Add(testV3);
             Assert.Equal(expected, graph.BreadFirst(testV2));
-
-
         }
     }
 }

@@ -118,7 +118,6 @@ namespace Graph.Classes
                     if(!table.Contains(front.Value))
                     {
                         table.Add(front.Value, front.Value);
-                        que.Enqueue(child.V1);
                         que.Enqueue(child.V2);
                         order.Add(front);
                     }
