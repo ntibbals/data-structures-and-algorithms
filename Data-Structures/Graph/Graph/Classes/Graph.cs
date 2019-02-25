@@ -61,5 +61,22 @@ namespace Graph.Classes
 
             return vList;
         }
+
+        public List<Edge> GetNeighbors(Vertex vertex)
+        {
+            List<Edge> neighbors = new List<Edge>();
+
+            foreach (var v in vertex.Graph.Edges)
+            {
+                neighbors.Add(v);
+            }
+
+            return neighbors;
+        }
+
+        public int GetSize()
+        {
+            return Size;
+        }
     }
 }
