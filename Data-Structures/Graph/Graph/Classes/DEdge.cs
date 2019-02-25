@@ -4,9 +4,15 @@ using System.Text;
 
 namespace Graph.Classes
 {
-    class DEdge
+    public class DEdge
     {
         Node Vertex { get; set; }
         int Weight { get; set; }
+
+        public DEdge(Node vertex, int weight)
+        {
+            Vertex = vertex;
+            Weight = weight;
+        }
     }
 }
