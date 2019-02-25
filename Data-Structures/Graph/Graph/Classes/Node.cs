@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Graph.Classes
 {
-    public class Vertex
+    public class Node
     {
         public object Value { get; set; }
         public Graphs Graph { get; set; }
 
-        public Vertex(object value)
+        public Node(object value)
         {
             Value = value;
         }

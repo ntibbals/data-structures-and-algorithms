@@ -8,7 +8,7 @@ namespace Graph.Classes
     {
         public List<Edge> Edges { get; set; }
 
-        public List<Vertex> Vertices { get; set; }
+        public List<Node> Vertices { get; set; }
 
         public int Size { get; set; }
 
@@ -16,9 +16,9 @@ namespace Graph.Classes
         {
             List<Edge> edges = new List<Edge>();
             Edges = edges;
-            List<Vertex> vertices = new List<Vertex>();
+            List<Node> vertices = new List<Node>();
             Vertices = vertices;
-            foreach (Vertex v in vertices)
+            foreach (Node v in vertices)
             {
                 v.Graph = this;
             }
@@ -26,11 +26,11 @@ namespace Graph.Classes
         }
 
 
-        public Graphs(List<Edge> edges, List<Vertex> vertices)
+        public Graphs(List<Edge> edges, List<Node> vertices)
         {
             Edges = edges;
             Vertices = vertices;
-            foreach (Vertex v in vertices)
+            foreach (Node v in vertices)
             {
                 v.Graph = this;
             }
@@ -42,12 +42,12 @@ namespace Graph.Classes
             Edges.Add(edge);
         }
 
-        public void AddEdge(Vertex v1, Vertex v2, int weight)
+        public void AddEdge(Node v1, Node v2, int weight)
         {
             Edges.Add(new Edge(v1, v2, weight));
         }
 
-        public void AddVertex(Vertex vertices)
+        public void AddVertex(Node vertices)
         {
             Vertices.Add(vertices);
             vertices.Graph = this;
@@ -59,16 +59,16 @@ namespace Graph.Classes
             Edges.Remove(edge);
         }
 
-        public void RemoveVertex(Vertex vertices)
+        public void RemoveVertex(Node vertices)
         {
             Edges.RemoveAll(edge => edge.V2 == vertices || edge.V1 == vertices);
             Vertices.Remove(vertices);
         }
 
-        public List<Vertex> GetVertex()
+        public List<Node> GetNodes()
         {
-            List<Vertex> vList = new List<Vertex>();
-            foreach (Vertex v in Vertices)
+            List<Node> vList = new List<Node>();
+            foreach (Node v in Vertices)
             {
                 vList.Add(v);
             }
@@ -76,7 +76,7 @@ namespace Graph.Classes
             return vList;
         }
 
-        public List<Edge> GetNeighbors(Vertex vertex)
+        public List<Edge> GetNeighbors(Node vertex)
         {
             List<Edge> neighbors = new List<Edge>();
 
