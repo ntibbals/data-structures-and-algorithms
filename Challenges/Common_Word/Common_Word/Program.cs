@@ -31,22 +31,22 @@ namespace Common_Word
             for (int i = 0; i < sArray.Length; i++)
             {
 
-                if (table.Contains(sArray[i]))
+                if (table.Contains(sArray[i])) /// looks for if value is in table
                 {
 
                     int compare = table.Get(sArray[i]);
                     NodeHT temp = table.Table[i];
                     while (temp != null)
                     {
-                        compare++;
+                        compare++; /// keeps track of length of linked list within collision
                         temp = temp.Next;
                     }
-                    if (compare > topCount)
+                    if (compare > topCount) /// compares collided value with current top count value
                     {
                         topCount = compare;
                         word = sArray[i];
                     }
-                    table.Add(sArray[i], compare);
+                    table.Add(sArray[i], compare); /// adds value to hash table
 
                 }
                 else
