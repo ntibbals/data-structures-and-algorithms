@@ -37,6 +37,13 @@ namespace Graph.Classes
             Size = 0;
         }
 
+        public void AddNode(Node vertices)
+        {
+            Vertices.Add(vertices);
+            vertices.Graph = this;
+            Size = 1 + Size;
+        }
+
         public void AddEdge(Edge edge)
         {
             Edges.Add(edge);
@@ -47,12 +54,7 @@ namespace Graph.Classes
             Edges.Add(new Edge(v1, v2, weight));
         }
 
-        public void AddVertex(Node vertices)
-        {
-            Vertices.Add(vertices);
-            vertices.Graph = this;
-            Size = 1 + Size;
-        }
+
 
         public void RemoveEdge(Edge edge)
         {

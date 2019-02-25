@@ -15,7 +15,7 @@ namespace Graph_TDD
             Graphs graph = new Graphs();
             Node testVertex = new Node("Test");
 
-            graph.AddVertex(testVertex);
+            graph.AddNode(testVertex);
 
             List<Node> expected = new List<Node>();
             expected.Add(testVertex);
@@ -31,8 +31,8 @@ namespace Graph_TDD
             Node testV1 = new Node("Test1");
             Node testV2 = new Node("Test2");
 
-            graph.AddVertex(testV1);
-            graph.AddVertex(testV2);
+            graph.AddNode(testV1);
+            graph.AddNode(testV2);
             graph.AddEdge(testV1, testV2, 4);
             Edge testEdge = new Edge(testV1, testV2, 4);
             List<Node> expected = new List<Node>();
@@ -57,8 +57,8 @@ namespace Graph_TDD
             Node testV1 = new Node("Test1");
             Node testV2 = new Node("Test2");
 
-            graph.AddVertex(testV1);
-            graph.AddVertex(testV2);
+            graph.AddNode(testV1);
+            graph.AddNode(testV2);
             graph.AddEdge(testV1, testV2, 4);
             List<Node> expected = new List<Node>();
             expected.Add(testV1);
@@ -75,8 +75,8 @@ namespace Graph_TDD
             Node testV1 = new Node("Test1");
             Node testV2 = new Node("Test2");
             Node testV3 = new Node("Test3");
-            graph.AddVertex(testV1);
-            graph.AddVertex(testV2);
+            graph.AddNode(testV1);
+            graph.AddNode(testV2);
             graph.AddEdge(testV1, testV2, 4);
             graph.AddEdge(testV2, testV3, 8);
             Edge testEdge = new Edge(testV1, testV2, 4);
@@ -102,8 +102,8 @@ namespace Graph_TDD
             Graphs graph = new Graphs();
             Node testV1 = new Node("Test1");
             Node testV2 = new Node("Test2");
-            graph.AddVertex(testV1);
-            graph.AddVertex(testV2);
+            graph.AddNode(testV1);
+            graph.AddNode(testV2);
             graph.AddEdge(testV1, testV2, 4);
             Edge testEdge = new Edge(testV1, testV2, 4);
             List<Edge> graphEdges = graph.GetNeighbors(testV2);
@@ -124,8 +124,8 @@ namespace Graph_TDD
             Node testV1 = new Node("Test1");
             Node testV2 = new Node("Test2");
             Node testV3 = new Node("Test3");
-            graph.AddVertex(testV1);
-            graph.AddVertex(testV2);
+            graph.AddNode(testV1);
+            graph.AddNode(testV2);
             graph.AddEdge(testV1, testV2, 4);
             graph.AddEdge(testV2, testV3, 8);
 
@@ -140,7 +140,7 @@ namespace Graph_TDD
             Graphs graph = new Graphs();
             Node testV1 = new Node("Test1");
 
-            graph.AddVertex(testV1);
+            graph.AddNode(testV1);
             graph.AddEdge(testV1, testV1, 4);
             Edge testEdge = new Edge(testV1, testV1, 4);
             List<Node> expected = new List<Node>();
