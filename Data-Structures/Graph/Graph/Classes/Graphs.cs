@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -97,6 +98,31 @@ namespace Graph.Classes
         public int GetSize()
         {
             return Size;
+        }
+
+        public List<object> BreadFirst(Node node)
+        {
+            List<object> order = new List<object>();
+            Hashtable table = new Hashtable();
+            Queue<Node> que = new Queue<Node>();
+
+            que.Enqueue(node);
+
+            while(que.TryPeek(out node))
+            {
+                Node front = que.Dequeue();
+                order.Add(front);
+
+                foreach (Edge child in front.Graph.GetNeighbors(front))
+                {
+                    if(!table.Contains(front.Value))
+                    {
+                        table.Add(front.Value, front.Value);
+                        que.Enqueue(child.V1);
+                    }
+                }
+            }
+            return order;
         }
     }
 }
