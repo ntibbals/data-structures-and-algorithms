@@ -3,7 +3,7 @@ using System;
 
 namespace Common_Word
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -22,7 +22,8 @@ namespace Common_Word
         public static string CommonWord(string book)
         {
             HashT table = new HashT(50);
-            string[] sArray = book.Split(" ");
+            char[] delimiters = { ' ', ':', ';', '/', ',', '.' };
+            string[] sArray = book.ToLower().Split(delimiters);
             string word = "No Common Word"; /// holds most common word
 
             int topCount = 0; ////holds count for current most common word
