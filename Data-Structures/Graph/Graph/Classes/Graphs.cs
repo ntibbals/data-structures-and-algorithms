@@ -67,6 +67,10 @@ namespace Graph.Classes
 
         public List<Node> GetNodes()
         {
+            if(Size < 1)
+            {
+                return null;
+            }
             List<Node> vList = new List<Node>();
             foreach (Node v in Vertices)
             {

@@ -156,6 +156,7 @@ namespace Graph_TDD
         [Fact]
         public void TestEmptyGraph()
         {
+            ///return null if graph is empty
             Graphs graph = new Graphs();
             Assert.Null(graph.GetNodes());
         }
