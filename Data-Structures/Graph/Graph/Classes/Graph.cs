@@ -10,6 +10,8 @@ namespace Graph.Classes
 
         public List<Vertex> Vertices { get; set; }
 
+        public int Size { get; set; }
+
         public Graph(List<Edge> edges, List<Vertex> vertices)
         {
             Edges = edges;
@@ -18,6 +20,7 @@ namespace Graph.Classes
             {
                 v.Graph = this;
             }
+            Size = 0;
         }
 
         public void AddEdge(Edge edge)
@@ -34,6 +37,7 @@ namespace Graph.Classes
         {
             Vertices.Add(vertices);
             vertices.Graph = this;
+            Size = 1 + Size;
         }
 
         public void RemoveEdge(Edge edge)
