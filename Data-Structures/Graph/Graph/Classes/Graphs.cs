@@ -111,7 +111,7 @@ namespace Graph.Classes
             while(que.TryPeek(out node))
             {
                 Node front = que.Dequeue();
-                order.Add(front);
+               // order.Add(front);
 
                 foreach (Edge child in front.Graph.GetNeighbors(front))
                 {
@@ -119,6 +119,8 @@ namespace Graph.Classes
                     {
                         table.Add(front.Value, front.Value);
                         que.Enqueue(child.V1);
+                        que.Enqueue(child.V2);
+                        order.Add(front);
                     }
                 }
             }
