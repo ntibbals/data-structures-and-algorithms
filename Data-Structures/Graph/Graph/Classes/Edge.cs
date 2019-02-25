@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Graph.Classes
 {
-    class Edge
+    public class Edge
     {
 
 

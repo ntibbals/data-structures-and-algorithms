@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Graph.Classes
 {
-    class Graph
+    public class Graphs
     {
         public List<Edge> Edges { get; set; }
 
@@ -12,7 +12,21 @@ namespace Graph.Classes
 
         public int Size { get; set; }
 
-        public Graph(List<Edge> edges, List<Vertex> vertices)
+        public Graphs()
+        {
+            List<Edge> edges = new List<Edge>();
+            Edges = edges;
+            List<Vertex> vertices = new List<Vertex>();
+            Vertices = vertices;
+            foreach (Vertex v in vertices)
+            {
+                v.Graph = this;
+            }
+            Size = 0;
+        }
+
+
+        public Graphs(List<Edge> edges, List<Vertex> vertices)
         {
             Edges = edges;
             Vertices = vertices;
@@ -51,10 +65,10 @@ namespace Graph.Classes
             Vertices.Remove(vertices);
         }
 
-        public List<Vertex> GetVertex(List<Vertex> vertices)
+        public List<Vertex> GetVertex()
         {
             List<Vertex> vList = new List<Vertex>();
-            foreach (Vertex v in vertices)
+            foreach (Vertex v in Vertices)
             {
                 vList.Add(v);
             }
