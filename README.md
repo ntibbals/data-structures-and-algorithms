@@ -29,3 +29,11 @@
 [11. Challenge: Determine if a Binary Tree is Balanced](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Binary-Tree-Balancer) 
 
 [12. Challenge: Determine if characters in an array are unique](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Are_Characters_Unique) 
+
+[13. Challenge: Repeated Word](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Repeated_Word) 
+
+[14. Challenge: Tree Intersection](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Tree_Intersection) 
+
+[15. Challenge: Left Joinn](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Left_Join)
+
+[16. Challenge: Common Word](https://github.com/ntibbals/data-structures-and-algorithms/tree/master/Challenges/Common_Word)
