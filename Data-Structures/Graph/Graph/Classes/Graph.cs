@@ -50,5 +50,16 @@ namespace Graph.Classes
             Edges.RemoveAll(edge => edge.V2 == vertices || edge.V1 == vertices);
             Vertices.Remove(vertices);
         }
+
+        public List<Vertex> GetVertex(List<Vertex> vertices)
+        {
+            List<Vertex> vList = new List<Vertex>();
+            foreach (Vertex v in vertices)
+            {
+                vList.Add(v);
+            }
+
+            return vList;
+        }
     }
 }
