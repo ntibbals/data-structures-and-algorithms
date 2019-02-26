@@ -12,6 +12,10 @@ namespace Graph.Classes
         public Node V2 { get; set; }
         public int Weight { get; set; }
 
+        public Edge()
+        {
+
+        }
         public Edge(Node neightbor1, Node neighbor2, int weight)
         {
             V1 = neightbor1;
