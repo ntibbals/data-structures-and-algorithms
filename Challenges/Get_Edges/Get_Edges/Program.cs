@@ -8,20 +8,43 @@ namespace Get_Edges
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Graphs graph = new Graphs();
+            Node testV1 = new Node("Sea");
+            Node testV2 = new Node("Chi");
+
+            graph.AddNode(testV1);
+            graph.AddNode(testV2);
+            graph.AddEdge(testV1, testV2, 150);
+            string[] travel = new string[] { "Sea, Chi" };
+            Console.WriteLine(GetEdge(graph, travel));
         }
 
-        public static string GetEdge(DGraph graph, string[] cities)
+        public static string GetEdge(Graphs graph, string[] cities)
         {
 
-            NodeD city1 = new NodeD(cities[0]);
-            NodeD city2 = new NodeD(cities[1]);
+            Node city1 = new Node(cities[0]);
+            Node city2 = new Node(cities[1]);
 
-
-            if (!graph.AdjList.ContainsKey(city1) || !graph.AdjList.ContainsKey(city1))
+            List<Edge> neighbors1 = graph.GetNeighbors(city1);
+            foreach (var v in city1.Graph.Edges)
             {
-                return "False, $0";
+                if(v.V1 == city1 && v.V2 == city2 || v.V2 == city1 && v.V1 == city2)
+                {
+                    return $"True, ${v.Weight}";
+                }
             }
+            neighbors1 = graph.GetNeighbors(city2);
+            foreach (var v in city2.Graph.Edges)
+            {
+                if (v.V1 == city1 && v.V2 == city2 || v.V2 == city1 && v.V1 == city2)
+                {
+                    return $"True, ${v.Weight}";
+                }
+            }
+
+            return "False, $0 ";
+
         }
     }
 }
