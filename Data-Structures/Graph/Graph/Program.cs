@@ -16,27 +16,14 @@ namespace Graph
             graph.AddNode(testV1);
             graph.AddNode(testV2);
             graph.AddEdge(testV1, testV2, 4);
-            List<Node> expected = new List<Node>();
-            expected.Add(testV1);
-            expected.Add(testV2);
 
-            graph.BreadFirst(testV1);
-            Console.WriteLine("Hello World!");
-            //DGraph graph = new DGraph();
-            //NodeD testV1 = new NodeD("Test1");
-            //NodeD testV2 = new NodeD("Test2");
-            //NodeD testV3 = new NodeD("Test3");
+            List<Node> ordered = graph.BreadFirst(testV1);
+            foreach (Node item in ordered)
+            {
+                Console.Write($"{item.Value} => ");
+            }
+            Console.ReadLine();
 
-            //graph.AddNode(testV1);
-            //graph.AddNode(testV2);
-            //graph.AddNode(testV3);
-            //graph.AddEdge(testV1, testV2, 4);
-            //graph.AddEdge(testV2, testV3, 8);
-            //List<NodeD> expected = new List<NodeD>();
-            //expected.Add(testV1);
-            //expected.Add(testV2);
-            //expected.Add(testV3);
-            //graph.BreadthFirst(testV1);
         }
     }
 }

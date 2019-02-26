@@ -18,4 +18,4 @@
 
 ### Visual (BreadthFirst)
 
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Data-Structures/Graph/whiteboard.JPG)
