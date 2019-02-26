@@ -6,10 +6,10 @@ namespace Graph.Classes
 {
     public class DEdge
     {
-        Node Vertex { get; set; }
+        NodeD Vertex { get; set; }
         int Weight { get; set; }
 
-        public DEdge(Node vertex, int weight)
+        public DEdge(NodeD vertex, int weight)
         {
             Vertex = vertex;
             Weight = weight;

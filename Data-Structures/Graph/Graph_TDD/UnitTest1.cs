@@ -194,9 +194,25 @@ namespace Graph_TDD
             graph.AddEdge(testV1, testV2, 4);
             graph.AddEdge(testV2, testV3, 8);
             List<Node> expected = new List<Node>();
-            expected.Add(testV2);
             expected.Add(testV3);
-            Assert.Equal(expected, graph.BreadFirst(testV2));
+            expected.Add(testV2);
+            Assert.Equal(expected, graph.BreadFirst(testV3));
         }
+        [Fact]
+        public void ReturnSingleVisitedNode()
+        {
+            ///test that method will return a single visited node
+            Graphs graph = new Graphs();
+            Node testV1 = new Node("Test1");
+
+
+            graph.AddNode(testV1);
+
+            List<Node> expected = new List<Node>();
+            expected.Add(testV1);
+            Assert.Equal(expected, graph.BreadFirst(testV1));
+        }
+
+
     }
 }

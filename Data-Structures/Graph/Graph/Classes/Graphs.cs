@@ -100,26 +100,29 @@ namespace Graph.Classes
             return Size;
         }
 
-        public List<object> BreadFirst(Node node)
+        public List<Node> BreadFirst(Node node)
         {
-            List<object> order = new List<object>();
-            Hashtable table = new Hashtable();
+            List<Node> order = new List<Node>();
+            Hashtable table = new Hashtable(); 
             Queue<Node> que = new Queue<Node>();
 
             que.Enqueue(node);
 
-            while(que.TryPeek(out node))
+            while (que.TryPeek(out node))
             {
                 Node front = que.Dequeue();
-               // order.Add(front);
+                order.Add(front);
 
                 foreach (Edge child in front.Graph.GetNeighbors(front))
                 {
-                    if(!table.Contains(front.Value))
+                    if (!table.Contains(front) && !front.Visited)
                     {
-                        table.Add(front.Value, front.Value);
+                        
+                        table.Add(child.V2, front.Value);
+                        front.Visited = true;
                         que.Enqueue(child.V2);
-                        order.Add(front);
+                        
+                        //order.Add(front);
                     }
                 }
             }
