@@ -22,6 +22,19 @@ namespace Graph
             {
                 Console.Write($"{item.Value} => ");
             }
+
+            DGraph dictGraph = new DGraph();
+            NodeD node1 = new NodeD("Sea");
+            NodeD node2 = new NodeD("Chi");
+
+            dictGraph.AddNode(node1);
+            dictGraph.AddNode(node2);
+            dictGraph.AddEdge(node1, node2, 150);
+            List<DEdge> edges = dictGraph.GetNeighbors(node2);
+            foreach (DEdge item in edges)
+            {
+                Console.Write($"{item} => ");
+            }
             Console.ReadLine();
 
         }
