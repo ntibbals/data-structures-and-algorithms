@@ -87,7 +87,7 @@ namespace Graph.Classes
         {
             List<Edge> neighbors = new List<Edge>();
 
-            foreach (var v in vertex.Graph.Edges)
+            foreach (Edge v in vertex.Graph.Edges)
             {
                 neighbors.Add(v);
             }
