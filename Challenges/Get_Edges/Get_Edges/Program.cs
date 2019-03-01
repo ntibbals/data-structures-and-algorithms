@@ -9,10 +9,10 @@ namespace Get_Edges
         static void Main(string[] args)
         {
 
-            Graphs graph = new Graphs();
-            Node testV1 = new Node("Sea");
-            Node testV2 = new Node("Chi");
-            Node testV3 = new Node("SF");
+            DGraph graph = new DGraph();
+            NodeD testV1 = new NodeD("Sea");
+            NodeD testV2 = new NodeD("Chi");
+            NodeD testV3 = new NodeD("SF");
 
             graph.AddNode(testV1);
             graph.AddNode(testV2);
@@ -26,24 +26,27 @@ namespace Get_Edges
             //{
             //    Console.WriteLine(item.Value.ToString());
             //}
-            List<Edge> edges = graph.GetNeighbors(testV1);
-            foreach (var item in edges)
+            List<DEdge> edges = graph.GetNeighbors(testV1);
+            foreach (DEdge item in edges)
             {
-                Console.WriteLine(item.Weight.ToString());
+                Console.WriteLine(item);
             }
             Console.WriteLine(GetEdge(graph, travel));
         }
 
-        public static string GetEdge(Graphs graph, string[] cities)
+        public static string GetEdge(DGraph graph, string[] cities)
         {
 
-            Node city1 = new Node(cities[0]);
-            Node city2 = new Node(cities[1]);
+            NodeD city1 = new NodeD(cities[0]);
+            NodeD city2 = new NodeD(cities[1]);
+            if(graph.AdjList.ContainsKey(city1) && graph.AdjList.ContainsKey(city2))
+            {
 
-            List<Edge> neighbors = graph.GetNeighbors(city1);
+
+            List<DEdge> neighbors = graph.GetNeighbors(city1);
             foreach (var v in neighbors)
             {
-                if (v.V1 == city1 && v.V2 == city2 || v.V2 == city1 && v.V1 == city2)
+                if (v.Start == city1 && v.End == city2 || v.Start == city1 && v.End == city2)
                 {
                     return $"True, ${v.Weight}";
                 }
@@ -51,10 +54,11 @@ namespace Get_Edges
             neighbors = graph.GetNeighbors(city2);
             foreach (var v in neighbors)
             {
-                if (v.V1 == city1 && v.V2 == city2 || v.V2 == city1 && v.V1 == city2)
+                if (v.Start == city1 && v.End == city2 || v.End== city1 && v.Start == city2)
                 {
                     return $"True, ${v.Weight}";
                 }
+            }
             }
 
             return "False, $0 ";

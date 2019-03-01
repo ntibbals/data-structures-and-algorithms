@@ -6,12 +6,14 @@ namespace Graph.Classes
 {
     public class DEdge
     {
-        NodeD Vertex { get; set; }
-        int Weight { get; set; }
+        public NodeD Start { get; set; }
+        public NodeD End { get; set; }
+        public int Weight { get; set; }
 
-        public DEdge(NodeD vertex, int weight)
+        public DEdge(NodeD start, NodeD end, int weight)
         {
-            Vertex = vertex;
+            Start = start;
+            End = end;
             Weight = weight;
         }
     }
