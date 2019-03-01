@@ -25,15 +25,15 @@ namespace Graph.Classes
             Size = 1 + Size;
         }
 
-        public void AddEdge(NodeD v1, NodeD v2, int weight)
+        public void AddEdge(NodeD start, NodeD end, int weight)
         {
-            if(AdjList.ContainsKey(v1) && AdjList.ContainsKey(v2))
+            if(AdjList.ContainsKey(start) && AdjList.ContainsKey(end))
             {
                 LinkedList<DEdge> neighbor = new LinkedList<DEdge>();
-                AdjList.TryGetValue(v1, out neighbor);
-                DEdge edge = new DEdge(v2, weight);
+                AdjList.TryGetValue(start, out neighbor);
+                DEdge edge = new DEdge(start, end, weight);
                 neighbor.AddFirst(edge);
-                AdjList[v1] = neighbor;
+                AdjList[start] = neighbor;
             }
             else
             {

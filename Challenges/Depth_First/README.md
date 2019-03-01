@@ -9,4 +9,4 @@
 - The time efficiency of this method is O(n) as we will need to traverse through every node in the graph. The space efficiency of this method is O(n). We are utilizing a List ot hold the order of the Nodes and a stack to hold nodes which have potential children to yet visited.
 
 ### Visual
-![SCREENSHOT]()
+![SCREENSHOT](https://github.com/ntibbals/data-structures-and-algorithms/blob/master/Challenges/Depth_First/whiteboard.JPG)

@@ -30,7 +30,7 @@ namespace Graph
             dictGraph.AddNode(node1);
             dictGraph.AddNode(node2);
             dictGraph.AddEdge(node1, node2, 150);
-            List<DEdge> edges = dictGraph.GetNeighbors(node2);
+            List<DEdge> edges = dictGraph.GetNeighbors(node1);
             foreach (DEdge item in edges)
             {
                 Console.Write($"{item} => ");
