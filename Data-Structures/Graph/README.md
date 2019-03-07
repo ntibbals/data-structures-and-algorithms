@@ -4,6 +4,8 @@
 
 - Create a Graph Class that includes a AddNode() method, AddEdge() method, GetNodes() method, GetNeighbors() method, and GetSize() method.
 
+#### Approach and Efficiency 
+
 - The time efficiency of the AddNode method is O(1) as it will add the Node directly to the list within the Graph. The space efficiency is O(1) as we are only adding one node within the Graph each instance.
 
 - The time efficiency of the AddEdge method is O(1) as it will add the Edge directly to the list within the Graph. The space efficiency is O(1) as we are only adding one edge in between two given nodes within the Graph each instance.
